@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Назва:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Автор:</strong>
+  <%= @book.auth %>
+</p>
+
+<p>
+  <strong>Жанр:</strong>
+  <%= @book.zhanr %>
+</p>
+
+<p>
+  <strong>Кількість сторінок:</strong>
+  <%= @book.pages_qty %>
+</p>
+
+<p>
+  <strong>Опис:</strong>
+  <%= @book.description %>
+</p>
+
+<p>
+  <strong>Адреса до картинки:</strong>
+  <%= @book.image_url %>
+</p>
+
+<%= link_to 'Редагувати', edit_book_path(@book) %> |
+<%= link_to 'Назад', books_path %>

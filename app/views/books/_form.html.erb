@@ -1,0 +1,47 @@
+<%= form_for(book) do |f| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Назва" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Автор" %>
+    <%= f.text_field :auth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Жанр" %>
+    <%= f.text_field :zhanr %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Кількість сторінок" %>
+    <%= f.text_field :pages_qty %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Опис" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Адреса до картинки" %>
+    <%= f.text_field :image_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
