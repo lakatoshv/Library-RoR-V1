@@ -1,34 +1,69 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :label_T => "Назва",
+      :label_A => "Автор",
+      :label_Z => "Жанр",
+      :label_Q => "Кількість сторінок",
+      :label_D => "Опис",
+      :label_I => "Адреса до картинки",
+      :edit => "Редагувати",
+      :back => "Назад"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :label_T => "Name",
+      :label_A => "Author",
+      :label_Z => "Genre",
+      :label_Q => "Number of pages",
+      :label_D => "Description",
+      :label_I => "Address to the picture",
+      :edit => "Edit",
+      :back => "Back"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :label_T => "Название",
+      :label_A => "Автор",
+      :label_Z => "Жанр",
+      :label_Q => "Количество страниц",
+      :label_D => "Описание",
+      :label_I => "Адрес к картинке",
+      :edit => "Редактировать",
+      :back => "Назад"
+    } 
+  end 
+%>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Назва:</strong>
+  <strong><%= text[:label_T] %></strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong>Автор:</strong>
+  <strong><%= text[:label_A] %></strong>
   <%= @book.auth %>
 </p>
 
 <p>
-  <strong>Жанр:</strong>
+  <strong><%= text[:label_Z] %></strong>
   <%= @book.zhanr %>
 </p>
 
 <p>
-  <strong>Кількість сторінок:</strong>
+  <strong><%= text[:label_Q] %></strong>
   <%= @book.pages_qty %>
 </p>
 
 <p>
-  <strong>Опис:</strong>
+  <strong><%= text[:label_D] %></strong>
   <%= @book.description %>
 </p>
 
 <p>
-  <strong>Адреса до картинки:</strong>
+  <strong><%= text[:label_I] %></strong>
   <%= @book.image_url %>
 </p>
 
-<%= link_to 'Редагувати', edit_book_path(@book) %> |
-<%= link_to 'Назад', books_path %>
+<%= link_to text[:edit], edit_book_path(@book) %> |
+<%= link_to text[:back], books_path %>

@@ -1,5 +1,22 @@
-<h1>Додати нову книгу</h1>
+<% if session[:lang] == "ua" 
+    text ={
+      :h1 => "Додати нову книгу",
+      :back => "Назад"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :h1 => "Add new book",
+      :back => "Back"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :h1 => "Добавить новую книгу",
+      :back => "Назад"
+    } 
+  end 
+%>
+<h1><%= text[:h1] %></h1>
 
 <%= render 'form', book: @book %>
 
-<%= link_to 'Назад', books_path %>
+<%= link_to text[:back], books_path %>

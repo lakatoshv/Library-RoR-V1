@@ -1,16 +1,67 @@
+<%= session %>
+<% if session[:lang] == "ua" 
+    text ={
+      :label_T => "Назва",
+      :label_A => "Автор",
+      :label_Z => "Жанр",
+      :label_Q => "Кількість сторінок",
+      :label_D => "Опис",
+      :label_I => "Адреса до картинки",
+      :h1 => "Книги",
+      :show => "Показати",
+      :edit => "Редагувати",
+      :delete => "Видалити",
+      :question => "Ви впевнені?",
+      :new => "Додати нову книгу",
+      :back => "Назад"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :label_T => "Name",
+      :label_A => "Author",
+      :label_Z => "Genre",
+      :label_Q => "Number of pages",
+      :label_D => "Description",
+      :label_I => "Address to the picture",
+      :h1 => "Books",
+      :show => "Show",
+      :edit => "Edit",
+      :delete => "Remove",
+      :question => "Are you sure?",
+      :new => "Add new book",
+      :back => "Back"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :label_T => "Название",
+      :label_A => "Автор",
+      :label_Z => "Жанр",
+      :label_Q => "Количество страниц",
+      :label_D => "Описание",
+      :label_I => "Адрес к картинке",
+      :h1 => "Книги",
+      :show => "Показать",
+      :edit => "Редактировать",
+      :delete => "Удалить",
+      :question => "Вы уверены?",
+      :new => "Добавить новую книгу",
+      :back => "Назад"
+    } 
+  end 
+%>
 <p id="notice"><%= notice %></p>
 
-<h1>Книги</h1>
+<h1><%= text[:h1] %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Назва</th>
-      <th>Автор</th>
-      <th>Жанр</th>
-      <th>Кільність сторінок</th>
-      <th>Опис</th>
-      <th>Адреса до картинки</th>
+      <th><%= text[:label_T] %></th>
+      <th><%= text[:label_A] %></th>
+      <th><%= text[:label_Z] %></th>
+      <th><%= text[:label_Q] %></th>
+      <th><%= text[:label_D] %></th>
+      <th><%= text[:label_I] %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,14 +75,14 @@
         <td><%= book.pages_qty %></td>
         <td><%= book.description %></td>
         <td><%= book.image_url %></td>
-        <td><%= link_to 'Показати', book %></td>
-        <td><%= link_to 'Редагувати', edit_book_path(book) %></td>
-        <td><%= link_to 'Видалити', book, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
+        <td><%= link_to text[:show], book %></td>
+        <td><%= link_to text[:edit], edit_book_path(book) %></td>
+        <td><%= link_to text[:delete], book, method: :delete, data: { confirm: text[:question] } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<%= link_to text[:new], new_book_path %>
 
-<%= link_to 'Додати нову книгу', new_book_path %>

@@ -1,0 +1,52 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :h2 => "Увійти",
+      :email => "Електронна пошта",
+      :password => "Пароль",
+      :password_confirmation => "Підтвердження паролю",
+      :remember => "Запам'ятати мене"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :h2 => "Log in",
+      :email => "Email",
+      :password => "Password",
+      :password_confirmation => "Password confirmation",
+      :remember => "Remember me"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :h2 => "Авторизоваться",
+      :email => "Электронная почта",
+      :password => "Пароль",
+      :password_confirmation => "Подтверждение пароля",
+      :remember => "Запомнить меня"
+    }
+  end 
+%>
+<h2><%= text[:h2] %></h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <label><%= text[:email] %></label><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <label><%= text[:password] %></label><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <label><%= text[:remember] %></label>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <input type="submit" name="submit" value=<%= text[:h2] %>>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

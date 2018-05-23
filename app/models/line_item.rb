@@ -1,3 +1,3 @@
-class LineItem < ApplicationRecord::Base
-	belongs_to :product
+class LineItem < ApplicationRecord
+	belongs_to :book
 end

@@ -17,7 +17,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create line_item" do
     assert_difference('LineItem.count') do
-      post line_items_url, params: { line_item: { product_id: @line_item.product_id } }
+      post line_items_url, params: { line_item: { id_book: @line_item.id_book } }
     end
 
     assert_redirected_to line_item_url(LineItem.last)
@@ -34,7 +34,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update line_item" do
-    patch line_item_url(@line_item), params: { line_item: { product_id: @line_item.product_id } }
+    patch line_item_url(@line_item), params: { line_item: { id_book: @line_item.id_book } }
     assert_redirected_to line_item_url(@line_item)
   end
 

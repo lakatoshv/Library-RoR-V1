@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lproj1</title>
+    <title>Бібліотека на RubyOnRails</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,18 @@
   </head>
 
   <body>
+
+  <%= link_to 'Реєстрація', sign_up_path %>
+    <%= link_to 'Авторизація', sign_in_path %>
+    <%= link_to 'Вихід', sign_out_path  %>
+    <%= link_to 'Книги', books_path %>
+  	<%= form_tag(books_path, :method => 'get') do %>
+  	  <p>
+  	    <%= text_field_tag :search, params[:search] %>
+  	  <%= submit_tag :"Пошук" %>
+  	  </p>
+
+  	<% end %>
     <%= yield %>
   </body>
 </html>

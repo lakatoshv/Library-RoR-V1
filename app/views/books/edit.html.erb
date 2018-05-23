@@ -1,6 +1,27 @@
-<h1>Редагування книги</h1>
+<% if session[:lang] == "ua" 
+    text ={
+      :h1 => "Редагування книги",
+      :show => "Показати",
+      :back => "Назад"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :h1 => "Editing a book",
+      :show => "Show",
+      :back => "Back"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :h1 => "Редактирования книги",
+      :show => "Показать",
+      :back => "Назад"
+    } 
+  end 
+%>
+<h1><%= text[:h1] %></h1>
 
 <%= render 'form', book: @book %>
 
-<%= link_to 'Показати', @book %> |
-<%= link_to 'Назад', books_path %>
+<%= link_to text[:show], @book %> |
+<%= link_to text[:back], books_path %>
+
