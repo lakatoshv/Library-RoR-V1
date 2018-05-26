@@ -64,9 +64,9 @@
               <i class="fa fa-desktop fa-3x"></i>
             </div>
             <p>
-              <%= book.description %>
+              <%= book.mini_description %><br/>
+               <%= link_to 'Видалити', book, method: :delete, data: { confirm: 'Ви впевнені?' } %>
             </p>
-                  
           </div>
         </div>
       </div>

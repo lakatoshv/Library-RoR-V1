@@ -13051,268 +13051,1659 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 63ms (Views: 61.6ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/index?lang=ru" for 127.0.0.1 at 2017-05-01 13:44:18 +0300
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by IndexController#index as HTML
-  Parameters: {"lang"=>"ru"}
-  Rendering index/index.html.erb within layouts/application
-  Rendered index/index.html.erb within layouts/application (3.1ms)
-Completed 200 OK in 570ms (Views: 554.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:44:36 +0300
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "line_items"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170429130508"]]
+  [1m[35m (67.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (51.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:05:43 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (18.7ms)
-Completed 200 OK in 82ms (Views: 74.9ms | ActiveRecord: 1.4ms)
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 631ms (Views: 602.4ms | ActiveRecord: 1.4ms)
 
 
-Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:44:41 +0300
+Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:05:59 +0300
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"1"}
   [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (3.4ms)
-Completed 200 OK in 84ms (Views: 77.1ms | ActiveRecord: 0.7ms)
+  Rendered books/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 99ms (Views: 57.3ms | ActiveRecord: 0.7ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:45:52 +0300
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-05-01 13:06:01 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (81.5ms)
+  Rendered books/edit.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 147ms (Views: 144.7ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "line_items"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170429130508"]]
+  [1m[35m (74.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (68.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "line_items"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170429130508"]]
+  [1m[35m (130.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "line_items"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170429130508"]]
+  [1m[35m (102.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (109.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "line_items"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170429130508"]]
+  [1m[35m (105.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (91.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from block in execute at /home/vital-l/.rvm/gems/ruby-2.4.0@global/gems/rake-12.0.0/lib/rake/task.rb:250)
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from block in execute at /home/vital-l/.rvm/gems/ruby-2.4.0@global/gems/rake-12.0.0/lib/rake/task.rb:250)
+  [1m[35m (109.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (83.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170421112948)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170421112948"]]
+  [1m[35m (75.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170429130500)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBooks (20170429130500)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "auth" varchar, "zhanr" varchar, "pages_qty" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130500"]]
+  [1m[35m (119.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (73.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-05-01 10:18:15 UTC], ["updated_at", 2017-05-01 10:18:15 UTC]]
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from block in execute at /home/vital-l/.rvm/gems/ruby-2.4.0@global/gems/rake-12.0.0/lib/rake/task.rb:250)
+  [1m[35m (132.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (115.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170421112948)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170421112948"]]
+  [1m[35m (174.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170429130500)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "auth" varchar, "zhanr" varchar, "pages_qty" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130500"]]
+  [1m[35m (118.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (73.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-05-01 10:27:15 UTC], ["updated_at", 2017-05-01 10:27:15 UTC]]
+  [1m[35m (62.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-05-01 13:27:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/vital-l/Ruby_On_Rails/library/v1-4/app/controllers/books_controller.rb:77: syntax error, unexpected ':', expecting ')'
+ty, :description, :image_url :mini_description, :likes_qty, 
+                              ^
+/home/vital-l/Ruby_On_Rails/library/v1-4/app/controllers/books_controller.rb:77: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+:mini_description, :likes_qty, :dislikes_qty
+                              ^):
+  
+app/controllers/books_controller.rb:77: syntax error, unexpected ':', expecting ')'
+app/controllers/books_controller.rb:77: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.1ms)
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-05-01 13:28:35 +0300
+  
+SyntaxError (/home/vital-l/Ruby_On_Rails/library/v1-4/app/controllers/books_controller.rb:77: syntax error, unexpected ':', expecting ')'
+ty, :description, :image_url :mini_description, :likes_qty, 
+                              ^
+/home/vital-l/Ruby_On_Rails/library/v1-4/app/controllers/books_controller.rb:77: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+:mini_description, :likes_qty, :dislikes_qty)
+                              ^):
+  
+app/controllers/books_controller.rb:77: syntax error, unexpected ':', expecting ')'
+app/controllers/books_controller.rb:77: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.0ms)
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-05-01 13:29:18 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=1):
+  
+app/controllers/books_controller.rb:72:in `set_book'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.0ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:29:32 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 385ms (Views: 383.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:29:35 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+  Rendered books/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 84ms (Views: 81.4ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/books/2" for 127.0.0.1 at 2017-05-01 13:45:53 +0300
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 13:29:43 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (125.0ms)
+  Rendered books/new.html.erb within layouts/application (126.7ms)
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `minidescription' for #<Book:0x007f921829a3e0>):
+    42:   </div>
+    43:   <div class="field">
+    44:     <%= f.label :"мініопис" %>
+    45:     <%= f.text_area :minidescription %>
+    46:   </div>
+    47:   <div class="field">
+    48:     <%= f.label :"Кількість сторінок" %>
+  
+app/views/books/_form.html.erb:45:in `block in _app_views_books__form_html_erb__756051794830158474_70132725204740'
+app/views/books/_form.html.erb:1:in `_app_views_books__form_html_erb__756051794830158474_70132725204740'
+app/views/books/new.html.erb:3:in `_app_views_books_new_html_erb___4107678832576320745_70132800407840'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.1ms)
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 13:30:04 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (22.8ms)
+  Rendered books/new.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `mini_description' for #<Book:0x007f9224132780>):
+    42:   </div>
+    43:   <div class="field">
+    44:     <%= f.label :"мініопис" %>
+    45:     <%= f.text_area :mini_description %>
+    46:   </div>
+    47:   <div class="field">
+    48:     <%= f.label :"Кількість сторінок" %>
+  
+app/views/books/_form.html.erb:45:in `block in _app_views_books__form_html_erb__756051794830158474_70132823522940'
+app/views/books/_form.html.erb:1:in `_app_views_books__form_html_erb__756051794830158474_70132823522940'
+app/views/books/new.html.erb:3:in `_app_views_books_new_html_erb___4107678832576320745_70132823591060'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.5ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from block in execute at /home/vital-l/.rvm/gems/ruby-2.4.0@global/gems/rake-12.0.0/lib/rake/task.rb:250)
+  [1m[35m (87.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (88.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170421112948)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170421112948"]]
+  [1m[35m (95.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170429130500)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "auth" varchar, "zhanr" varchar, "pages_qty" varchar, "description" text, "mini_description" text, "likes_qty" integer, "dislikes_qty" integer, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130500"]]
+  [1m[35m (71.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (155.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-05-01 10:31:13 UTC], ["updated_at", 2017-05-01 10:31:13 UTC]]
+  [1m[35m (88.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 13:31:27 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (37.4ms)
+  Rendered books/new.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 459ms (Views: 419.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 13:31:55 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FdoW3+b10O73IgOOlkyLvhwQCGj652TJvVbkasVbi2cGGcVssxQ7mw/1Hkw2GPCMn4L9K4TqWpfpCI7qIB3a0w==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Габріель Гарсіа Маркес", "zhanr"=>"Фентезі", "pages_qty"=>"dddd", "description"=>"xxddd", "image_url"=>"ssss", "mini_description"=>"dddd", "likes_qty"=>"dddd", "dislikes_qty"=>"dddd"}, "commit"=>"Create Book"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "likes_qty", "dislikes_qty", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "451 за Фаренгейтом"], ["auth", "Габріель Гарсіа Маркес"], ["zhanr", "Фентезі"], ["pages_qty", "dddd"], ["description", "xxddd"], ["mini_description", "dddd"], ["likes_qty", 0], ["dislikes_qty", 0], ["image_url", "ssss"], ["created_at", 2017-05-01 10:31:55 UTC], ["updated_at", 2017-05-01 10:31:55 UTC]]
+  [1m[35m (169.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 179ms (ActiveRecord: 170.3ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:31:55 +0300
 Processing by BooksController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:34:09 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
   Rendered books/show.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.5ms)
+Completed 200 OK in 62ms (Views: 58.9ms | ActiveRecord: 0.6ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:46:09 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:34:12 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (4.1ms)
-Completed 200 OK in 81ms (Views: 78.9ms | ActiveRecord: 0.6ms)
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 95ms (Views: 92.3ms | ActiveRecord: 0.8ms)
 
 
-Started GET "/books/3" for 127.0.0.1 at 2017-05-01 13:46:11 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:34:21 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:34:28 +0300
 Processing by BooksController#show as HTML
-  Parameters: {"id"=>"3"}
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 62ms (Views: 57.9ms | ActiveRecord: 0.3ms)
+  Rendered books/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 96ms (Views: 92.6ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:46:23 +0300
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-05-01 13:34:29 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (7.6ms)
+  Rendered books/edit.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 104ms (Views: 100.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:34:34 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.3ms)
+  Rendered books/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/books/4" for 127.0.0.1 at 2017-05-01 13:46:25 +0300
+Started GET "/" for 127.0.0.1 at 2017-05-01 13:49:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 503ms (Views: 487.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:50:01 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:50:06 +0300
 Processing by BooksController#show as HTML
-  Parameters: {"id"=>"4"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 82ms (Views: 74.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-05-01 13:50:08 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (10.7ms)
+  Rendered books/edit.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 88ms (Views: 85.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:50:35 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 63ms (Views: 61.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:50:39 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
   Rendered books/show.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.2ms)
+Completed 200 OK in 68ms (Views: 65.8ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:46:35 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:52:25 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:52:34 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-05-01 13:52:39 +0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"a0X1JPJce5+hpzKKrEnuvwfkDTV+PkDerFgJ4MJ1nMh4hiaXp72Q6llwL0gMHZWNhHb4dgAzfoD4BmNgJzPNfA==", "id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  [1m[35m (167.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 174ms (ActiveRecord: 168.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 13:52:39 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (6.0ms)
-Completed 200 OK in 78ms (Views: 75.3ms | ActiveRecord: 0.4ms)
+  Rendered books/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/books/5" for 127.0.0.1 at 2017-05-01 13:46:40 +0300
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 13:52:45 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.5ms)
+  Rendered books/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 13:58:09 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.2ms)
+  Rendered books/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 71ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:00:58 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vCjLlKI6JfTBQi+56X6LvtRnMvE7vnmMz8GVuDZDuP2v6xgn99vOgTmVMntJKvCMV/XHskWzR9Kbn/840wXpSQ==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Рей Бредбері", "zhanr"=>"Фантастика", "pages_qty"=>"451", "mini_description"=>"451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики.", "description"=>"Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.5ms)
+  Rendered books/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 80ms (Views: 64.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:01:39 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OT46Lt++TTlFx2HjmbZcYyHp+UdYmTIs0bmqD0Nb0fYq/emdil+mTL0QfCE54idRonsMBCaUDHKF58CPph2AQg==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Рей Бредбері", "zhanr"=>"Фантастика", "pages_qty"=>"451", "mini_description"=>"451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики.", "description"=>"Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (5.9ms)
+  Rendered books/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 101ms (Views: 78.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 14:01:43 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:01:52 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (6.1ms)
+  Rendered books/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 75ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:02:49 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Vut9+Iy47XGuFscooQ2EVd+IR+A70pxiHE6Tk1DNdHimH5Et9MIwD5vRt4C0E0j1OzUXP7idC/cL1DOqAVkZQ==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Рей Бредбері", "zhanr"=>"Фантастика", "pages_qty"=>"451", "mini_description"=>"451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики. Вперше побачив світ у 1953.", "description"=>"Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (6.1ms)
+  Rendered books/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 73ms (Views: 69.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:03:27 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/uTXFafz1PfFNWtPLw5JPl4T8Ac+zCgQdgT79fRqsmTtJwSm8hI/gj3ido2PWjIM3YEFREDBFk4iWpF1ESzj0A==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Рей Бредбері", "zhanr"=>"Фантастика", "pages_qty"=>"451", "mini_description"=>"451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики. Вперше побачив світ у 1953.", "description"=>"Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.2ms)
+  Rendered books/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 75ms (Views: 55.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:04:46 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gh2HQsYyni6PPOgt13uBRgUkSTij+iqsF6uk8s+D242R3lTxk9N1W3fr9e93L/p0hra8e933FPJD9c5yKsWKOQ==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Рей Бредбері", "zhanr"=>"Фантастика", "pages_qty"=>"451", "mini_description"=>"451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики. Вперше побачив світ у 1953.", "description"=>"Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "451 за Фаренгейтом"], ["auth", "Рей Бредбері"], ["zhanr", "Фантастика"], ["pages_qty", "451"], ["description", "Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг."], ["mini_description", "451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики. Вперше побачив світ у 1953."], ["image_url", "Image url"], ["created_at", 2017-05-01 11:04:46 UTC], ["updated_at", 2017-05-01 11:04:46 UTC]]
+  [1m[35m (118.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 140ms (ActiveRecord: 119.7ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-05-01 14:04:46 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:04:57 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.5ms)
+  Rendered books/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:06:49 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C9+CnVlkpVQGKqRtjTNbWUoj++eZ6VU/L+A5K0RN8WEYHFEuDIVOIf79ua8tZyBrybEOpOfka2F7vlOroQug1Q==", "book"=>{"title"=>"Сто років самотності ", "auth"=>"Габріель Гарсіа Маркес", "zhanr"=>"Фантастика", "pages_qty"=>"100", "mini_description"=>"Сто років самотності — роман нобелівського лауреата, колумбійського письменника Ґабрієля Ґарсія Маркеса, вперше опублікований іспанською 1967 року.", "description"=>"\tРоман «Сто років самотності», повісті «Полковникові ніхто не пише», «Хроніка вбивства, про яке всі знали заздалегідь» — центральні твори славетного колумбійського письменника, лауреата Нобелівської премії Ґабріеля Ґарсії Маркеса. В його творах дивовижно переплітаються людські долі й суспільні проблеми, розгортається широка панорама латиноамериканського життя з його повсякденними клопотами, соціальними заворушеннями, диктатурами й безперервними революціями.Переклали з іспанської: Галина Вінграновська, Маргарита Жердинівська, Женев'єва Конєва, Лев Олевський, Петро Соколовський, Дмитро Стельмах, Віктор Шовкун", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Сто років самотності "], ["auth", "Габріель Гарсіа Маркес"], ["zhanr", "Фантастика"], ["pages_qty", "100"], ["description", "\tРоман «Сто років самотності», повісті «Полковникові ніхто не пише», «Хроніка вбивства, про яке всі знали заздалегідь» — центральні твори славетного колумбійського письменника, лауреата Нобелівської премії Ґабріеля Ґарсії Маркеса. В його творах дивовижно переплітаються людські долі й суспільні проблеми, розгортається широка панорама латиноамериканського життя з його повсякденними клопотами, соціальними заворушеннями, диктатурами й безперервними революціями.Переклали з іспанської: Галина Вінграновська, Маргарита Жердинівська, Женев'єва Конєва, Лев Олевський, Петро Соколовський, Дмитро Стельмах, Віктор Шовкун"], ["mini_description", "Сто років самотності — роман нобелівського лауреата, колумбійського письменника Ґабрієля Ґарсія Маркеса, вперше опублікований іспанською 1967 року."], ["image_url", "Image url"], ["created_at", 2017-05-01 11:06:49 UTC], ["updated_at", 2017-05-01 11:06:49 UTC]]
+  [1m[35m (175.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 181ms (ActiveRecord: 175.7ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2017-05-01 14:06:49 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 75ms (Views: 72.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:06:55 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.4ms)
+  Rendered books/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 65ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:08:45 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2+hl8IcVbme1m8suduCBMefDyW0zECTk+wZ7UgD4uQnIK7ZD0vSFEk1M1uzWtPoDZFE8Lk0dGrqvWBHS5b7ovQ==", "book"=>{"title"=>"Марсіанин", "auth"=>"Енді Вейєр", "zhanr"=>"Фантастика", "pages_qty"=>"300", "mini_description"=>"«Марсіянин» — дебютний та перший опублікований роман американського письменника Енді Вейра.", "description"=>"сі вважають астронавта Марка Вотні мертвим, адже вся його команда бачила, як його проштикнула антена, яку зірвало піщаною бурею на шостий день після висадки \"Аресу-3\" на Марс. Потрапивши в бурю,команда \"Аресу-3\" змушена евакуюватися, покинувши тіло Марка. От тільки ніхто не міг і припустити, що Марк виживе й тепер опиниться на Марсі в пастці, сам-один, без зв'язку з Землею, без достатнього запасу харчів і води, щоб протриматися до прибуття наступної місії \"Аресу-4\". Хто врятує Марка Вотні? Чи йому доведеться покладатися тільки на власну винахідливість?", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Марсіанин"], ["auth", "Енді Вейєр"], ["zhanr", "Фантастика"], ["pages_qty", "300"], ["description", "сі вважають астронавта Марка Вотні мертвим, адже вся його команда бачила, як його проштикнула антена, яку зірвало піщаною бурею на шостий день після висадки \"Аресу-3\" на Марс. Потрапивши в бурю,команда \"Аресу-3\" змушена евакуюватися, покинувши тіло Марка. От тільки ніхто не міг і припустити, що Марк виживе й тепер опиниться на Марсі в пастці, сам-один, без зв'язку з Землею, без достатнього запасу харчів і води, щоб протриматися до прибуття наступної місії \"Аресу-4\". Хто врятує Марка Вотні? Чи йому доведеться покладатися тільки на власну винахідливість?"], ["mini_description", "«Марсіянин» — дебютний та перший опублікований роман американського письменника Енді Вейра."], ["image_url", "Image url"], ["created_at", 2017-05-01 11:08:45 UTC], ["updated_at", 2017-05-01 11:08:45 UTC]]
+  [1m[35m (179.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/4
+Completed 302 Found in 185ms (ActiveRecord: 180.5ms)
+
+
+Started GET "/books/4" for 127.0.0.1 at 2017-05-01 14:08:45 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 66ms (Views: 63.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/%D1%82%D1%83%D1%86" for 127.0.0.1 at 2017-05-01 14:08:54 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"туц"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=туц):
+  
+app/controllers/books_controller.rb:72:in `set_book'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.4ms)
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:08:58 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.7ms)
+  Rendered books/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 78ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:13:45 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NYLKpzib39H0ifRn9X1sV0/ywAbtHBoyQnWjidGtQoMmQRkUbXo0pAxe6aVVKRdlzGA1RZMRJGwWK8kJNOsTNw==", "book"=>{"title"=>"Хроніки Амбера ", "auth"=>"Роджер Желязни", "zhanr"=>"Фентезі", "pages_qty"=>"1600", "mini_description"=>"Хроніки Амбера — епічний цикл фентезі-романів, написаний американським фантастом Роджером Желязни, який складається з десяти книжок, об'єднаних у два п'ятикнижжя — одне про принца Амбера Корвіна, а друге — про його сина Мерліна.", "description"=>"Хроніки Амбера складаються з десяти книг, де розкривається дивовижна всесвіт. Амбер складається зі світу Порядку та світу Хаосу. У центрі подій дев'ять дітей давно зниклого короля Амбера Оберона. Вони всі спадкоємці наймогутнішого престолу. Вони забули про родинних зв'язках, і плетуть інтриги, щоб домогтися влади. Хроніки розділені на дві частини. У першій головний герой Корвін, член королівської сім'ї. Йому належить пройти безліч випробувань, щоб, врешті-решт, зрозуміти, що йому не потрібна влада. (П'ятикнижжя Корвіна - «Дев'ять принців Амбера», «Рушниці Авалона», «Знак Єдинорога», «Рука Оберона», «Володіння Хаосу»). У другій частині в центрі оповідання його син Мерлін. Йому доведеться зробити нелегкий вибір. Від його рішення залежить рівновага сил і світів. (П'ятикнижжя Мерліна - «Карти долі», «Кров Амбера», «Знак Хаосу», «Лицар Тіней», «Принц Хаосу»). Розповісти весь сюжет Хронік просто неможливо. Це дивовижні історії, які наповнені пригодами і інтригами. Кожна книга відкриває щось нове і неповторне. Хроніки Амбера - класика жанру фентезі. ", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Хроніки Амбера "], ["auth", "Роджер Желязни"], ["zhanr", "Фентезі"], ["pages_qty", "1600"], ["description", "Хроніки Амбера складаються з десяти книг, де розкривається дивовижна всесвіт. Амбер складається зі світу Порядку та світу Хаосу. У центрі подій дев'ять дітей давно зниклого короля Амбера Оберона. Вони всі спадкоємці наймогутнішого престолу. Вони забули про родинних зв'язках, і плетуть інтриги, щоб домогтися влади. Хроніки розділені на дві частини. У першій головний герой Корвін, член королівської сім'ї. Йому належить пройти безліч випробувань, щоб, врешті-решт, зрозуміти, що йому не потрібна влада. (П'ятикнижжя Корвіна - «Дев'ять принців Амбера», «Рушниці Авалона», «Знак Єдинорога», «Рука Оберона», «Володіння Хаосу»). У другій частині в центрі оповідання його син Мерлін. Йому доведеться зробити нелегкий вибір. Від його рішення залежить рівновага сил і світів. (П'ятикнижжя Мерліна - «Карти долі», «Кров Амбера», «Знак Хаосу», «Лицар Тіней», «Принц Хаосу»). Розповісти весь сюжет Хронік просто неможливо. Це дивовижні історії, які наповнені пригодами і інтригами. Кожна книга відкриває щось нове і неповторне. Хроніки Амбера - класика жанру фентезі. "], ["mini_description", "Хроніки Амбера — епічний цикл фентезі-романів, написаний американським фантастом Роджером Желязни, який складається з десяти книжок, об'єднаних у два п'ятикнижжя — одне про принца Амбера Корвіна, а друге — про його сина Мерліна."], ["image_url", "Image url"], ["created_at", 2017-05-01 11:13:45 UTC], ["updated_at", 2017-05-01 11:13:45 UTC]]
+  [1m[35m (190.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/5
+Completed 302 Found in 197ms (ActiveRecord: 190.7ms)
+
+
+Started GET "/books/5" for 127.0.0.1 at 2017-05-01 14:13:45 +0300
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"5"}
   [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.2ms)
+  Rendered books/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:46:50 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (4.4ms)
-Completed 200 OK in 78ms (Views: 75.8ms | ActiveRecord: 0.3ms)
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:14:00 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.3ms)
+  Rendered books/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 69ms (Views: 67.0ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/books/6" for 127.0.0.1 at 2017-05-01 13:46:52 +0300
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:18:41 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JUUEGZgvYaUyY9XwvXGcUO5yLOhdBxfCkzyqthxkAS42hteqzc6K0Mq0yDIdJedibeDZqyMKKZzHYsA2+SJQmg==", "book"=>{"title"=>"Володар кілець ", "auth"=>"Джон Рональд Руел Толкін ", "zhanr"=>"Фентезі", "pages_qty"=>"800", "mini_description"=>"«Володар Перстенів» — епічний роман у жанрі «фентезі», написаний філологом та професором Оксфордського університету Дж. Р. Р. Толкіном.", "description"=>"Епічний роман у жанрі «фентезі», написаний філологом та професором Оксфордського університету Дж. Р. Р. Толкіном. Оповідь почалася як продовження до попередньої роботи Толкіна, «Гобіт», але згодом розвинулась у набагато більшу історію. Її було написано поетапно між 1937 та 1949 роками, істотну частину — протягом Другої світової війни.[1] Роман є другим у світі бестселером, кількість проданих примірників якого перевищила 150 млн.[2] Книга також входить у Рейтинг 100 найкращих книг усіх часів журналу Ньюсвік під номером 35[3].\r\n\r\nЗ анотації до книги:\r\n\r\n    «Володаря Перстенів» не можна описати кількома словами. Величний твір Дж. Р. Р. Толкіна має в собі щось від героїчної романтики і класичної наукової фантастики. Але таке означення все ж не передає сучасному читачеві всі особливості книги, весь спектр її значень. Почергово то комічна й домашня, то епічна, а подекуди навіть страхітлива оповідь переходить через нескінченні зміни сцен і характерів у цьому фантастичному світі, кожен елемент якого виглядає цілком реалістично. Толкін створив нову міфологію вигаданого світу — світу із власним часом і простором.\r\n\r\n\r\nТрилогію під назвою «Володар кілець» знає кожна людина в світі. Перш, ніж автор створив світ Середзем'я, який ми його бачимо в сазі. Толкін написав книгу «Хоббіт, або Туди і назад». Ця книга стала своєрідним прологом до тих подій, які ми побачимо у Володарі кілець. Роман-епопея став класикою жанру, де є все - ельфи, гноми, дракони, маги, орки, гобліни, люди і хоббіти. Ви напевно дивилися фільми про пригоди Більбо і Фродо. І якщо ще не читали сагу, то обов'язково прочитайте, щоб повністю відчути чудеса Середзем'я. ", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Володар кілець "], ["auth", "Джон Рональд Руел Толкін "], ["zhanr", "Фентезі"], ["pages_qty", "800"], ["description", "Епічний роман у жанрі «фентезі», написаний філологом та професором Оксфордського університету Дж. Р. Р. Толкіном. Оповідь почалася як продовження до попередньої роботи Толкіна, «Гобіт», але згодом розвинулась у набагато більшу історію. Її було написано поетапно між 1937 та 1949 роками, істотну частину — протягом Другої світової війни.[1] Роман є другим у світі бестселером, кількість проданих примірників якого перевищила 150 млн.[2] Книга також входить у Рейтинг 100 найкращих книг усіх часів журналу Ньюсвік під номером 35[3].\r\n\r\nЗ анотації до книги:\r\n\r\n    «Володаря Перстенів» не можна описати кількома словами. Величний твір Дж. Р. Р. Толкіна має в собі щось від героїчної романтики і класичної наукової фантастики. Але таке означення все ж не передає сучасному читачеві всі особливості книги, весь спектр її значень. Почергово то комічна й домашня, то епічна, а подекуди навіть страхітлива оповідь переходить через нескінченні зміни сцен і характерів у цьому фантастичному світі, кожен елемент якого виглядає цілком реалістично. Толкін створив нову міфологію вигаданого світу — світу із власним часом і простором.\r\n\r\n\r\nТрилогію під назвою «Володар кілець» знає кожна людина в світі. Перш, ніж автор створив світ Середзем'я, який ми його бачимо в сазі. Толкін написав книгу «Хоббіт, або Туди і назад». Ця книга стала своєрідним прологом до тих подій, які ми побачимо у Володарі кілець. Роман-епопея став класикою жанру, де є все - ельфи, гноми, дракони, маги, орки, гобліни, люди і хоббіти. Ви напевно дивилися фільми про пригоди Більбо і Фродо. І якщо ще не читали сагу, то обов'язково прочитайте, щоб повністю відчути чудеса Середзем'я. "], ["mini_description", "«Володар Перстенів» — епічний роман у жанрі «фентезі», написаний філологом та професором Оксфордського університету Дж. Р. Р. Толкіном."], ["image_url", "Image url"], ["created_at", 2017-05-01 11:18:41 UTC], ["updated_at", 2017-05-01 11:18:41 UTC]]
+  [1m[35m (190.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/6
+Completed 302 Found in 196ms (ActiveRecord: 191.8ms)
+
+
+Started GET "/books/6" for 127.0.0.1 at 2017-05-01 14:18:41 +0300
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"6"}
   [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (2.4ms)
-Completed 200 OK in 91ms (Views: 88.5ms | ActiveRecord: 0.2ms)
+  Rendered books/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:47:02 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 70ms (Views: 67.4ms | ActiveRecord: 0.3ms)
+Started GET "/books/6/edit" for 127.0.0.1 at 2017-05-01 14:18:48 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.2ms)
+  Rendered books/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/books/6" for 127.0.0.1 at 2017-05-01 13:47:05 +0300
+Started PATCH "/books/6" for 127.0.0.1 at 2017-05-01 14:20:01 +0300
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMMS77jVhx+nYRbw6y2ZgUyQBuCXnnj/7GctRtWMMpyTOG3OCU/Znza7eveYxYYONPB/0XVRLrbxuKogpEit1Q==", "book"=>{"title"=>"Володар кілець ", "auth"=>"Джон Рональд Руел Толкін ", "zhanr"=>"Фентезі", "pages_qty"=>"800", "mini_description"=>"«Володар Перстенів» — епічний роман у жанрі «фентезі», написаний філологом та професором Оксфордського університету Дж. Р. Р. Толкіном.", "description"=>"Епічний роман у жанрі «фентезі», написаний філологом та професором Оксфордського університету Дж. Р. Р. Толкіном. Оповідь почалася як продовження до попередньої роботи Толкіна, «Гобіт», але згодом розвинулась у набагато більшу історію. Її було написано поетапно між 1937 та 1949 роками, істотну частину — протягом Другої світової війни. Роман є другим у світі бестселером, кількість проданих примірників якого перевищила 150 млн. Книга також входить у Рейтинг 100 найкращих книг усіх часів журналу Ньюсвік під номером 35.<br/>\r\n\r\nЗ анотації до книги:\r\n<br/>\r\n    «Володаря Перстенів» не можна описати кількома словами. Величний твір Дж. Р. Р. Толкіна має в собі щось від героїчної романтики і класичної наукової фантастики. Але таке означення все ж не передає сучасному читачеві всі особливості книги, весь спектр її значень. Почергово то комічна й домашня, то епічна, а подекуди навіть страхітлива оповідь переходить через нескінченні зміни сцен і характерів у цьому фантастичному світі, кожен елемент якого виглядає цілком реалістично. Толкін створив нову міфологію вигаданого світу — світу із власним часом і простором.\r\n<br/><br/>\r\n\r\nТрилогію під назвою «Володар кілець» знає кожна людина в світі. Перш, ніж автор створив світ Середзем'я, який ми його бачимо в сазі. Толкін написав книгу «Хоббіт, або Туди і назад». Ця книга стала своєрідним прологом до тих подій, які ми побачимо у Володарі кілець. Роман-епопея став класикою жанру, де є все - ельфи, гноми, дракони, маги, орки, гобліни, люди і хоббіти. Ви напевно дивилися фільми про пригоди Більбо і Фродо. І якщо ще не читали сагу, то обов'язково прочитайте, щоб повністю відчути чудеса Середзем'я. ", "image_url"=>"Image url"}, "submit"=>"Подтвердить", "id"=>"6"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "description" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["description", "Епічний роман у жанрі «фентезі», написаний філологом та професором Оксфордського університету Дж. Р. Р. Толкіном. Оповідь почалася як продовження до попередньої роботи Толкіна, «Гобіт», але згодом розвинулась у набагато більшу історію. Її було написано поетапно між 1937 та 1949 роками, істотну частину — протягом Другої світової війни. Роман є другим у світі бестселером, кількість проданих примірників якого перевищила 150 млн. Книга також входить у Рейтинг 100 найкращих книг усіх часів журналу Ньюсвік під номером 35.<br/>\r\n\r\nЗ анотації до книги:\r\n<br/>\r\n    «Володаря Перстенів» не можна описати кількома словами. Величний твір Дж. Р. Р. Толкіна має в собі щось від героїчної романтики і класичної наукової фантастики. Але таке означення все ж не передає сучасному читачеві всі особливості книги, весь спектр її значень. Почергово то комічна й домашня, то епічна, а подекуди навіть страхітлива оповідь переходить через нескінченні зміни сцен і характерів у цьому фантастичному світі, кожен елемент якого виглядає цілком реалістично. Толкін створив нову міфологію вигаданого світу — світу із власним часом і простором.\r\n<br/><br/>\r\n\r\nТрилогію під назвою «Володар кілець» знає кожна людина в світі. Перш, ніж автор створив світ Середзем'я, який ми його бачимо в сазі. Толкін написав книгу «Хоббіт, або Туди і назад». Ця книга стала своєрідним прологом до тих подій, які ми побачимо у Володарі кілець. Роман-епопея став класикою жанру, де є все - ельфи, гноми, дракони, маги, орки, гобліни, люди і хоббіти. Ви напевно дивилися фільми про пригоди Більбо і Фродо. І якщо ще не читали сагу, то обов'язково прочитайте, щоб повністю відчути чудеса Середзем'я. "], ["updated_at", 2017-05-01 11:20:01 UTC], ["id", 6]]
+  [1m[35m (82.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/6
+Completed 302 Found in 91ms (ActiveRecord: 82.8ms)
+
+
+Started GET "/books/6" for 127.0.0.1 at 2017-05-01 14:20:01 +0300
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"6"}
-  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 63ms (Views: 58.4ms | ActiveRecord: 0.4ms)
+  Rendered books/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:47:14 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (4.6ms)
-Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:20:26 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (2.8ms)
+  Rendered books/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/books/7" for 127.0.0.1 at 2017-05-01 13:47:22 +0300
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:24:37 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e5PvpZZbZ4pXlytiX2CShxbS3sfyqw4jEA+W7F9kwyhoUDwWw7qM/69ANqD/NOm1lUArhIymMH1EUfxsuiKSnA==", "book"=>{"title"=>"Гаррі Поттер ", "auth"=>"Джоан Роулінг", "zhanr"=>"Фентезі", "pages_qty"=>"1400", "mini_description"=>"«Гаррі Поттер» — серія з семи фантастичних романів, гепталогія англійської письменниці Джоан Роулінг. У книгах розповідається про пригоди юного чарівника Гаррі Поттера, цей персонаж і дав назву серії.", "description"=>"Історія про хлопчика, який вижив - знайома всім не з чуток. Багато виросли на книгах про Гаррі, а багато хто тільки дивилися фільми. Ніхто не сперечається, що екранізації дуже гарні, але книги більш повно відображають світ магії і почуття і характер героїв. Ви знайдете цікаві моменти, які не ввійшли в фільми. Книги про Гаррі дуже повчальні і заслуговують того, щоб їх читати і перечитувати. Ця історія вчить цінувати дружбу, залишатися вірним, добрим і не сумніватися в своєму виборі. \r\nСерія з семи романів, написаний англійська письменниця Дж. К. Роулінг. Книги представляють собою хроніку пригод юного чарівника Гаррі Поттера, а також його друзів Рона Візлі і Герміони Грейнджер, що навчаються в школі чаклунства Хогвартс. Основний сюжет присвячений протистоянню Гаррі і темного чарівника на ім'я лорд волан-де-Морт, в чиї цілі входить набуття безсмертя і поневолення магічного світу.\r\n\r\nПочинаючи з публікації першого роману «Гаррі Поттер і філософський камінь» 30 червня 1997 року, книги серії здобули величезну популярність, визнання критиків і комерційний успіх у всьому світі. Станом на червень 2011 року кількість проданих книг склало близько 450 мільйонів екземплярів, внаслідок чого серія увійшла в список літературних бестселерів. Романи перекладені на 67 мов, в тому числі російською. Останні чотири книги послідовно поставили рекорди, як найшвидше продаються літературні твори в історії.\r\n\r\nСерія являє собою поєднання багатьох жанрів, серед яких фентезі та підлітковий роман з елементами пригод, детектива, трилера і любовного роману, а також включає в себе чимало культурних відсилань. За словами Роулінг, головною темою романів є смерть, хоча вони і розглядаються в першу чергу як дитяча література. Крім цього в серії порушені такі теми, як забобони і корупція.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Гаррі Поттер "], ["auth", "Джоан Роулінг"], ["zhanr", "Фентезі"], ["pages_qty", "1400"], ["description", "Історія про хлопчика, який вижив - знайома всім не з чуток. Багато виросли на книгах про Гаррі, а багато хто тільки дивилися фільми. Ніхто не сперечається, що екранізації дуже гарні, але книги більш повно відображають світ магії і почуття і характер героїв. Ви знайдете цікаві моменти, які не ввійшли в фільми. Книги про Гаррі дуже повчальні і заслуговують того, щоб їх читати і перечитувати. Ця історія вчить цінувати дружбу, залишатися вірним, добрим і не сумніватися в своєму виборі. \r\nСерія з семи романів, написаний англійська письменниця Дж. К. Роулінг. Книги представляють собою хроніку пригод юного чарівника Гаррі Поттера, а також його друзів Рона Візлі і Герміони Грейнджер, що навчаються в школі чаклунства Хогвартс. Основний сюжет присвячений протистоянню Гаррі і темного чарівника на ім'я лорд волан-де-Морт, в чиї цілі входить набуття безсмертя і поневолення магічного світу.\r\n\r\nПочинаючи з публікації першого роману «Гаррі Поттер і філософський камінь» 30 червня 1997 року, книги серії здобули величезну популярність, визнання критиків і комерційний успіх у всьому світі. Станом на червень 2011 року кількість проданих книг склало близько 450 мільйонів екземплярів, внаслідок чого серія увійшла в список літературних бестселерів. Романи перекладені на 67 мов, в тому числі російською. Останні чотири книги послідовно поставили рекорди, як найшвидше продаються літературні твори в історії.\r\n\r\nСерія являє собою поєднання багатьох жанрів, серед яких фентезі та підлітковий роман з елементами пригод, детектива, трилера і любовного роману, а також включає в себе чимало культурних відсилань. За словами Роулінг, головною темою романів є смерть, хоча вони і розглядаються в першу чергу як дитяча література. Крім цього в серії порушені такі теми, як забобони і корупція."], ["mini_description", "«Гаррі Поттер» — серія з семи фантастичних романів, гепталогія англійської письменниці Джоан Роулінг. У книгах розповідається про пригоди юного чарівника Гаррі Поттера, цей персонаж і дав назву серії."], ["image_url", "Image url"], ["created_at", 2017-05-01 11:24:37 UTC], ["updated_at", 2017-05-01 11:24:37 UTC]]
+  [1m[35m (184.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/7
+Completed 302 Found in 192ms (ActiveRecord: 185.9ms)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2017-05-01 14:24:37 +0300
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"7"}
   [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.2ms)
+  Rendered books/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:47:31 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (6.1ms)
-Completed 200 OK in 94ms (Views: 91.9ms | ActiveRecord: 0.4ms)
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:24:51 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (6.5ms)
+  Rendered books/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 72ms (Views: 70.2ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/books/8" for 127.0.0.1 at 2017-05-01 13:47:34 +0300
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:27:24 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AQDCRan8hrzfPr27D8LdMwcipq45AagEr26RRGy6VBcSwxH2/B1tySfpoHmvlqYBhLBT7UcMllr7MPvEifwFow==", "book"=>{"title"=>"Меч істини", "auth"=>"Террі Гудкайнд", "zhanr"=>"Фентезі", "pages_qty"=>"1400", "mini_description"=>"Серія літературних творів в жанрі фентезі, написана американським письменником Террі Гудкайнд", "description"=>"Серія складається з 11 книг, і декількох приквелів і сіквелів. Світ, який змінився після страшної війни. Світ став жорстоким і похмурим, тут не залишилося місця добру. Головний герой Річард - лісовий провідник, який став Бойовим чародія і шукачем Істини. На сторінках серії ви зустрінете багато персонажів, які ведуть вічну боротьбу за владу. Не обійшлося і без найбільшого лиходія - чорний маг Дарка Рал. Річарду доведеться битися з чорним магом, щоб роздобути три чарівних шкатулки, кожна з яких містить великий дар. Якщо ви фанат боїв, інтриг і бойової магії, то ця серія для вас. ", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Меч істини"], ["auth", "Террі Гудкайнд"], ["zhanr", "Фентезі"], ["pages_qty", "1400"], ["description", "Серія складається з 11 книг, і декількох приквелів і сіквелів. Світ, який змінився після страшної війни. Світ став жорстоким і похмурим, тут не залишилося місця добру. Головний герой Річард - лісовий провідник, який став Бойовим чародія і шукачем Істини. На сторінках серії ви зустрінете багато персонажів, які ведуть вічну боротьбу за владу. Не обійшлося і без найбільшого лиходія - чорний маг Дарка Рал. Річарду доведеться битися з чорним магом, щоб роздобути три чарівних шкатулки, кожна з яких містить великий дар. Якщо ви фанат боїв, інтриг і бойової магії, то ця серія для вас. "], ["mini_description", "Серія літературних творів в жанрі фентезі, написана американським письменником Террі Гудкайнд"], ["image_url", "Image url"], ["created_at", 2017-05-01 11:27:24 UTC], ["updated_at", 2017-05-01 11:27:24 UTC]]
+  [1m[35m (163.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/8
+Completed 302 Found in 170ms (ActiveRecord: 164.5ms)
+
+
+Started GET "/books/8" for 127.0.0.1 at 2017-05-01 14:27:25 +0300
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"8"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (2.3ms)
-Completed 200 OK in 78ms (Views: 75.3ms | ActiveRecord: 0.2ms)
+  Rendered books/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:47:42 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (6.3ms)
-Completed 200 OK in 91ms (Views: 88.6ms | ActiveRecord: 0.4ms)
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:27:36 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.9ms)
+  Rendered books/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/books/9" for 127.0.0.1 at 2017-05-01 13:47:44 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"9"}
-  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 0.1ms)
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:29:08 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QOTTutBi95SujVyZYWno3CaV0cVSERVD28N6Zd6qznJTJwAJhYMc4VZaQVvBPZPupQckhiwcKx2PnRDlO+yfxg==", "book"=>{"title"=>"Темна Вежа", "auth"=>"Стівен Кінг", "zhanr"=>"Фентезі", "pages_qty"=>"1600", "mini_description"=>"Серія (цикл) з восьми романів, написаних американським письменником Стівеном Кінгом", "description"=>"Серія «Темна Вежа» складається з 8 книг. Історія про Стрілку Роланда Діскейна, який шукає Темну Вежу. Ця вежа є центром всіх світів і знаходиться поза часом і простором. Роланду необхідно відшукати Темну Вежу, щоб пасти свій світ від руйнування. Роланду доведеться пройти безліч випробувань, щоб дійти до кінцевої мети. Відразу необхідно попередити, що читати серію буде нелегко, але Темна Вежа стоїть того, щоб її прочитали.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Темна Вежа"], ["auth", "Стівен Кінг"], ["zhanr", "Фентезі"], ["pages_qty", "1600"], ["description", "Серія «Темна Вежа» складається з 8 книг. Історія про Стрілку Роланда Діскейна, який шукає Темну Вежу. Ця вежа є центром всіх світів і знаходиться поза часом і простором. Роланду необхідно відшукати Темну Вежу, щоб пасти свій світ від руйнування. Роланду доведеться пройти безліч випробувань, щоб дійти до кінцевої мети. Відразу необхідно попередити, що читати серію буде нелегко, але Темна Вежа стоїть того, щоб її прочитали."], ["mini_description", "Серія (цикл) з восьми романів, написаних американським письменником Стівеном Кінгом"], ["image_url", "Image url"], ["created_at", 2017-05-01 11:29:08 UTC], ["updated_at", 2017-05-01 11:29:08 UTC]]
+  [1m[35m (214.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/9
+Completed 302 Found in 224ms (ActiveRecord: 216.4ms)
 
 
-Started GET "/books/9" for 127.0.0.1 at 2017-05-01 13:48:23 +0300
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/books/9" for 127.0.0.1 at 2017-05-01 14:29:08 +0300
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"9"}
   [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (6.0ms)
-Completed 200 OK in 381ms (Views: 353.5ms | ActiveRecord: 1.0ms)
+  Rendered books/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 63ms (Views: 59.2ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:48:33 +0300
+Started GET "/books/%D1%82%D1%83%D1%86" for 127.0.0.1 at 2017-05-01 14:29:37 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"туц"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=туц):
+  
+app/controllers/books_controller.rb:72:in `set_book'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.7ms)
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 14:29:41 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (5.6ms)
+  Rendered books/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-05-01 14:31:36 +0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qTtvM/dN5Pe1xEsCFrQDT7h7g371JxCWdHei4J1wuuy6+LyAoqwPgk0TVsC24Hh9O+l2PYsqLsggKchgeDbrWA==", "book"=>{"title"=>"Пісня льоду і полум'я ", "auth"=>"Джордж Мартін", "zhanr"=>"Фентезі", "pages_qty"=>"2000", "mini_description"=>"Серія епічних фентезі-романів відомого американського письменника і сценариста Джорджа Мартіна.", "description"=>"Дія епопеї «Пісні льоду й полум'я» відбувається у псевдоісторичному світі, найбільш близькому до середньовічної Європи XV століття («Війна Червоної та Білої троянд»). Основним місцем дії є материк Вестерос, але також і велика земля на схід, відома під назвою Ессос. Більшість персонажів  — люди, але по ходу розвитку розповіді серії нам представляють і інші раси, такі як холодні і жорстокі Інші з далекої Півночі чи останні з драконів зі Сходу. В оповіданні три основні сюжетні лінії: хроніки династичної громадянської війни за контроль над Вестеросом між кількома сім'ями; зростаюча загроза від Інших, які мешкають за величезною крижаною Стіною, яка є північним кордоном Вестеросу; подорож Дейнеріс Таргарієн, вигнаної дочки короля Ейєріса Таргарієна, який був убитий в ході іншої громадянської війни за 15 років до цих подій (Війна узурпатора). Дейнеріс зараз шукає спосіб повернутися в Вестерос і пред'явити свої права на трон. У міру того як дія розвивається, всі три лінії оповіді стають тісно пов'язаними і залежними одна від одної.\r\n\r\nРозповідь ведеться від третьої особи, оповідь бачиться нам з точок зору деяких персонажів. До кінця четвертого тому таких героїв було 25, включаючи вісьмох, які з'являються тільки один раз. Зростаюча популярність серії призвела до того, що телекомпанія HBO придбала права на серію та почала створення телевізійної адаптації. Знятий перший сезон телесеріалу «Гра престолів» (дата прем'єри у США — 17 квітня 2011).\r\n\r\nТакож існують популярні настільні та рольові ігри, колекції художніх робіт, засновані на книгах. Французька компанія-розробник комп'ютерних ігор Cyanide Studios оголосила про те, що вона уклала договір з Мартіном про створення серії ігор за мотивами саги.", "image_url"=>"Image url"}, "submit"=>"Подтвердить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "auth", "zhanr", "pages_qty", "description", "mini_description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Пісня льоду і полум'я "], ["auth", "Джордж Мартін"], ["zhanr", "Фентезі"], ["pages_qty", "2000"], ["description", "Дія епопеї «Пісні льоду й полум'я» відбувається у псевдоісторичному світі, найбільш близькому до середньовічної Європи XV століття («Війна Червоної та Білої троянд»). Основним місцем дії є материк Вестерос, але також і велика земля на схід, відома під назвою Ессос. Більшість персонажів  — люди, але по ходу розвитку розповіді серії нам представляють і інші раси, такі як холодні і жорстокі Інші з далекої Півночі чи останні з драконів зі Сходу. В оповіданні три основні сюжетні лінії: хроніки династичної громадянської війни за контроль над Вестеросом між кількома сім'ями; зростаюча загроза від Інших, які мешкають за величезною крижаною Стіною, яка є північним кордоном Вестеросу; подорож Дейнеріс Таргарієн, вигнаної дочки короля Ейєріса Таргарієна, який був убитий в ході іншої громадянської війни за 15 років до цих подій (Війна узурпатора). Дейнеріс зараз шукає спосіб повернутися в Вестерос і пред'явити свої права на трон. У міру того як дія розвивається, всі три лінії оповіді стають тісно пов'язаними і залежними одна від одної.\r\n\r\nРозповідь ведеться від третьої особи, оповідь бачиться нам з точок зору деяких персонажів. До кінця четвертого тому таких героїв було 25, включаючи вісьмох, які з'являються тільки один раз. Зростаюча популярність серії призвела до того, що телекомпанія HBO придбала права на серію та почала створення телевізійної адаптації. Знятий перший сезон телесеріалу «Гра престолів» (дата прем'єри у США — 17 квітня 2011).\r\n\r\nТакож існують популярні настільні та рольові ігри, колекції художніх робіт, засновані на книгах. Французька компанія-розробник комп'ютерних ігор Cyanide Studios оголосила про те, що вона уклала договір з Мартіном про створення серії ігор за мотивами саги."], ["mini_description", "Серія епічних фентезі-романів відомого американського письменника і сценариста Джорджа Мартіна."], ["image_url", "Image url"], ["created_at", 2017-05-01 11:31:36 UTC], ["updated_at", 2017-05-01 11:31:36 UTC]]
+  [1m[35m (143.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/10
+Completed 302 Found in 150ms (ActiveRecord: 145.1ms)
+
+
+Started GET "/books/10" for 127.0.0.1 at 2017-05-01 14:31:36 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 14:31:39 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 14:32:47 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/4" for 127.0.0.1 at 2017-05-01 14:33:14 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 83ms (Views: 79.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books/4/edit" for 127.0.0.1 at 2017-05-01 14:33:16 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.7ms)
+  Rendered books/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/books/4" for 127.0.0.1 at 2017-05-01 14:33:19 +0300
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x5S/STdsFqK/6zonpD1FyRVswqZaa1tWI4fiKDywNMTN/X7lYuPhwGmqj4+1mkpWDjzHUiaJC9+UObw4SCBQbw==", "book"=>{"title"=>"Марсіанин", "auth"=>"Енді Вейєр", "zhanr"=>"Фантастика", "pages_qty"=>"300", "mini_description"=>"«Марсіянин» — дебютний та перший опублікований роман американського письменника Енді Вейра.", "description"=>"сі вважають астронавта Марка Вотні мертвим, адже вся його команда бачила, як його проштикнула антена, яку зірвало піщаною бурею на шостий день після висадки \"Аресу-3\" на Марс. Потрапивши в бурю,команда \"Аресу-3\" змушена евакуюватися, покинувши тіло Марка. От тільки ніхто не міг і припустити, що Марк виживе й тепер опиниться на Марсі в пастці, сам-один, без зв'язку з Землею, без достатнього запасу харчів і води, щоб протриматися до прибуття наступної місії \"Аресу-4\". Хто врятує Марка Вотні? Чи йому доведеться покладатися тільки на власну винахідливість?", "image_url"=>"Image url"}, "submit"=>"Подтвердить", "id"=>"4"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/4
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/books/4" for 127.0.0.1 at 2017-05-01 14:33:19 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 63ms (Views: 60.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 14:33:23 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (5.3ms)
-Completed 200 OK in 64ms (Views: 62.1ms | ActiveRecord: 0.6ms)
+  Rendered books/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 77ms (Views: 74.8ms | ActiveRecord: 0.6ms)
 
 
-Started GET "/books/1" for 127.0.0.1 at 2017-05-01 13:48:49 +0300
+Started GET "/index?lang=ua" for 127.0.0.1 at 2017-05-01 14:33:30 +0300
+Processing by IndexController#index as HTML
+  Parameters: {"lang"=>"ua"}
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 66ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-01 15:12:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 461ms (Views: 436.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-05-01 15:31:08 +0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (19.7ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    16:   end 
+    17: %>
+    18: <div class="back">
+    19:   <h1 class="col-md-6 col-md-offset-3 text-center back"><%= text[:h1] %></h1>
+    20: 
+    21:   <%= render 'form', book: @book %>
+    22: 
+  
+app/views/books/new.html.erb:19:in `_app_views_books_new_html_erb__2336058543783172404_70349122281360'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.9ms)
+Started GET "/" for 127.0.0.1 at 2017-05-01 22:30:05 +0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (660.9ms)
+Completed 200 OK in 9313ms (Views: 7700.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:30:42 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (40.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (785.6ms)
+Completed 200 OK in 1084ms (Views: 907.6ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-05-01 22:30:48 +0300
 Processing by BooksController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (530.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 69ms (Views: 66.5ms | ActiveRecord: 0.5ms)
+  Rendered books/show.html.erb within layouts/application (125.6ms)
+Completed 200 OK in 2957ms (Views: 1558.9ms | ActiveRecord: 530.7ms)
 
 
-Started GET "/books/1/edit" for 127.0.0.1 at 2017-05-01 13:48:51 +0300
+Started GET "/books/2/edit" for 127.0.0.1 at 2017-05-01 22:31:04 +0300
 Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (10.8ms)
-  Rendered books/edit.html.erb within layouts/application (23.5ms)
-Completed 200 OK in 93ms (Views: 89.0ms | ActiveRecord: 0.6ms)
+  Rendered books/_form.html.erb (783.7ms)
+  Rendered books/edit.html.erb within layouts/application (905.5ms)
+Completed 200 OK in 1017ms (Views: 991.4ms | ActiveRecord: 0.6ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:48:56 +0300
+Started PATCH "/books/2" for 127.0.0.1 at 2017-05-01 22:32:34 +0300
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OB7T7e8BNYxJ2+t7uTt0rn8simxRM9L1Ra49pDreKZKK6ekcWvKDqy2J6q9PurI91czPfg3G0DurqtNLfrpxWg==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Рей Бредбері", "zhanr"=>"Фантастика", "pages_qty"=>"451", "mini_description"=>"451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики. Вперше побачив світ у 1953.", "description"=>"Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг.", "image_url"=>"Image url"}, "submit"=>"Підтвердити", "id"=>"2"}
+  [1m[36mBook Load (37.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (25.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 202ms (ActiveRecord: 63.4ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-05-01 22:32:35 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (19.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 512ms (Views: 489.8ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:32:55 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 183ms (Views: 180.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2017-05-01 22:33:01 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 92ms (Views: 89.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/3/edit" for 127.0.0.1 at 2017-05-01 22:33:03 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (22.3ms)
+  Rendered books/edit.html.erb within layouts/application (90.1ms)
+Completed 200 OK in 423ms (Views: 421.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/books/3" for 127.0.0.1 at 2017-05-01 22:34:17 +0300
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z4g2DFyEXaOw/wWfmU+oIDHspybRtKvVCyzFkpvlp5bKLpQBEyFZFSy6Y3pdPeg9mfITUFvOpcd8MJmzn/T7sg==", "book"=>{"title"=>"Сто років самотності ", "auth"=>"Габріель Гарсіа Маркес", "zhanr"=>"Фантастика", "pages_qty"=>"100", "mini_description"=>"Сто років самотності — роман нобелівського лауреата, колумбійського письменника Ґабрієля Ґарсія Маркеса, вперше опублікований іспанською 1967 року.", "description"=>"\tРоман «Сто років самотності», повісті «Полковникові ніхто не пише», «Хроніка вбивства, про яке всі знали заздалегідь» — центральні твори славетного колумбійського письменника, лауреата Нобелівської премії Ґабріеля Ґарсії Маркеса. В його творах дивовижно переплітаються людські долі й суспільні проблеми, розгортається широка панорама латиноамериканського життя з його повсякденними клопотами, соціальними заворушеннями, диктатурами й безперервними революціями.Переклали з іспанської: Галина Вінграновська, Маргарита Жердинівська, Женев'єва Конєва, Лев Олевський, Петро Соколовський, Дмитро Стельмах, Віктор Шовкун", "image_url"=>"Image url"}, "submit"=>"Підтвердити", "id"=>"3"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2017-05-01 22:34:17 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 149ms (Views: 146.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:34:52 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 60ms (Views: 58.4ms | ActiveRecord: 0.3ms)
+  Rendered books/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 157ms (Views: 131.7ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/books/new" for 127.0.0.1 at 2017-05-01 13:49:02 +0300
-Processing by BooksController#new as HTML
-  Rendering books/new.html.erb within layouts/application
-  Rendered books/_form.html.erb (3.7ms)
-  Rendered books/new.html.erb within layouts/application (6.1ms)
-Completed 200 OK in 67ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+Started GET "/books/4" for 127.0.0.1 at 2017-05-01 22:34:55 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (14.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 528ms (Views: 424.9ms | ActiveRecord: 14.6ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:49:15 +0300
+Started GET "/books/4/edit" for 127.0.0.1 at 2017-05-01 22:34:58 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.1ms)
+  Rendered books/edit.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 97ms (Views: 94.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:36:12 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (5.1ms)
-Completed 200 OK in 62ms (Views: 59.4ms | ActiveRecord: 0.4ms)
+  Rendered books/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 13:49:16 +0300
+Started GET "/books/5" for 127.0.0.1 at 2017-05-01 22:36:31 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (10.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (88.3ms)
+Completed 200 OK in 613ms (Views: 583.2ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/books/5/edit" for 127.0.0.1 at 2017-05-01 22:36:34 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.1ms)
+  Rendered books/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 73ms (Views: 68.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:37:28 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 253ms (Views: 250.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/6" for 127.0.0.1 at 2017-05-01 22:37:52 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/6/edit" for 127.0.0.1 at 2017-05-01 22:37:56 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.5ms)
+  Rendered books/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:38:44 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 130ms (Views: 127.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2017-05-01 22:39:17 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 136ms (Views: 133.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/7/edit" for 127.0.0.1 at 2017-05-01 22:39:20 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (5.2ms)
+  Rendered books/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 93ms (Views: 90.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:41:05 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (35.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 360ms (Views: 306.2ms | ActiveRecord: 35.9ms)
+
+
+Started GET "/books/8" for 127.0.0.1 at 2017-05-01 22:41:30 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 69ms (Views: 67.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/8/edit" for 127.0.0.1 at 2017-05-01 22:41:33 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.7ms)
+  Rendered books/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 154ms (Views: 151.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:42:35 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (5.0ms)
-Completed 200 OK in 72ms (Views: 68.0ms | ActiveRecord: 0.4ms)
+  Rendered books/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 121ms (Views: 118.1ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-05 14:16:32 +0300
+Started GET "/books/9" for 127.0.0.1 at 2017-05-01 22:42:59 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 290ms (Views: 282.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/9/edit" for 127.0.0.1 at 2017-05-01 22:43:01 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (18.2ms)
+  Rendered books/edit.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:44:02 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 118ms (Views: 115.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/10" for 127.0.0.1 at 2017-05-01 22:44:06 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 73ms (Views: 70.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/10/edit" for 127.0.0.1 at 2017-05-01 22:44:08 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (5.8ms)
+  Rendered books/edit.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 145ms (Views: 142.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:44:46 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 128ms (Views: 125.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:49:46 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (345.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (463.3ms)
+Completed 200 OK in 1306ms (Views: 909.6ms | ActiveRecord: 345.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-05 14:18:20 +0300
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (20.4ms)
-Completed 200 OK in 1710ms (Views: 1684.6ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-05 14:16:43 +0300
+  Rendered books/index.html.erb within layouts/application (23.4ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-05 14:18:21 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (9.2ms)
-Completed 200 OK in 69ms (Views: 63.7ms | ActiveRecord: 1.6ms)
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 627ms (Views: 624.8ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 1833ms (Views: 1802.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-05 14:18:24 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-05-05 14:18:41 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 156ms (Views: 58.2ms | ActiveRecord: 0.6ms)
 
 

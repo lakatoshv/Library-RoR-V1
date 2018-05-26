@@ -5,6 +5,7 @@
       :label_Z => "Жанр",
       :label_Q => "Кількість сторінок",
       :label_D => "Опис",
+      :label_MD => "Короткий опис",
       :label_I => "Адреса до картинки",
       :submit => "Підтвердити"
     } 
@@ -15,6 +16,7 @@
       :label_Z => "Genre",
       :label_Q => "Number of pages",
       :label_D => "Description",
+      :label_MD => "Mini description",
       :label_I => "Address to the picture",
       :submit => "Submit"
     } 
@@ -25,6 +27,7 @@
       :label_Z => "Жанр",
       :label_Q => "Количество страниц",
       :label_D => "Описание",
+      :label_MD => "Краткое описание",
       :label_I => "Адрес к картинке",
       :submit => "Подтвердить"
     } 
@@ -62,6 +65,11 @@
       <div class="form-group">
         <label class="col-xs-2 control-label"><%= text[:label_Q] %></label>
         <%= f.text_field :pages_qty, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_MD] %></label>
+        <%= f.text_area :mini_description, :class => "form-control" %>
       </div>
 
       <div class="form-group">

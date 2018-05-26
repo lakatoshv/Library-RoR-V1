@@ -6,8 +6,10 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :zhanr
       t.string :pages_qty
       t.text :description
+      t.text :mini_description
+      t.integer :likes_qty
+      t.integer :dislikes_qty
       t.string :image_url
-
       t.timestamps
     end
   end

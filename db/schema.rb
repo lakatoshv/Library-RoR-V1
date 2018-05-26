@@ -18,9 +18,12 @@ ActiveRecord::Schema.define(version: 20170429130508) do
     t.string   "zhanr"
     t.string   "pages_qty"
     t.text     "description"
+    t.text     "mini_description"
+    t.integer  "likes_qty"
+    t.integer  "dislikes_qty"
     t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "line_items", force: :cascade do |t|
