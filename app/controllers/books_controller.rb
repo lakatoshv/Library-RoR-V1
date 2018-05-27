@@ -9,7 +9,10 @@ class BooksController < ApplicationController
       else
         @books = Book.all
       end
+
   end
+
+
 
   # GET /books/1
   # GET /books/1.json

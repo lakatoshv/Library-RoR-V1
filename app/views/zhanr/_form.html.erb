@@ -1,0 +1,89 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :label_T => "Назва",
+      :label_A => "Автор",
+      :label_Z => "Жанр",
+      :label_Q => "Кількість сторінок",
+      :label_D => "Опис",
+      :label_MD => "Короткий опис",
+      :label_I => "Адреса до картинки",
+      :submit => "Підтвердити"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :label_T => "Name",
+      :label_A => "Author",
+      :label_Z => "Genre",
+      :label_Q => "Number of pages",
+      :label_D => "Description",
+      :label_MD => "Mini description",
+      :label_I => "Address to the picture",
+      :submit => "Submit"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :label_T => "Название",
+      :label_A => "Автор",
+      :label_Z => "Жанр",
+      :label_Q => "Количество страниц",
+      :label_D => "Описание",
+      :label_MD => "Краткое описание",
+      :label_I => "Адрес к картинке",
+      :submit => "Подтвердить"
+    } 
+  end 
+%>
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for(book) do |f| %>
+      <% if book.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+          <ul>
+          <% book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_T] %></label>
+          <%= f.text_field :title, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_A] %></label>
+        <%= f.text_field :auth, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_Z] %></label>
+        <%= f.text_field :zhanr, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_Q] %></label>
+        <%= f.text_field :pages_qty, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_MD] %></label>
+        <%= f.text_area :mini_description, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_D] %></label>
+        <%= f.text_area :description, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_I] %></label>
+        <%= f.text_field :image_url, :class => "form-control" %>
+      </div>
+
+      <div class="actions">
+        <input type="submit" name="submit" class="btn" value=<%= text[:submit] %>>
+      </div>
+    <% end %>
+  </div>

@@ -14335,375 +14335,1464 @@ Processing by IndexController#index as HTML
 Completed 200 OK in 66ms (Views: 63.6ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2017-05-01 15:12:13 +0300
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-05-01 17:29:41 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 17473ms (Views: 17415.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 17:30:03 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (90.1ms)
+Completed 200 OK in 271ms (Views: 247.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-05-01 17:30:04 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/devise-4.2.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (3.2ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/devise-4.2.1/app/views/devise/registrations/new.html.erb within layouts/application (129.3ms)
+Completed 200 OK in 369ms (Views: 278.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2017-05-01 17:30:09 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (4.8ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 252ms (Views: 214.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2017-05-01 17:30:14 +0300
+Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-01 17:30:14 +0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 168ms (Views: 165.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 17:30:21 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 284ms (Views: 260.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2017-05-01 17:30:33 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 210ms (Views: 180.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/books/10" for 127.0.0.1 at 2017-05-01 17:30:54 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 162ms (Views: 153.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books/10/edit" for 127.0.0.1 at 2017-05-01 17:30:58 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (73.0ms)
+  Rendered books/edit.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 294ms (Views: 283.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-01 17:58:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 2982ms (Views: 2955.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index?lang=ua" for 127.0.0.1 at 2017-05-01 17:58:22 +0300
+Processing by IndexController#index as HTML
+  Parameters: {"lang"=>"ua"}
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 399ms (Views: 395.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index?lang=ru" for 127.0.0.1 at 2017-05-01 17:58:24 +0300
+Processing by IndexController#index as HTML
+  Parameters: {"lang"=>"ru"}
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 297ms (Views: 293.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index?lang=en" for 127.0.0.1 at 2017-05-01 17:58:28 +0300
+Processing by IndexController#index as HTML
+  Parameters: {"lang"=>"en"}
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 206ms (Views: 204.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 17:58:32 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (83.8ms)
+Completed 200 OK in 285ms (Views: 272.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2017-05-01 17:58:57 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (2.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 281ms (Views: 110.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/books/7/edit" for 127.0.0.1 at 2017-05-01 17:59:03 +0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (46.4ms)
+  Rendered books/edit.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 318ms (Views: 307.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/7" for 127.0.0.1 at 2017-05-01 17:59:10 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 240ms (Views: 234.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 17:59:13 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 259ms (Views: 256.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 17:59:23 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 250ms (Views: 246.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index?lang=ua" for 127.0.0.1 at 2017-05-01 17:59:27 +0300
+Processing by IndexController#index as HTML
+  Parameters: {"lang"=>"ua"}
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 190ms (Views: 185.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 17:59:30 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 281ms (Views: 276.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=451+%D0%B7%D0%B0+%D1%84%D0%B0%D1%80%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D1%82%D0%BE%D0%BC&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 17:59:40 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"451 за фаренгейтом", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%451 за фаренгейтом%' OR auth LIKE '%451 за фаренгейтом%' OR zhanr LIKE '%451 за фаренгейтом%' OR description LIKE '%451 за фаренгейтом%' )[0m
+  Rendered books/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 270ms (Views: 266.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=451+%D0%B7%D0%B0+%D1%84%D0%B0%D1%80%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D1%82%D0%BE%D0%BC&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 17:59:43 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"451 за фаренгейтом", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%451 за фаренгейтом%' OR auth LIKE '%451 за фаренгейтом%' OR zhanr LIKE '%451 за фаренгейтом%' OR description LIKE '%451 за фаренгейтом%' )[0m
+  Rendered books/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 167ms (Views: 163.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=%D1%80%D0%B5%D0%B9+%D0%B1%D0%B7%D1%83%D0%B4%D0%B1%D0%B5%D1%80%D1%8B&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 18:00:12 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"рей бзудберы", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (11.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%рей бзудберы%' OR auth LIKE '%рей бзудберы%' OR zhanr LIKE '%рей бзудберы%' OR description LIKE '%рей бзудберы%' )[0m
+  Rendered books/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 185ms (Views: 169.9ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=%D1%80%D0%B5%D0%B9+%D0%B1%D0%B7%D1%83%D0%B4%D0%B1%D0%B5%D1%80i&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 18:00:20 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"рей бзудберi", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (9.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%рей бзудберi%' OR auth LIKE '%рей бзудберi%' OR zhanr LIKE '%рей бзудберi%' OR description LIKE '%рей бзудберi%' )[0m
+  Rendered books/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 199ms (Views: 188.2ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=%D1%80%D0%B5%D0%B9+%D0%B1%D1%80%D0%B5%D0%B4%D0%B1%D0%B5%D1%80i&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 18:00:45 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"рей бредберi", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%рей бредберi%' OR auth LIKE '%рей бредберi%' OR zhanr LIKE '%рей бредберi%' OR description LIKE '%рей бредберi%' )[0m
+  Rendered books/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 206ms (Views: 203.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=%D1%80%D0%B5%D0%B9+%D0%B1%D1%80%D0%B5%D0%B4%D0%B1%D0%B5%D1%80i&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 18:00:48 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"рей бредберi", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%рей бредберi%' OR auth LIKE '%рей бредберi%' OR zhanr LIKE '%рей бредберi%' OR description LIKE '%рей бредберi%' )[0m
+  Rendered books/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 201ms (Views: 198.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-01 19:02:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.5ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateZhanrs (20170501155203)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE TABLE "zhanrs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "zhanr" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170501155203"]]
+  [1m[35m (54.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAuths (20170501155231)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "auths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "auth" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170501155231"]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-05-01 19:02:42 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by IndexController#index as HTML
   Rendering index/index.html.erb within layouts/application
   Rendered index/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 461ms (Views: 436.8ms | ActiveRecord: 0.0ms)
+Completed 200 OK in 3062ms (Views: 3031.2ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/books/new" for 127.0.0.1 at 2017-05-01 15:31:08 +0300
-Processing by BooksController#new as HTML
-  Rendering books/new.html.erb within layouts/application
-  Rendered books/new.html.erb within layouts/application (19.7ms)
-Completed 500 Internal Server Error in 76ms (ActiveRecord: 1.9ms)
-
-
-  
-ActionView::Template::Error (undefined method `[]' for nil:NilClass):
-    16:   end 
-    17: %>
-    18: <div class="back">
-    19:   <h1 class="col-md-6 col-md-offset-3 text-center back"><%= text[:h1] %></h1>
-    20: 
-    21:   <%= render 'form', book: @book %>
-    22: 
-  
-app/views/books/new.html.erb:19:in `_app_views_books_new_html_erb__2336058543783172404_70349122281360'
-  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
-  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
-  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
-  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.9ms)
-Started GET "/" for 127.0.0.1 at 2017-05-01 22:30:05 +0300
-Processing by IndexController#index as HTML
-  Rendering index/index.html.erb within layouts/application
-  Rendered index/index.html.erb within layouts/application (660.9ms)
-Completed 200 OK in 9313ms (Views: 7700.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:30:42 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:06:26 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (40.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (785.6ms)
-Completed 200 OK in 1084ms (Views: 907.6ms | ActiveRecord: 40.4ms)
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 215ms (Views: 185.7ms | ActiveRecord: 3.5ms)
 
 
-Started GET "/books/2" for 127.0.0.1 at 2017-05-01 22:30:48 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mBook Load (530.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (125.6ms)
-Completed 200 OK in 2957ms (Views: 1558.9ms | ActiveRecord: 530.7ms)
-
-
-Started GET "/books/2/edit" for 127.0.0.1 at 2017-05-01 22:31:04 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (783.7ms)
-  Rendered books/edit.html.erb within layouts/application (905.5ms)
-Completed 200 OK in 1017ms (Views: 991.4ms | ActiveRecord: 0.6ms)
-
-
-Started PATCH "/books/2" for 127.0.0.1 at 2017-05-01 22:32:34 +0300
-Processing by BooksController#update as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OB7T7e8BNYxJ2+t7uTt0rn8simxRM9L1Ra49pDreKZKK6ekcWvKDqy2J6q9PurI91czPfg3G0DurqtNLfrpxWg==", "book"=>{"title"=>"451 за Фаренгейтом", "auth"=>"Рей Бредбері", "zhanr"=>"Фантастика", "pages_qty"=>"451", "mini_description"=>"451° за Фаренгейтом — роман-антиутопія американського письменника Рея Бредбері в жанрі наукової фантастики. Вперше побачив світ у 1953.", "description"=>"Роман-антиутопія і в жанрі наукової фантастики. У романі зображено нове, майбутнє споживацьке суспільство, ймовірно, чимось схоже на Сполучені Штати Америки , де панує тоталітаризм і майже повний контроль суспільства. Керівництво держави намагається підпорядкувати собі навіть думки людей: книги заборонено, незаконним вважають читання і переховування будь-якої літератури, за дотриманням порядку мають слідкувати пожежники. 451 градус за Фаренгейт (233 градуси за Цельсієм) — температура, при якій загоряється папір. Пожежники не гасять вогонь, вони його розпалюють. Вони носять скафандри з зображенням фенікса на грудях і саламандри на плечі. Пожежники — опора режиму, запорука того, що люди не читатимуть книжок, адже книжки примушують думати і самостійно аналізувати. Пожежники спалюють книги і будинки, де книги переховувалися. Владі легше керувати натовпом, якщо зробити темп життя швидшим, придумувати нові спортивні ігри, розвивати в людях почуття «стадности», автоматизму. Більше швидких машин, кольорових телепрограм, більше шуму, галасу. Будь-яке інакомислення чи самостійна думка робить особу небезпекою для режиму та потенційною мішенню карної пожежної команди.\r\n\r\nЦе роман про важке прозрівання особи в тоталітарному суспільстві. Пожежник Монтег теж був його частиною. Його дивацтвом було те, що він таємно забирав книжки з домівок, призначених на повне спалення. Поштовхом до тривожних роздумів стала незвична подія : на черговому спаленні жінка — володарка будівлі і бібліотеки — відмовилась покинути улюблені книжки і загинула в пожежі.\r\n\r\nДонос карним органам на чоловіка, що утримує дома книжки,зробила і дружина Гая — Мілдред. Тепер вже домівку Монтегів спалюють вщент. Гай Монтег довідався від професора Фабера про існування відлюдників — шанувальників книг і подався до них. Утопічні принципи збереження знань і скарбів цивілізації для майбутнього розділяв і Бредбері, великий шанувальник бібліотек. От і його персонажі фактично чекають героїв, що прийдуть і змінять тоталітарний режим на кращий. Для цього нового суспільства і бережуть знання відлюдники — шанувальники книг.", "image_url"=>"Image url"}, "submit"=>"Підтвердити", "id"=>"2"}
-  [1m[36mBook Load (37.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  [1m[35m (25.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/books/2
-Completed 302 Found in 202ms (ActiveRecord: 63.4ms)
-
-
-Started GET "/books/2" for 127.0.0.1 at 2017-05-01 22:32:35 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mBook Load (19.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 512ms (Views: 489.8ms | ActiveRecord: 19.7ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:32:55 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:06:28 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (5.7ms)
-Completed 200 OK in 183ms (Views: 180.0ms | ActiveRecord: 0.5ms)
+  Rendered books/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 335ms (Views: 292.8ms | ActiveRecord: 0.5ms)
 
 
-Started GET "/books/3" for 127.0.0.1 at 2017-05-01 22:33:01 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"3"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (2.6ms)
-Completed 200 OK in 92ms (Views: 89.4ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/books/3/edit" for 127.0.0.1 at 2017-05-01 22:33:03 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"3"}
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (22.3ms)
-  Rendered books/edit.html.erb within layouts/application (90.1ms)
-Completed 200 OK in 423ms (Views: 421.1ms | ActiveRecord: 0.3ms)
-
-
-Started PATCH "/books/3" for 127.0.0.1 at 2017-05-01 22:34:17 +0300
-Processing by BooksController#update as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z4g2DFyEXaOw/wWfmU+oIDHspybRtKvVCyzFkpvlp5bKLpQBEyFZFSy6Y3pdPeg9mfITUFvOpcd8MJmzn/T7sg==", "book"=>{"title"=>"Сто років самотності ", "auth"=>"Габріель Гарсіа Маркес", "zhanr"=>"Фантастика", "pages_qty"=>"100", "mini_description"=>"Сто років самотності — роман нобелівського лауреата, колумбійського письменника Ґабрієля Ґарсія Маркеса, вперше опублікований іспанською 1967 року.", "description"=>"\tРоман «Сто років самотності», повісті «Полковникові ніхто не пише», «Хроніка вбивства, про яке всі знали заздалегідь» — центральні твори славетного колумбійського письменника, лауреата Нобелівської премії Ґабріеля Ґарсії Маркеса. В його творах дивовижно переплітаються людські долі й суспільні проблеми, розгортається широка панорама латиноамериканського життя з його повсякденними клопотами, соціальними заворушеннями, диктатурами й безперервними революціями.Переклали з іспанської: Галина Вінграновська, Маргарита Жердинівська, Женев'єва Конєва, Лев Олевський, Петро Соколовський, Дмитро Стельмах, Віктор Шовкун", "image_url"=>"Image url"}, "submit"=>"Підтвердити", "id"=>"3"}
-  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/books/3
-Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
-
-
-Started GET "/books/3" for 127.0.0.1 at 2017-05-01 22:34:17 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"3"}
-  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 149ms (Views: 146.3ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:34:52 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:06:49 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (4.4ms)
-Completed 200 OK in 157ms (Views: 131.7ms | ActiveRecord: 0.3ms)
+  [1m[36mBook Load (7.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 239ms (Views: 202.2ms | ActiveRecord: 9.8ms)
 
 
-Started GET "/books/4" for 127.0.0.1 at 2017-05-01 22:34:55 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"4"}
-  [1m[36mBook Load (14.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (42.7ms)
-Completed 200 OK in 528ms (Views: 424.9ms | ActiveRecord: 14.6ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:07:19 +0300
+  
+SyntaxError (/home/usertrav/fpr/v2-1/app/controllers/books_controller.rb:81: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/books_controller.rb:81: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.8ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.6ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:07:45 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 247ms (Views: 236.5ms | ActiveRecord: 5.7ms)
 
 
-Started GET "/books/4/edit" for 127.0.0.1 at 2017-05-01 22:34:58 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"4"}
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (4.1ms)
-  Rendered books/edit.html.erb within layouts/application (14.9ms)
-Completed 200 OK in 97ms (Views: 94.6ms | ActiveRecord: 0.3ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:07:48 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (5.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 240ms (Views: 232.2ms | ActiveRecord: 5.6ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:36:12 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:09:58 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (100.5ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Book::ActiveRecord_Relation:0x007f38b9d194c8>):
+    48:     } 
+    49:   end 
+    50: %>
+    51: <%= will_paginate @books %>
+    52: <p id="notice"><%= notice %></p>
+    53: 
+    54: <h1 class="col-md-6 col-md-offset-3 text-center back"><%= text[:h1] %></h1>
+  
+app/views/books/index.html.erb:51:in `_app_views_books_index_html_erb___4206372022082276698_69940806205720'
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.0ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.4ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:10:36 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (4.6ms)
-Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 0.4ms)
+  Rendered books/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 239ms (Views: 236.8ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/books/5" for 127.0.0.1 at 2017-05-01 22:36:31 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"5"}
-  [1m[36mBook Load (10.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (88.3ms)
-Completed 200 OK in 613ms (Views: 583.2ms | ActiveRecord: 10.6ms)
-
-
-Started GET "/books/5/edit" for 127.0.0.1 at 2017-05-01 22:36:34 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"5"}
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (4.1ms)
-  Rendered books/edit.html.erb within layouts/application (6.6ms)
-Completed 200 OK in 73ms (Views: 68.8ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:37:28 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 19:10:46 +0300
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (20.4ms)
-Completed 200 OK in 253ms (Views: 250.7ms | ActiveRecord: 0.5ms)
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 320ms (Views: 315.4ms | ActiveRecord: 0.8ms)
 
 
-Started GET "/books/6" for 127.0.0.1 at 2017-05-01 22:37:52 +0300
+Started GET "/" for 127.0.0.1 at 2017-05-01 20:47:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  Rendered index/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 4919ms (Views: 4888.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:48:10 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (16.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (144.5ms)
+Completed 200 OK in 376ms (Views: 333.6ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:48:37 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.html.erb within layouts/application (93.4ms)
+Completed 200 OK in 335ms (Views: 324.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:49:54 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.html.erb within layouts/application (22.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Completed 200 OK in 318ms (Views: 314.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:49:56 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.html.erb within layouts/application (22.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Completed 200 OK in 233ms (Views: 227.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:50:06 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered books/index.html.erb within layouts/application (24.8ms)
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Completed 200 OK in 252ms (Views: 236.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:50:36 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 304ms (Views: 300.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2017-05-01 20:51:25 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  Rendered books/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 296ms (Views: 293.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?page=1" for 127.0.0.1 at 2017-05-01 20:51:28 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 247ms (Views: 244.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:51:30 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 207ms (Views: 201.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:51:52 +0300
+  
+SyntaxError (/home/usertrav/fpr/v2-1/app/controllers/books_controller.rb:81: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/books_controller.rb:81: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.2ms)
+Started GET "/books?utf8=%E2%9C%93&search=&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:52:05 +0300
+  
+SyntaxError (/home/usertrav/fpr/v2-1/app/controllers/books_controller.rb:15: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/books_controller.rb:15: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.0ms)
+Started GET "/books?utf8=%E2%9C%93&search=&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:52:16 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (5.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (60.5ms)
+Completed 200 OK in 228ms (Views: 212.6ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=%D0%95%D0%BD%D0%B4%D1%96+%D0%92%D0%B5%D0%B9%D1%94%D1%80&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:52:27 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Енді Вейєр", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (5.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 251ms (Views: 243.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=%D0%95%D0%BD%D0%B4%D1%96+%D0%92%D0%B5%D0%B9%D1%94%D1%80&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:52:42 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Енді Вейєр", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%Енді Вейєр%' OR auth LIKE '%Енді Вейєр%' OR zhanr LIKE '%Енді Вейєр%' OR description LIKE '%Енді Вейєр%' )[0m
+  Rendered books/index.html.erb within layouts/application (94.5ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Book::ActiveRecord_Relation:0x0000000468c6b8>):
+    74:     <% end %>
+    75:   </div>
+    76: </div>
+    77:               <%= will_paginate @books %>
+  
+app/views/books/index.html.erb:77:in `_app_views_books_index_html_erb___3914990747752278143_37009140'
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (21.0ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.6ms)
+Started GET "/books?utf8=%E2%9C%93&search=%D0%95%D0%BD%D0%B4%D1%96+%D0%92%D0%B5%D0%B9%D1%94%D1%80&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:52:53 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Енді Вейєр", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (76.1ms)
+Completed 200 OK in 240ms (Views: 221.8ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=%D0%95%D0%BD%D0%B4%D1%96+%D0%92%D0%B5%D0%B9%D1%94%D1%80&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:54:36 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Енді Вейєр", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%Енді Вейєр%' OR auth LIKE '%Енді Вейєр%' OR zhanr LIKE '%Енді Вейєр%' OR description LIKE '%Енді Вейєр%' )[0m
+  Rendered books/index.html.erb within layouts/application (64.4ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Book::ActiveRecord_Relation:0x007fba79817488>):
+    74:     <% end %>
+    75:   </div>
+    76: </div>
+    77:               <%= will_paginate @books %>
+  
+app/views/books/index.html.erb:77:in `_app_views_books_index_html_erb___3914990747752278143_70219439560260'
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (66.0ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.4ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (141.4ms)
+Started GET "/books?utf8=%E2%9C%93&search=%D0%95%D0%BD%D0%B4%D1%96+%D0%92%D0%B5%D0%B9%D1%94%D1%80&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:54:48 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Енді Вейєр", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%Енді Вейєр%' OR auth LIKE '%Енді Вейєр%' OR zhanr LIKE '%Енді Вейєр%' OR description LIKE '%Енді Вейєр%' )[0m
+  Rendered books/index.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Book::ActiveRecord_Relation:0x007fba79b7a4b8>):
+    72:               <li class="active"><%= link_to text[:registration], sign_up_path %></li>
+    73:               <li><%= link_to text[:autorisation], sign_in_path %></li>
+    74:               <li><%= link_to text[:exit], sign_out_path  %></li>
+    75:               <%= will_paginate @books %>
+    76:               <li class="dropdown">
+    77:                 <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><%= text[:lang] %><b class=" icon-angle-down"></b></a>
+    78:                 <ul class="dropdown-menu">
+  
+app/views/layouts/application.html.erb:75:in `_app_views_layouts_application_html_erb___1183632396299437445_70219441567180'
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.1ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.1ms)
+Started GET "/books?utf8=%E2%9C%93&search=%D0%95%D0%BD%D0%B4%D1%96+%D0%92%D0%B5%D0%B9%D1%94%D1%80&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-01 20:55:01 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Енді Вейєр", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%Енді Вейєр%' OR auth LIKE '%Енді Вейєр%' OR zhanr LIKE '%Енді Вейєр%' OR description LIKE '%Енді Вейєр%' )[0m
+  Rendered books/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 203ms (Views: 187.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/4" for 127.0.0.1 at 2017-05-01 20:55:06 +0300
 Processing by BooksController#show as HTML
-  Parameters: {"id"=>"6"}
-  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (7.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 2617ms (Views: 2582.8ms | ActiveRecord: 8.0ms)
 
 
-Started GET "/books/6/edit" for 127.0.0.1 at 2017-05-01 22:37:56 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"6"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (3.5ms)
-  Rendered books/edit.html.erb within layouts/application (5.5ms)
-Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 0.2ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:55:16 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 289ms (Views: 285.3ms | ActiveRecord: 1.4ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:38:44 +0300
+Started GET "/books/2" for 127.0.0.1 at 2017-05-01 20:55:22 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/show.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 296ms (Views: 285.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-05-01 20:55:55 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (9.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 11.1ms)
+
+
+  
+ActionView::Template::Error (The @books variable appears to be empty. Did you forget to pass the collection object for will_paginate?):
+    70:     <%= link_to text[:back], books_path %>
+    71:   </div>
+    72: </div>
+    73:              <%= will_paginate @books %>
+  
+app/views/books/show.html.erb:73:in `_app_views_books_show_html_erb__2367342095088688442_36442540'
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.0ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendering /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/usertrav/.rvm/gems/ruby-2.3.0@rails5.0.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.4ms)
+Started GET "/books/2" for 127.0.0.1 at 2017-05-01 20:56:04 +0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (6.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 264ms (Views: 254.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:56:07 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 320ms (Views: 316.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-01 20:58:08 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
   [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (7.0ms)
-Completed 200 OK in 130ms (Views: 127.3ms | ActiveRecord: 0.6ms)
+  Rendered books/index.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 1017ms (Views: 966.4ms | ActiveRecord: 4.6ms)
 
 
-Started GET "/books/7" for 127.0.0.1 at 2017-05-01 22:39:17 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"7"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 136ms (Views: 133.8ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/books/7/edit" for 127.0.0.1 at 2017-05-01 22:39:20 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"7"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (5.2ms)
-  Rendered books/edit.html.erb within layouts/application (7.6ms)
-Completed 200 OK in 93ms (Views: 90.5ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:41:05 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (35.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (42.6ms)
-Completed 200 OK in 360ms (Views: 306.2ms | ActiveRecord: 35.9ms)
-
-
-Started GET "/books/8" for 127.0.0.1 at 2017-05-01 22:41:30 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"8"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 69ms (Views: 67.4ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/books/8/edit" for 127.0.0.1 at 2017-05-01 22:41:33 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"8"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (4.7ms)
-  Rendered books/edit.html.erb within layouts/application (8.4ms)
-Completed 200 OK in 154ms (Views: 151.4ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:42:35 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (13.3ms)
-Completed 200 OK in 121ms (Views: 118.1ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/books/9" for 127.0.0.1 at 2017-05-01 22:42:59 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"9"}
-  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (14.1ms)
-Completed 200 OK in 290ms (Views: 282.2ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/books/9/edit" for 127.0.0.1 at 2017-05-01 22:43:01 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"9"}
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (18.2ms)
-  Rendered books/edit.html.erb within layouts/application (29.7ms)
-Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:44:02 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (27.6ms)
-Completed 200 OK in 118ms (Views: 115.6ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/books/10" for 127.0.0.1 at 2017-05-01 22:44:06 +0300
-Processing by BooksController#show as HTML
-  Parameters: {"id"=>"10"}
-  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 73ms (Views: 70.2ms | ActiveRecord: 0.1ms)
-
-
-Started GET "/books/10/edit" for 127.0.0.1 at 2017-05-01 22:44:08 +0300
-Processing by BooksController#edit as HTML
-  Parameters: {"id"=>"10"}
-  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
-  Rendering books/edit.html.erb within layouts/application
-  Rendered books/_form.html.erb (5.8ms)
-  Rendered books/edit.html.erb within layouts/application (7.9ms)
-Completed 200 OK in 145ms (Views: 142.2ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:44:46 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (6.5ms)
-Completed 200 OK in 128ms (Views: 125.4ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-01 22:49:46 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (345.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (463.3ms)
-Completed 200 OK in 1306ms (Views: 909.6ms | ActiveRecord: 345.1ms)
-
-
-Started GET "/books" for 127.0.0.1 at 2017-05-05 14:18:20 +0300
+Started GET "/books" for 127.0.0.1 at 2017-05-01 22:52:36 +0300
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (23.4ms)
-Started GET "/books" for 127.0.0.1 at 2017-05-05 14:18:21 +0300
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 962ms (Views: 928.7ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from block in execute at /home/vital-l/.rvm/gems/ruby-2.4.0@global/gems/rake-12.0.0/lib/rake/task.rb:250)
+  [1m[35m (100.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (80.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170421112948)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (50.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170421112948"]]
+  [1m[35m (132.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170429130500)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "auth" varchar, "zhanr" varchar, "pages_qty" varchar, "description" text, "mini_description" text, "likes_qty" integer, "dislikes_qty" integer, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130500"]]
+  [1m[35m (118.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLineItems (20170429130508)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_book" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170429130508"]]
+  [1m[35m (168.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateZhanrs (20170501155203)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "zhanrs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "zhanr" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170501155203"]]
+  [1m[35m (152.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAuths (20170501155231)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "auths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "auth" varchar, "book" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170501155231"]]
+  [1m[35m (163.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-05-01 19:55:52 UTC], ["updated_at", 2017-05-01 19:55:52 UTC]]
+  [1m[35m (154.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/books" for 127.0.0.1 at 2017-05-01 23:37:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by BooksController#index as HTML
   Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (4.8ms)
-Completed 200 OK in 627ms (Views: 624.8ms | ActiveRecord: 0.6ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 2143ms (Views: 2093.9ms | ActiveRecord: 0.5ms)
 
 
-Completed 200 OK in 1833ms (Views: 1802.6ms | ActiveRecord: 1.1ms)
+Started GET "/auth" for 127.0.0.1 at 2017-05-01 23:37:32 +0300
+Processing by AuthController#index as HTML
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
 
 
-Started GET "/books" for 127.0.0.1 at 2017-05-05 14:18:24 +0300
-Processing by BooksController#index as HTML
-  Rendering books/index.html.erb within layouts/application
-  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
-  Rendered books/index.html.erb within layouts/application (5.1ms)
-Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.3ms)
+  
+SyntaxError (/home/vital-l/Ruby_On_Rails/library/versiya_2/v2-2/app/models/auth.rb:2: syntax error, unexpected ':', expecting keyword_end
+	validates :auth, :book :presence => true
+	                        ^):
+  
+app/models/auth.rb:2: syntax error, unexpected ':', expecting keyword_end
+app/controllers/auth_controller.rb:7:in `index'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.2ms)
+Started GET "/auth/new" for 127.0.0.1 at 2017-05-01 23:37:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/auth/new"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [65 times] (83.9ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (28.3ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (170.4ms)
+Started GET "/auth_newnew" for 127.0.0.1 at 2017-05-01 23:37:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/auth_newnew"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [65 times] (29.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.8ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:38:00 +0300
+Processing by AuthController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
 
 
-Started GET "/books/2" for 127.0.0.1 at 2017-05-05 14:18:41 +0300
+  
+SyntaxError (/home/vital-l/Ruby_On_Rails/library/versiya_2/v2-2/app/models/auth.rb:2: syntax error, unexpected ':', expecting keyword_end
+	validates :auth, :book :presence => true
+	                        ^):
+  
+app/models/auth.rb:2: syntax error, unexpected ':', expecting keyword_end
+app/controllers/auth_controller.rb:20:in `new'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.9ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:38:45 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (203.8ms)
+  Rendered auth/new.html.erb within layouts/application (213.5ms)
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000041c1020>:0x0000000418e698>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(book) do |f| %>
+    23:       <% if book.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_33616860'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_34531240'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.8ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.3ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.6ms)
+Started GET "/auth/new" for 127.0.0.1 at 2017-05-01 23:39:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/auth/new"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered collection of /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [65 times] (39.3ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (86.6ms)
+Started GET "/auth" for 127.0.0.1 at 2017-05-01 23:39:21 +0300
+Processing by AuthController#index as HTML
+  Rendering auth/index.html.erb within layouts/application
+  [1m[36mAuth Load (0.2ms)[0m  [1m[34mSELECT "auths".* FROM "auths"[0m
+  Rendered auth/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 105ms (Views: 90.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth_ne" for 127.0.0.1 at 2017-05-01 23:39:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/auth_ne"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered collection of /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [65 times] (28.5ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.0ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:39:30 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (221.3ms)
+  Rendered auth/new.html.erb within layouts/application (223.7ms)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000041c1020>:0x007fbd266044c0>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(book) do |f| %>
+    23:       <% if book.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225184657260'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225184696160'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.5ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:42:49 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (5.7ms)
+  Rendered auth/new.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(book) do |f| %>
+    23:       <% if book.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_25520000'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_26736940'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.3ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.3ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:43:53 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (392.7ms)
+  Rendered auth/new.html.erb within layouts/application (395.1ms)
+Completed 500 Internal Server Error in 401ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `auth' for #<#<Class:0x000000032ccb78>:0x007fbd25cbccc8>
+Did you mean?  @auth):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225179800600'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225179831140'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.7ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.9ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:44:57 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (252.0ms)
+  Rendered auth/new.html.erb within layouts/application (254.3ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000032ccb78>:0x007fbd26577340>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(@auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225184474640'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225184407180'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.7ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:47:12 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (391.3ms)
+  Rendered auth/new.html.erb within layouts/application (393.0ms)
+Completed 500 Internal Server Error in 397ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `auth' for #<#<Class:0x000000032ccb78>:0x007fbd24cfc0b8>
+Did you mean?  @auth):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225171405900'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225171574280'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.4ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.2ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:47:59 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (194.0ms)
+  Rendered auth/new.html.erb within layouts/application (198.4ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000032ccb78>:0x007fbd2657e3c0>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225184300960'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225184421580'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (33.7ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.5ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:48:17 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (188.9ms)
+  Rendered auth/new.html.erb within layouts/application (190.7ms)
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000032ccb78>:0x007fbd26717268>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225185228500'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225185259080'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.2ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:48:38 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (228.7ms)
+  Rendered auth/new.html.erb within layouts/application (231.0ms)
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000032ccb78>:0x007fbd266e96b0>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225185135560'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225185165440'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.7ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.1ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:48:55 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (169.8ms)
+  Rendered auth/new.html.erb within layouts/application (171.6ms)
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000032ccb78>:0x007fbd266afa28>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225185014080'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225185063560'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.1ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.8ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:49:38 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (192.8ms)
+  Rendered auth/new.html.erb within layouts/application (194.9ms)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000032ccb78>:0x007fbd2665f578>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225184852000'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225184882600'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.1ms)
+Started GET "/auth/new" for 127.0.0.1 at 2017-05-01 23:51:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/auth/new"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [65 times] (115.6ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.6ms)
+Started GET "/auth_new" for 127.0.0.1 at 2017-05-01 23:51:52 +0300
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/_form.html.erb (195.7ms)
+  Rendered auth/new.html.erb within layouts/application (198.0ms)
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `auths_path' for #<#<Class:0x000000032ccb78>:0x007fbd200d6990>
+Did you mean?  auth_path
+               audio_path):
+    19:   end 
+    20: %>
+    21:   <div class="col-md-4 col-md-offset-4">
+    22:     <%= form_for(auth) do |f| %>
+    23:       <% if auth.errors.any? %>
+    24:         <div id="error_explanation">
+    25:           <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+  
+app/views/auth/_form.html.erb:22:in `_app_views_auth__form_html_erb__3406654371427072125_70225198670560'
+app/views/auth/new.html.erb:21:in `_app_views_auth_new_html_erb___4455090339830467213_70225131649460'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.6ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.3ms)
+Started GET "/books/2" for 127.0.0.1 at 2017-05-05 14:20:47 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by BooksController#show as HTML
   Parameters: {"id"=>"2"}
-  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering books/show.html.erb within layouts/application
-  Rendered books/show.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 156ms (Views: 58.2ms | ActiveRecord: 0.6ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 23ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=2):
+  
+app/controllers/books_controller.rb:75:in `set_book'
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendering /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/vital-l/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.7ms)
+Started GET "/books" for 127.0.0.1 at 2017-05-05 14:20:56 +0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 2250ms (Views: 2173.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-05-05 14:22:39 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 346ms (Views: 329.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&search=451+%D0%B7%D0%B0+%D0%A4%D0%B0%D1%80%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D1%82%D0%BE%D0%BC&commit=%D0%9F%D0%BE%D1%88%D1%83%D0%BA" for 127.0.0.1 at 2017-05-05 14:22:45 +0300
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"451 за Фаренгейтом", "commit"=>"Пошук"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE (title LIKE '%451 за Фаренгейтом%' OR auth LIKE '%451 за Фаренгейтом%' OR zhanr LIKE '%451 за Фаренгейтом%' OR description LIKE '%451 за Фаренгейтом%' )[0m
+  Rendered books/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.3ms)
 
 

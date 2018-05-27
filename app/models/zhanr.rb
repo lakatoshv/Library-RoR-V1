@@ -1,0 +1,2 @@
+class Zhanr < ApplicationRecord
+end
