@@ -1,0 +1,47 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :label_A => "Автор",
+      :label_B => "Книга/Книги",
+      :submit => "Підтвердити"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :label_A => "Author",
+      :label_B => "Book/Books",
+      :submit => "Submit"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :label_A => "Автор",
+      :label_B => "Книга/Книги",
+      :submit => "Подтвердить"
+    } 
+  end 
+%>
+<div class="col-md-4 col-md-offset-4">
+  <%= form_for(auth) do |f| %>
+    <% if auth.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+        <ul>
+          <% auth.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= text[:label_A] %></label>
+      <%= f.text_field :auth, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= text[:label_B] %></label>
+      <%= f.text_field :book, :class => "form-control" %>
+    </div>
+
+    <div class="actions">
+      <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>">
+    </div>
+  <% end %>
+</div>

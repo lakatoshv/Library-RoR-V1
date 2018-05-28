@@ -1,0 +1,29 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :h1 => "Редагування",
+      :show => "Показати",
+      :back => "Назад"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :h1 => "Editing",
+      :show => "Show",
+      :back => "Back"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :h1 => "Редактирования",
+      :show => "Показать",
+      :back => "Назад"
+    } 
+  end 
+%>
+<div class="back">
+  <h1 class="col-md-6 col-md-offset-3 text-center back"><%= text[:h1] %></h1>
+
+  <%= render 'form', zhanr: @zhanr %>
+
+  <%= link_to text[:show], @zhanr %> |
+  <%= link_to text[:back], zhanrs_path %>
+</div>
+

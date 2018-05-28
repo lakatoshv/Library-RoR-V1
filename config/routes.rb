@@ -1,25 +1,33 @@
 Rails.application.routes.draw do
+  resources :kritics
+  resources :zhanrs
+  resources :auths
   resources :line_items
   resources :books
-  resources :users
-  resources :zhanr
 #  get 'home#index'
   get "books/index"
 root :to => 'index#index'
   get 'index', to: 'index#index'
+
   get 'edit', to: 'books#edit'
   get'books', to: 'books#index'
   get 'new', to:'books#new'
   get 'show', to: 'books#show'
 
-  get 'auth', to: 'auth#index'
-  get 'auth_edit', to: 'auth#edit'
-  get'auth_books', to: 'auth#index'
-  get 'auth_new', to:'auth#new'
-  get 'auth_show', to: 'auth#show'
+  get 'edit', to: 'zhanr#edit'
+  get'zhanr', to: 'zhanr#index'
+  get 'new', to:'zhanr#new'
+  get 'show', to: 'zhanr#show'
 
-  get 'zhanr', to: 'zhanr#index'
-  get 'zhanr_new', to:'zhanr#new'
+  get 'edit', to: 'auth#edit'
+  get'auth', to: 'auth#index'
+  get 'new', to:'auth#new'
+  get 'show', to: 'auth#show'
+
+  get 'edit', to: 'kritics#edit'
+  get'kritics', to: 'kritics#index'
+  get 'new', to:'kritics#new'
+  get 'show', to: 'kritics#show'
 
 devise_scope :user do
   get 'sign_up', to: 'devise/registrations#new'

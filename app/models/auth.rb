@@ -1,3 +1,6 @@
 class Auth < ApplicationRecord
-	validates :auth, :book, :presence => true
+	def self.search(search)
+		where([' auth LIKE ? ', "%#{search}%"])
+
+	end	
 end

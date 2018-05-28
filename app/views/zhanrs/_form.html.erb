@@ -1,0 +1,41 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :label_Z => "Жанр",
+      :submit => "Підтвердити"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :label_Z => "Genre",
+      :submit => "Submit"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :label_Z => "Жанр",
+      :submit => "Подтвердить"
+    } 
+  end 
+%>
+  <div class="col-md-4 col-md-offset-4">
+<%= form_for(zhanr) do |f| %>
+  <% if zhanr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(zhanr.errors.count, "error") %> prohibited this zhanr from being saved:</h2>
+
+      <ul>
+      <% zhanr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:label_Z] %></label>
+        <%= f.text_field :zhanr, :class => "form-control" %>
+      </div>
+
+  <div class="actions">
+        <input type="submit" name="submit" class="btn" value=<%= text[:submit] %>>
+      </div>
+<% end %>
+  </div>
