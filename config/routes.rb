@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  get 'userparams/new'
+
+  get 'userparams/edit'
+
+  get 'userparams/profile'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :kritics
   resources :zhanrs
   resources :auths
   resources :line_items
   resources :books
+  resources :userparams
 #  get 'home#index'
   get "books/index"
 root :to => 'index#index'
@@ -35,6 +44,8 @@ devise_scope :user do
   get 'sign_out', to: 'devise/sessions#destroy'
 end
 get 'show', to: 'home#show'
+get  'profile', to: 'userparams#profile'
+resources :userparams
 
 
 
