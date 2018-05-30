@@ -17,10 +17,18 @@ body {
         -o-background-size: auto;
         background-size: auto;
 }
-
+.comments{
+	text-align: left;
+}
+.vidguk show_h2{
+	margin-bottom: 20px;
+}
 .back {
-	padding: 50px;
 	background-color: fff;
+}
+.pages{
+	background-color: fff;
+	height: auto;
 }
 
 .show_h2 p{
@@ -31,11 +39,13 @@ body {
 }
 .back {
 	padding: 50px;
-	background-color:  #fff;
+	background-color: #fff;
+	color: 333;
 }
 .back form{
 	padding: 50px;
-	background-color:  #fff;
+	background-color: #fff;
+	color: 333;
 }
 a:active {
 	outline:0;
@@ -385,19 +395,23 @@ section.callaction {
 }
 
 /* --- box --- */
+.col-lg-3{
+	min-height: 200px;
+	height: auto;
+}
 .col-lg-3 .box {
 	min-height: 200px;
 	height: auto;
 	width: 100%;
-	background: #fff;
+	background: #f8f8f8;
 	border: 1px solid silver;
+	margin-bottom: 10px;
 }
 .box p{
 	display: none;
 }
 .box:hover{
 	border: 3px solid yellow;
-	background: #51AE3A;
 }
 .box:hover p{
 	display: block;
@@ -1628,6 +1642,8 @@ section.demogrid .col-lg-1,section.demogrid .col-lg-2,section.demogrid .col-lg-3
 	background:#f6f6f6;
 	text-align:center;
 	padding:20px 0 20px;
+	minheight: 200px;
+	height: auto;
 }
 
 section.demogrid .show-grid .row,section.demogrid .show-grid .row-fluid {
@@ -2009,3 +2025,20 @@ article img.pull-right, article .align-right{
 
 }
 
+
+.clear{
+	clear: both;
+	margin-bottom: 50px;
+}
+#wrapper{
+	clear: both;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	text-align: center;
+	background: #f8f8f8;
+}
+#footer a{
+	color: #333;
+}

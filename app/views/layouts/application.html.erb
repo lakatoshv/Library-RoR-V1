@@ -1,5 +1,5 @@
 <% if session[:lang] == "ua" 
-    text ={
+    text ={ 
       :title => "Бібліотека на RubyOnRails",
       :name => "Бібліотека Ruby On Rails",
       :books => "Книги",
@@ -10,6 +10,10 @@
       :ua => "укр",
       :ru => "рус",
       :en => "анг",
+      :auth => "Автори",
+      :zhanr => "Жанри",
+      :about_site => "Про сайт",
+      :about_us => "Про нас",
       :submit => "Пошук"
     } 
   elsif session[:lang] == "en" 
@@ -24,6 +28,10 @@
       :ua => "ua",
       :ru => "ru",
       :en => "en",
+      :auth => "Authors",
+      :zhanr => "Genres",
+      :about_site => "About site",
+      :about_us => "About us",
       :submit => "Search"
     } 
   elsif session[:lang] == "ru"
@@ -38,6 +46,10 @@
       :ua => "укр",
       :ru => "рус",
       :en => "анг",
+      :auth => "Автори",
+      :zhanr => "Жанри",
+      :about_site => "О сайте",
+      :about_us => "О нас",
       :submit => "Поиск"
     } 
   end 
@@ -58,7 +70,7 @@
     <header>
       <div class="navbar navbar-default navbar-static-top">
         <div class="container">
-          <div class="navbar-header">
+          <div class="navbar-header">`
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -68,28 +80,27 @@
           </div>
           <div class="navbar-collapse collapse ">
             <ul class="nav navbar-nav">
-            <li><%= link_to 'Критика', kritics_path %></li>
-            <li><%= link_to 'Автор', auths_path %></li>
-            <li><%= link_to 'Жанр', zhanrs_path %></li>
+              <li><%= link_to text[:auth], auths_path %></li>
+              <li><%= link_to text[:zhanr], zhanrs_path %></li>
               <li><%= link_to text[:books], books_path %></li>
               <% if user_signed_in? %>
-  <p> Hello, <%= link_to current_user.email, profile_path %> |  
-  <li><%= link_to text[:exit], sign_out_path  %></li>
-  <% else %>
-              <li class="active"><%= link_to text[:registration], sign_up_path %></li>
-              <li><%= link_to text[:autorisation], sign_in_path %></li>
+                <li><%= link_to current_user.email, profile_path %></li>
+                <li><%= link_to text[:exit], sign_out_path  %></li>
+              <% else %>
+                <li class="active"><%= link_to text[:registration], sign_up_path %></li>
+                <li><%= link_to text[:autorisation], sign_in_path %></li>
               <% end %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><%= text[:lang] %><b class=" icon-angle-down"></b></a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a href="index?lang=ua"><%= text[:ua] %></a>
+                    <a href="../index?lang=ua"><%= text[:ua] %></a>
                   </li>
                   <li>
-                    <a href="index?lang=ru"><%= text[:ru] %></a>
+                    <a href="../index?lang=ru"><%= text[:ru] %></a>
                   </li>
                   <li>
-                    <a href="index?lang=en"><%= text[:en] %></a>
+                    <a href="../index?lang=en"><%= text[:en] %></a>
                   </li>
                 </ul>
               </li>
@@ -106,7 +117,20 @@
         </div>
       </div>
     </header>
-  </div>	
-    <%= yield %>
+  </div>  
+  <%= yield %>
+  <div class="clear"></div>
+  <div id="wrapper" class="navbar-fixed-bottom row-fluid">
+    <div class="navbar-inner">
+      <div class="container">
+        <div id="footer" class="navbar navbar-default navbar-static-bottom col-md-6 col-md-offset-3">
+          <ul class="list-inline">
+            <li><h3 class="menu_head"><%= link_to text[:about_site], abouts_about_program_path %></h3></li>
+            <li><h3 class="menu_head"><%= link_to text[:about_us], abouts_about_us_path %></h3></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>

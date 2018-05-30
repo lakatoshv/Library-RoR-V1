@@ -1,0 +1,59 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :name => "Ім'я",
+      :title_book => "Назва книги",
+      :recensiya => "Відгук",
+      :ocinka => "Дата",
+      :submit => "Підтвердити",
+      :edit => "Редагувати",
+      :back => "Назад"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :name => "Author",
+      :title_book => "Name of book",
+      :recensiya => "Review",
+      :ocinka => "Date",
+      :submit => "Submit",
+      :edit => "Edit",
+      :back => "Back"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :name => "Автор",
+      :title_book => "Назвиние Книги",
+      :recensiya => "Отзив",
+      :ocinka => "Дата",
+      :submit => "Подтвердить",
+      :edit => "Редактировать",
+      :back => "Назад"
+    } 
+  end 
+%>
+<div class="col-md-4 col-md-offset-4 back">
+  <p id="notice"><%= notice %></p>
+  <div class="show_h2 text-center">
+
+    <p>
+      <strong><%= @vidguk.name %></strong>
+    </p>
+  </div> 
+  <div class="show_h2_content">
+    <p>
+      <strong><%= text[:title_book] %></strong>
+      <%= @vidguk.title_book %>
+    </p>
+    <p>
+      <strong><%= text[:ocinka] %></strong>
+      <%= @vidguk.vidguk %>
+    </p>
+    <p>
+      <strong><%= text[:recensiya] %></strong>
+      <%= @vidguk.date %>
+    </p>
+  </div>
+  <div class="show_h2_content text-center">
+    <%= link_to text[:edit], edit_vidguk_path(@vidguk) %> |
+	<%= link_to text[:back], vidguks_path %>
+  </div>
+</div>

@@ -15,7 +15,10 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-
+    @kritics = Kritic.search(@book.title)
+    @vidguks = Vidguk.search(@book.title)
+    @kritic = Kritic.new
+    @vidguk = Vidguk.new
   end
 
   # GET /books/new

@@ -1,0 +1,57 @@
+<% if session[:lang] == "ua" 
+    text ={
+      :name => "Ім'я",
+      :title_book => "Назва книги",
+      :recensiya => "Рецензія",
+      :ocinka => "Оцінка",
+      :submit => "Підтвердити"
+    } 
+  elsif session[:lang] == "en" 
+    text ={
+      :name => "Author",
+      :title_book => "Name of book",
+      :recensiya => "Review",
+      :ocinka => "Rating",
+      :submit => "Submit"
+    } 
+  elsif session[:lang] == "ru"
+    text ={
+      :name => "Автор",
+      :title_book => "Назвиние Книги",
+      :recensiya => "Рецензия",
+      :ocinka => "Оценка",
+      :submit => "Подтвердить"
+    } 
+  end 
+%>
+  <%= form_for(kritic) do |f| %>
+    <% if kritic.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(kritic.errors.count, "error") %> prohibited this kritic from being saved:</h2>
+        <ul>
+          <% kritic.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= text[:name] %></label>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :title_book, :value => @book.title, :class => "form-control", :type => "hidden" %>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= text[:recensiya] %></label>
+      <%= f.text_field :recensiya, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= text[:ocinka] %></label>
+      <%= f.text_field :ocinka, :class => "form-control" %>
+    </div>
+    <div class="actions">
+      <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>">
+    </div>
+  <% end %>

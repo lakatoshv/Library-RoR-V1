@@ -4,7 +4,12 @@ class KriticsController < ApplicationController
   # GET /kritics
   # GET /kritics.json
   def index
-    @kritics = Kritic.all
+    if params[:search]
+      @kritics = Kritic.search(params[:search])
+      @title = params[:search]
+    else
+      redirect_to(books_path)
+    end
   end
 
   # GET /kritics/1
@@ -14,6 +19,11 @@ class KriticsController < ApplicationController
 
   # GET /kritics/new
   def new
+    if params[:search]
+      @kritics = params[:search]
+    else
+      redirect_to(books_path)
+    end
     @kritic = Kritic.new
   end
 

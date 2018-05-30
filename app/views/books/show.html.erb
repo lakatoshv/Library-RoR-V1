@@ -7,6 +7,19 @@
       :label_D => "Опис",
       :label_I => "Адреса до картинки",
       :edit => "Редагувати",
+      :kritic => "Критика",
+      :write_kritic => "Написати критику",
+      :review => "Відгуки",
+      :write_review => "Написати відгук",
+
+      :kritics => "Критика",
+      :vidguks => "Відгуки",
+      :label_O => "Оцінка",
+      :edit => "Редагувати",
+      :delete => "Видалити",
+      :question => "Ви впевнені?",
+      :kritic => "Нова критика",
+      :vidguk=> "Новий відгук",
       :back => "Назад"
     } 
   elsif session[:lang] == "en" 
@@ -18,6 +31,20 @@
       :label_D => "Description",
       :label_I => "Address to the picture",
       :edit => "Edit",
+      :kritic => "Critics",
+      :write_kritic => "Write critics",
+      :review => "Reviews",
+      :write_review => "Write a review",
+
+
+      :kritics => "Kritics",
+      :vidguks => "Reviews",
+      :show => "Show",
+      :edit => "Edit",
+      :delete => "Remove",
+      :question => "Are you sure?",
+      :kritic => "New critics",
+      :vidguk=> "New review",
       :back => "Back"
     } 
   elsif session[:lang] == "ru"
@@ -29,6 +56,21 @@
       :label_D => "Описание",
       :label_I => "Адрес к картинке",
       :edit => "Редактировать",
+      :kritic => "Критика",
+      :write_kritic => "Написать критику",
+      :review => "Отзывы",
+      :write_review => "Написать отзыв",
+
+
+      :kritics => "Критика",
+      :vidguks => "Отзывы",
+      :show => "Показать",
+      :edit => "Редактировать",
+      :delete => "Удалить",
+      :question => "Вы уверены?",
+      :new => "Добавить новий отзив",
+      :kritic => "Новая критика",
+      :vidguk=> "Новий отзыв",
       :back => "Назад"
     } 
   end 
@@ -69,4 +111,45 @@
     <%= link_to text[:edit], edit_book_path(@book) %> |
     <%= link_to text[:back], books_path %>
   </div>
+  <br><br>
+  <div class="show_h2_content text-right">
+    <a href="../kritics?utf8=✓&search=<%= @book.title %>"><%= text[:kritic] %> | <a href="../kritics/new?utf8=✓&search=<%= @book.title %>"><%= text[:write_kritic] %><br>
+    <a href="../vidguks?utf8=✓&search=<%= @book.title %>"><%= text[:review] %> | <a href="../vidguks/new?utf8=✓&search=<%= @book.title %>"><%= text[:write_review] %>
+  </div>
+  <br><br><br>
+  <h2 class="text-center"><%= text[:kritics] %></h2></br>
+  <% @kritics.each do |kritic| %>
+    <div class="vidguk show_h2">
+      <ul class="list-inline text-left">
+        <li><h3><%= link_to kritic.name, kritic_path, :class => "product" %></h3></li>
+        <li><h3><%= kritic.ocinka %></h3></li>
+      </ul>
+      <p><%= kritic.recensiya %></p>
+      <div class="text-right">
+        <%= link_to text[:delete], kritic, method: :delete, data: { confirm: text[:question] } %> | <%= link_to text[:edit], edit_kritic_path(kritic) %>
+      </div>
+    </div>
+  <% end %>
+  <h2 class="text-center"><%= text[:vidguks] %></h2></br>
+  <% @vidguks.each do |vidguk| %>
+    <div class="vidguk show_h2">
+      <ul class="list-inline text-left">
+        <li><h3><%= link_to vidguk.name, vidguk_path, :class => "product" %></h3></li>
+        <li><h3><%= vidguk.date %></h3></li>
+      </ul>
+      <p><%= vidguk.vidguk %></p>
+      <div class="text-right">
+        <%= link_to text[:delete], vidguk, method: :delete, data: { confirm: text[:question] } %> | <%= link_to text[:edit], edit_vidguk_path(vidguk) %>
+      </div>
+    </div>
+  <% end %>
+  <br><br><br>
+</div>
+<div class="col-md-4 col-md-offset-4 back">
+  <h3 class="text-center"><%= text[:kritic] %></h3>
+  <%= render 'form_kritics', kritic: @kritic %>
+</div>
+<div class="col-md-4 col-md-offset-4 back">
+  <h3 class="text-center"><%= text[:vidguk] %></h3>
+  <%= render 'form_vidguk', vidguk: @vidguk %>
 </div>

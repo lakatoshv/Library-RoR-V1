@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :vidguks
+  get 'abouts/about_us'
+
+  get 'abouts/about_program'
+
   get 'userparams/new'
 
   get 'userparams/edit'
@@ -13,6 +18,8 @@ Rails.application.routes.draw do
   resources :line_items
   resources :books
   resources :userparams
+  resources :vidhucks
+  resources :abouts
 #  get 'home#index'
   get "books/index"
 root :to => 'index#index'
@@ -37,6 +44,15 @@ root :to => 'index#index'
   get'kritics', to: 'kritics#index'
   get 'new', to:'kritics#new'
   get 'show', to: 'kritics#show'
+
+  get 'edit', to: 'vidguks#edit'
+  get'vidguks', to: 'vidguks#index'
+  get 'new', to:'vidguks#new'
+  get 'show', to: 'vidguks#show'
+
+
+  get 'about_us', to: 'abouts#about_us'
+  get 'about_us', to: 'abouts#about_program'
 
 devise_scope :user do
   get 'sign_up', to: 'devise/registrations#new'
