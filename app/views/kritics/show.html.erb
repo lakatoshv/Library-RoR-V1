@@ -45,7 +45,7 @@
     </p>
     <p>
       <strong><%= text[:ocinka] %></strong>
-      <%= @kritic.ocinka %>
+      <div class="review-rating" data-score="<%= @kritic.ocinka %>"></div>
     </p>
     <p>
       <strong><%= text[:recensiya] %></strong>
@@ -57,3 +57,12 @@
 	<%= link_to text[:back], kritics_path %>
   </div>
 </div>
+<script type="text/javascript">
+    $('.review-rating').raty({
+      readOnly: true,
+      score: function(){
+         return $(this).attr("data-score");
+      },
+      path: "/assets/"
+    });
+  </script>

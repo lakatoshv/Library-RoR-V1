@@ -49,9 +49,35 @@
   end 
 %>
 <p id="notice"><%= notice %></p>
-<div class="text-center back">
-  <h1 class="col-md-6 col-md-offset-3"><%= text[:h1] %></h1></br>
-  <%= link_to text[:new], new_book_path %>
+<div class="back">
+  <div class="text-center">
+    <h1 class="col-md-6 col-md-offset-3"><%= text[:h1] %></h1></br>
+    <%= link_to text[:new], new_book_path %>
+  </div>
+  <br>
+</div>
+<div class="back">
+  <div class="text-left">
+    <ul class="list-inline">
+      <li>Сортувати за:</li>
+      <li>
+        <select id="sort" name="sort">
+          <option selected value="title">Назвою</option>
+          <option value="auth">Автором</option>
+          <option value="likes_qty">Лайками</option>
+          <option value="dislikes_qty">Дизлайками</option>
+        </select>
+      </li>
+      <li>Тип сортування:</li>
+      <li>
+        <select id="type_sort" name="type_sort">
+          <option selected value="asc">За спаданням</option>
+          <option value="desc">За зростанням</option>
+        </select>
+      </li>
+      <li><a id="sorting" class="btn btn-default" href="#">Сортувати</a></li>
+    </ul>
+  </div>
 </div>
 <div class="container">
   <div class="row">
@@ -80,3 +106,12 @@
     <%= will_paginate @books %>
   </div>
 <% end %>
+<script type="text/javascript">
+  $("#sorting").click(function(){
+            select = document.getElementById('sort');
+            value_sort=select.options[select.selectedIndex].value;
+            select=document.getElementById('type_sort');
+            type_sort=select.options[select.selectedIndex].value;
+            location = "?direction="+type_sort+"&page=1&sort="+value_sort;
+        });
+</script>

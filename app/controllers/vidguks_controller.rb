@@ -1,6 +1,6 @@
 class VidguksController < InheritedResources::Base
 before_action :set_vidguk, only: [:show, :edit, :update, :destroy]
-
+before_action :authenticate_user!, only: [:new, :edit]
   # GET /vidguks
   # GET /vidguks.json
   def index

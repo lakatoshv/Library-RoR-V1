@@ -1,14 +1,26 @@
 class BooksController < ApplicationController
  before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+ helper_method :sort_column, :sort_direction
   # GET /books
   # GET /books.json
   def index
+    if params[:direction]
+      session[:sort_by] = params[:direction]
+    else
+      session[:sort_by] = "title"
+    end
+    if params[:type_sort]
+      session[:type_sort] = params[:type_sort]
+    else
+      session[:type_sort] = "asc"
+    end
     if params[:search]
       books = Book.search(params[:search])
+      books = books.order(sort_column + " " + sort_direction)
       @books = books.paginate(page: params[:page], per_page: 5)
     else
-      @books = Book.paginate(page: params[:page], per_page: 5)
+      books = Book.order(sort_column + " " + sort_direction)
+      @books = books.paginate(page: params[:page], per_page: 5)
     end
   end
 
@@ -20,7 +32,10 @@ class BooksController < ApplicationController
     @kritic = Kritic.new
     @vidguk = Vidguk.new
   end
-
+  # GET /books/like
+  def like
+    @book = Book.search(params[:search])
+  end
   # GET /books/new
   def new
     @book = Book.new
@@ -71,6 +86,15 @@ class BooksController < ApplicationController
   end
 
   private
+    def sort_column
+      #params[:sort]|| "title"
+      params[:sort]||session[:sort_by]
+    end
+
+    def sort_direction
+      #params[:direction]||"asc"
+      params[:direction]||session[:type_sort]
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])

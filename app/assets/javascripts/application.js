@@ -18,3 +18,19 @@
 //= require bootstrap
 //= require_tree .
 
+$(document).ready(
+    function(){
+    	$(".show_kritics").click(function(){
+            $(".block_kritics").slideToggle(200);
+        });
+        $(".show_vidgucs").click(function(){
+            $(".block_vidgucs").slideToggle(200);
+        });
+        $(".add_kritics").click(function(){
+            $(".form_kritics").slideToggle(200);
+        });
+        $(".add_vidgucs").click(function(){
+            $(".form_vidgucs").slideToggle(200);
+        });
+    }
+);

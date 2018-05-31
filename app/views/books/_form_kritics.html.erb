@@ -1,4 +1,4 @@
-<% if session[:lang] == "ua" 
+ <% if session[:lang] == "ua" 
     text ={
       :name => "Ім'я",
       :title_book => "Назва книги",
@@ -47,11 +47,16 @@
       <label class="col-xs-2 control-label"><%= text[:recensiya] %></label>
       <%= f.text_field :recensiya, :class => "form-control" %>
     </div>
-    <div class="form-group">
+    <div id="rating-form" class="form-group">
       <label class="col-xs-2 control-label"><%= text[:ocinka] %></label>
-      <%= f.text_field :ocinka, :class => "form-control" %>
     </div>
     <div class="actions">
       <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>">
     </div>
   <% end %>
+  <script type="text/javascript">
+    $('#rating-form').raty({
+      path: "/assets/",
+      scoreName: "kritic[ocinka]"
+    });
+  </script>

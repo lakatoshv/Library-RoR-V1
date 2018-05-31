@@ -1,6 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700');
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
 .right {
   display: inline-block;
   float: right;
@@ -16,6 +24,26 @@ body {
         -moz-background-size: auto;
         -o-background-size: auto;
         background-size: auto;
+}
+#line{
+	height: 3px;
+	width: 100%;
+	background-color: silver;
+}
+.block_kritics{
+	display: none;
+}
+.block_vidgucs{
+	display: none;
+}
+.form_kritics{
+	display: none;
+}
+.form_vidgucs{
+	display: none;
+}
+.add_v{
+	display: none;
 }
 .comments{
 	text-align: left;

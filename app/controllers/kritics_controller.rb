@@ -1,6 +1,6 @@
 class KriticsController < ApplicationController
   before_action :set_kritic, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit]
   # GET /kritics
   # GET /kritics.json
   def index

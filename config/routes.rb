@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   resources :zhanrs
   resources :auths
   resources :line_items
-  resources :books
+  resources :books do
+    get 'like', to: 'books#like'
+  end
   resources :userparams
   resources :vidhucks
   resources :abouts
@@ -29,6 +31,7 @@ root :to => 'index#index'
   get'books', to: 'books#index'
   get 'new', to:'books#new'
   get 'show', to: 'books#show'
+  #get 'like', to: 'books#like'
 
   get 'edit', to: 'zhanr#edit'
   get'zhanr', to: 'zhanr#index'
