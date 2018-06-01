@@ -71,11 +71,11 @@
     </div>
     <div class="form-group">
       <label class="col-xs-2 control-label"><%= text[:label_I] %></label>
-      <%= f.text_field :image_url, :class => "form-control" %>
+      <%= f.file_field :image_url %>
     </div>
     <div class="form-group">
       <label class="col-xs-2 control-label">Адреса до файлу</label>
-      <%= f.text_area :url_to_book, :class => "form-control" %>
+      <%= f.file_field :url_to_book %>
     </div>
     <div class="form-group">
       <label class="col-xs-2 control-label">Адреса сайту з якого скачано</label>

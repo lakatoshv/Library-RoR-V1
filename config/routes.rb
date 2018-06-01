@@ -50,6 +50,7 @@ root :to => 'index#index'
   get 'new', to:'books#new'
   get 'show', to: 'books#show'
   #get 'like', to: 'books#like'
+  post 'downl', to: 'books#downl'
 
   get 'edit', to: 'zhanr#edit'
   get'zhanr', to: 'zhanr#index'

@@ -121,8 +121,18 @@
 
     <p>
       <strong><%= text[:label_I] %></strong>
-      <%= @book.image_url %>
+    <%= image_tag @book.image_url.url(:medium) %>
     </p>
+
+
+   <p> 
+<%=form_for :download, url:  downl_path do |f| %>
+<%= f.text_field :url_to_book %></br>
+<%= f.submit :Dowload %>
+<% end %>
+</p>
+
+
   </div>
   <div class="show_h2_content text-center">
     <%= link_to "Подобається", like_book_path(@book), class: "btn btn-default blue" %>

@@ -55,6 +55,11 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
+    upload_file = params[:book][:url_to_book]
+    File.open(Rails.root.join('public', 'uploads', upload_file.original_filename), 'wb') do |f|
+      f.write(upload_file.read)
+    end
+
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Книга успішно додана' }
@@ -64,6 +69,12 @@ class BooksController < ApplicationController
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+ def downl
+
+   filedown = params[:download][:url_to_book]
+   send_file Rails.root.join('public', 'uploads', filedown)
   end
 
   # PATCH/PUT /books/1
