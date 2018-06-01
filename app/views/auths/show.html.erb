@@ -35,9 +35,14 @@
       <strong><%= text[:label_A] %></strong>
       <%= @auth.book %>
     </p>
-
+    <p>
+      <span class="glyphicon glyphicon-thumbs-up"><%= @auth.get_likes.size %></span>
+      <span class="glyphicon glyphicon-thumbs-down"><%= @auth.get_dislikes.size %></span>
+    </p>
   </div>
-  <div class="show_h2_content text-center">
+   <div class="show_h2_content text-center">
+    <%= link_to "Подобається", like_auth_path(@auth), class: "btn btn-default blue" %>
+    <%= link_to "Неподобається", dislike_auth_path(@auth), class: "btn btn-default red" %><br>
     <%= link_to text[:edit], edit_auth_path(@auth) %> |
     <%= link_to text[:back], auths_path %>
   </div>

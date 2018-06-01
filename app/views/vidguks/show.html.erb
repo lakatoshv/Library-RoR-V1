@@ -51,8 +51,14 @@
       <strong><%= text[:recensiya] %></strong>
       <%= @vidguk.date %>
     </p>
+    <p>
+      <span class="glyphicon glyphicon-thumbs-up"><%= @vidguk.get_likes.size %></span>
+      <span class="glyphicon glyphicon-thumbs-down"><%= @vidguk.get_dislikes.size %></span>
+    </p>
   </div>
   <div class="show_h2_content text-center">
+    <%= link_to "Подобається", like_vidguk_path(@vidguk), class: "btn btn-default blue" %>
+    <%= link_to "Неподобається", dislike_vidguk_path(@vidguk), class: "btn btn-default red" %><br>
     <%= link_to text[:edit], edit_vidguk_path(@vidguk) %> |
 	<%= link_to text[:back], vidguks_path %>
   </div>

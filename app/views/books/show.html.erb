@@ -1,10 +1,13 @@
-
 <% suma_ocinok = 0 %>
 <% count = @kritics.count %>
 <% @kritics.each do |kritic| %>
   <% suma_ocinok += kritic.ocinka.to_i %>
 <% end %>
-<% ocinka_kritikiv = suma_ocinok/count %> 
+<% if suma_ocinok == 0 || count == 0 %>
+  <% ocinka_kritikiv = 0 %>
+<% else %> 
+  <% ocinka_kritikiv = suma_ocinok/count %> 
+<% end %>
 <% if session[:lang] == "ua" 
     text ={
       :label_T => "Назва",
@@ -83,13 +86,11 @@
   end 
 %>
 <div class="col-md-4 col-md-offset-4 back">
-<%= link_to :"text", book_like_path(@book) + "?search=" + @book.title %> 
   <p id="notice"><%= notice %></p>
   <div class="show_h2 text-center">
     <p>
       <strong><%= @book.title %></strong>
     </p>
-
     <p>
       <strong><%= @book.auth %></strong>
     </p>
@@ -103,6 +104,10 @@
       <ul class="list-inline">
       <li><strong>Оцінка критиків:</strong></li>
       <li><div class="review-rating" data-score="<%= ocinka_kritikiv %>"></div></li>
+    </p>
+    <p>
+      <span class="glyphicon glyphicon-thumbs-up"><%= @book.get_likes.size %></span>
+      <span class="glyphicon glyphicon-thumbs-down"><%= @book.get_dislikes.size %></span>
     </p>
     <p>
       <strong><%= text[:label_Q] %></strong>
@@ -120,14 +125,10 @@
     </p>
   </div>
   <div class="show_h2_content text-center">
-  <%= link_to "Лайкнути", book_like_path(@book) %>
+    <%= link_to "Подобається", like_book_path(@book), class: "btn btn-default blue" %>
+    <%= link_to "Неподобається", dislike_book_path(@book), class: "btn btn-default red" %><br>
     <%= link_to text[:edit], edit_book_path(@book) %> |
     <%= link_to text[:back], books_path %>
-  </div>
-  <br><br>
-  <div class="show_h2_content text-right">
-    <a href="../kritics?utf8=✓&search=<%= @book.title %>"><%= text[:kritic] %> | <a href="../kritics/new?utf8=✓&search=<%= @book.title %>"><%= text[:write_kritic] %><br>
-    <a href="../vidguks?utf8=✓&search=<%= @book.title %>"><%= text[:review] %> | <a href="../vidguks/new?utf8=✓&search=<%= @book.title %>"><%= text[:write_review] %>
   </div>
   <br><br><br>
   <div>
@@ -140,6 +141,10 @@
             <li><div class="review-rating" data-score="<%= kritic.ocinka %>"></div></li>
           </ul>
           <p><%= kritic.recensiya %></p>
+          <p>
+            <span class="glyphicon glyphicon-thumbs-up"><%= kritic.get_likes.size %></span>
+            <span class="glyphicon glyphicon-thumbs-down"><%= kritic.get_dislikes.size %></span>
+          </p>
           <div class="text-right">
             <%= link_to text[:delete], kritic, method: :delete, data: { confirm: text[:question] } %> | <%= link_to text[:edit], edit_kritic_path(kritic) %>
           </div>
@@ -164,6 +169,10 @@
             <li><h3><%= vidguk.date %></h3></li>
           </ul>
           <p><%= vidguk.vidguk %></p>
+          <p>
+            <span class="glyphicon glyphicon-thumbs-up"><%= vidguk.get_likes.size %></span>
+            <span class="glyphicon glyphicon-thumbs-down"><%= vidguk.get_dislikes.size %></span>
+          </p>
           <div class="text-right">
             <%= link_to text[:delete], vidguk, method: :delete, data: { confirm: text[:question] } %> | <%= link_to text[:edit], edit_vidguk_path(vidguk) %>
           </div>

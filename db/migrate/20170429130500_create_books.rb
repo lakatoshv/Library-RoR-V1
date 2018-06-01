@@ -10,6 +10,8 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.integer :likes_qty
       t.integer :dislikes_qty
       t.string :image_url
+      t.string :url_to_book
+      t.string :origin_url_to_book
       t.timestamps
     end
   end

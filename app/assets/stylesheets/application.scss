@@ -9,6 +9,14 @@
   url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
   url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+.blue:hover{
+	color: white;
+	background: lightblue;
+}
+.red:hover{
+	color: white;
+	background: red;
+}
 .right {
   display: inline-block;
   float: right;

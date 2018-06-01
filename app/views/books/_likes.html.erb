@@ -9,5 +9,6 @@
       </ul>
     </div>
   <% end %>
-  <%= f.text_field :likes_qty, :class => "form-control" %>
+  <%= book.likes_qty %>
+  <%= f.text_field :likes_qty, :class => "form-control", :value =>  :likes_qty%>
 <% end %>

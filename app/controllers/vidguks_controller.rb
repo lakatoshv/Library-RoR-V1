@@ -1,5 +1,5 @@
 class VidguksController < InheritedResources::Base
-before_action :set_vidguk, only: [:show, :edit, :update, :destroy]
+before_action :set_vidguk, only: [:show, :edit, :update, :destroy, :like, :dislike]
 before_action :authenticate_user!, only: [:new, :edit]
   # GET /vidguks
   # GET /vidguks.json
@@ -15,6 +15,14 @@ before_action :authenticate_user!, only: [:new, :edit]
   # GET /vidguks/1
   # GET /vidguks/1.json
   def show
+  end
+  def like
+    @vidguk.liked_by current_user
+    redirect_to :back
+  end
+  def dislike
+    @vidguk.disliked_by current_user
+    redirect_to :back
   end
 
   # GET /vidguks/new
@@ -72,7 +80,9 @@ before_action :authenticate_user!, only: [:new, :edit]
   end
 
   private
-
+  def find_kritic
+      @vidguk = Vidguk.search(params[:search])
+    end
   def set_vidguk
       @vidguk = Vidguk.find(params[:id])
     end

@@ -1,5 +1,5 @@
 class AuthsController < ApplicationController
-  before_action :set_auth, only: [:show, :edit, :update, :destroy]
+  before_action :set_auth, only: [:show, :edit, :update, :destroy, :like, :dislike]
 
   # GET /auths
   # GET /auths.json
@@ -15,7 +15,14 @@ class AuthsController < ApplicationController
   # GET /auths/1.json
   def show
   end
-
+  def like
+    @auth.liked_by current_user
+    redirect_to :back
+  end
+  def dislike
+    @auth.unliked_by current_user
+    redirect_to :back
+  end
   # GET /auths/new
   def new
     @auth = Auth.new
@@ -66,6 +73,9 @@ class AuthsController < ApplicationController
   end
 
   private
+    def find_auth
+      @auth = Auth.search(params[:search])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_auth
       @auth = Auth.find(params[:id])
@@ -73,6 +83,6 @@ class AuthsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def auth_params
-      params.require(:auth).permit(:auth, :book)
+      params.require(:auth).permit(:auth, :book, :biography)
     end
 end

@@ -73,6 +73,14 @@
       <label class="col-xs-2 control-label"><%= text[:label_I] %></label>
       <%= f.text_field :image_url, :class => "form-control" %>
     </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label">Адреса до файлу</label>
+      <%= f.text_area :url_to_book, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label">Адреса сайту з якого скачано</label>
+      <%= f.text_area :origin_url_to_book, :class => "form-control" %>
+    </div>
     <div class="actions">
       <input type="submit" name="submit" class="btn" value=<%= text[:submit] %>>
     </div>

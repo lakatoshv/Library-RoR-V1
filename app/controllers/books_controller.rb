@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
- before_action :set_book, only: [:show, :edit, :update, :destroy]
+ before_action :set_book, only: [:show, :edit, :update, :destroy, :like, :dislike]
  helper_method :sort_column, :sort_direction
   # GET /books
   # GET /books.json
@@ -34,7 +34,12 @@ class BooksController < ApplicationController
   end
   # GET /books/like
   def like
-    @book = Book.search(params[:search])
+    @book.liked_by current_user
+    redirect_to :back
+  end
+  def dislike
+    @book.disliked_by current_user
+    redirect_to :back
   end
   # GET /books/new
   def new
@@ -86,6 +91,10 @@ class BooksController < ApplicationController
   end
 
   private
+    def find_book
+      @book = Book.search(params[:search])
+    end
+
     def sort_column
       #params[:sort]|| "title"
       params[:sort]||session[:sort_by]
@@ -102,6 +111,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :auth, :zhanr, :pages_qty, :description, :image_url, :mini_description)
+      params.require(:book).permit(:title, :auth, :zhanr, :pages_qty, :description, :image_url, :mini_description, :url_to_book, :origin_url_to_book)
     end
 end

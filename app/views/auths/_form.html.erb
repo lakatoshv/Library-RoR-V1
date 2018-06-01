@@ -39,7 +39,10 @@
       <label class="col-xs-2 control-label"><%= text[:label_B] %></label>
       <%= f.text_field :book, :class => "form-control" %>
     </div>
-
+    <div class="form-group">
+      <label class="col-xs-2 control-label">Біографія</label>
+      <%= f.text_field :biography, :class => "form-control" %>
+    </div>
     <div class="actions">
       <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>">
     </div>

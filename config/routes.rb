@@ -12,15 +12,33 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :kritics
+  resources :kritics do
+    member do
+      get 'like', to: 'kritics#like'
+      get 'dislike', to: 'kritics#dislike'
+    end
+  end
   resources :zhanrs
-  resources :auths
+  resources :auths do
+    member do
+      get 'like', to: 'auths#like'
+      get 'dislike', to: 'auths#dislike'
+    end
+  end
   resources :line_items
   resources :books do
-    get 'like', to: 'books#like'
+    member do
+      get 'like', to: 'books#like'
+      get 'dislike', to: 'books#dislike'
+    end
   end
   resources :userparams
-  resources :vidhucks
+  resources :vidguks do
+    member do
+      get 'like', to: 'vidguks#like'
+      get 'dislike', to: 'vidguks#dislike'
+    end
+  end
   resources :abouts
 #  get 'home#index'
   get "books/index"

@@ -51,10 +51,16 @@
       <strong><%= text[:recensiya] %></strong>
       <%= @kritic.recensiya %>
     </p>
+    <p>
+      <span class="glyphicon glyphicon-thumbs-up"><%= @kritic.get_likes.size %></span>
+      <span class="glyphicon glyphicon-thumbs-down"><%= @kritic.get_dislikes.size %></span>
+    </p>
   </div>
-  <div class="show_h2_content text-center">
+  <di<div class="show_h2_content text-center">
+    <%= link_to "Подобається", like_kritic_path(@kritic), class: "btn btn-default blue" %>
+    <%= link_to "Неподобається", dislike_kritic_path(@kritic), class: "btn btn-default red" %><br>
     <%= link_to text[:edit], edit_kritic_path(@kritic) %> |
-	<%= link_to text[:back], kritics_path %>
+	 <%= link_to text[:back], kritics_path %>
   </div>
 </div>
 <script type="text/javascript">

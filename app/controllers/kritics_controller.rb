@@ -1,5 +1,5 @@
 class KriticsController < ApplicationController
-  before_action :set_kritic, only: [:show, :edit, :update, :destroy]
+  before_action :set_kritic, only: [:show, :edit, :update, :destroy, :like, :dislike]
   before_action :authenticate_user!, only: [:new, :edit]
   # GET /kritics
   # GET /kritics.json
@@ -10,6 +10,14 @@ class KriticsController < ApplicationController
     else
       redirect_to(books_path)
     end
+  end
+  def like
+    @kritic.liked_by current_user
+    redirect_to :back
+  end
+  def dislike
+    @kritic.disliked_by current_user
+    redirect_to :back
   end
 
   # GET /kritics/1
@@ -72,6 +80,9 @@ class KriticsController < ApplicationController
   end
 
   private
+    def find_kritic
+      @kritic = Kritic.search(params[:search])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_kritic
       @kritic = Kritic.find(params[:id])

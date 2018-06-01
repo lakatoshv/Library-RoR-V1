@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170507133146) do
+ActiveRecord::Schema.define(version: 20170510185131) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170507133146) do
   create_table "auths", force: :cascade do |t|
     t.string   "auth"
     t.string   "book"
+    t.string   "biography"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,8 +61,10 @@ ActiveRecord::Schema.define(version: 20170507133146) do
     t.integer  "likes_qty"
     t.integer  "dislikes_qty"
     t.string   "image_url"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "url_to_book"
+    t.string   "origin_url_to_book"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "kritics", force: :cascade do |t|
@@ -114,13 +117,18 @@ ActiveRecord::Schema.define(version: 20170507133146) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "vidhucks", force: :cascade do |t|
-    t.string   "name"
-    t.string   "title_book"
-    t.string   "vidguk"
-    t.string   "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "votes", force: :cascade do |t|
+    t.string   "votable_type"
+    t.integer  "votable_id"
+    t.string   "voter_type"
+    t.integer  "voter_id"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
   create_table "zhanrs", force: :cascade do |t|

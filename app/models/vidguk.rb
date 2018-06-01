@@ -1,4 +1,5 @@
 class Vidguk < ApplicationRecord
+	acts_as_votable
 	belongs_to :book
 	belongs_to :user
 	def self.search(search)

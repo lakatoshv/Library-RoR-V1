@@ -35,24 +35,46 @@
         </ul>
       </div>
     <% end %>
-
-    <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:name] %></label>
-      <%= f.text_field :name, :class => "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.text_field :title_book, :value => @book.title, :class => "form-control", :type => "hidden" %>
-    </div>
-    <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:recensiya] %></label>
-      <%= f.text_field :recensiya, :class => "form-control" %>
-    </div>
-    <div id="rating-form" class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:ocinka] %></label>
-    </div>
-    <div class="actions">
-      <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>">
-    </div>
+    <% if user_signed_in? %>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:name] %></label>
+        <%= f.text_field :name, :class => "form-control", :value => current_user.email, :disabled => "disabled" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :title_book, :value => @book.title, :class => "form-control", :type => "hidden" %>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:recensiya] %></label>
+        <%= f.text_field :recensiya, :class => "form-control" %>
+      </div>
+      <div id="rating-form" class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:ocinka] %></label>
+      </div>
+      <div class="actions">
+        <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>">
+      </div>
+    <% else %>
+      <div class="alert alert-danger">
+        <strong>Ви не авторизовані!</strong>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:name] %></label>
+        <%= f.text_field :name, :class => "form-control", :disabled => "disabled" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :title_book, :value => @book.title, :class => "form-control", :type => "hidden", :disabled => "disabled"  %>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:recensiya] %></label>
+        <%= f.text_field :recensiya, :class => "form-control", :disabled => "disabled"  %>
+      </div>
+      <div id="rating-form" class="form-group">
+        <label class="col-xs-2 control-label"><%= text[:ocinka] %></label>
+      </div>
+      <div class="actions">
+        <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>" disabled>
+      </div>
+    <% end %>
   <% end %>
   <script type="text/javascript">
     $('#rating-form').raty({
