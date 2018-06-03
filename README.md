@@ -63,8 +63,8 @@
 2. [1.5.3](https://github.com/lakatoshv/Library-RoR-V1/tree/v5.3)
     - _Додані стилі_
     
-4. [1.5.4](https://github.com/sgstriker/library-with-SQLite/tree/library_v5/v5-4)
+4. [1.5.4](https://github.com/lakatoshv/Library-RoR-V1/tree/v5.4)
     - _Додана можливість скачати книгу_
 
-5. [1.5.5](https://github.com/sgstriker/library-with-SQLite/tree/library_v5/v5-5)
+5. [1.5.5](https://github.com/lakatoshv/Library-RoR-V1/tree/v5.5)
     - _Виправлена помилка з адмінкою_
