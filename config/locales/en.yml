@@ -1,23 +1,166 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  abouts:
+    about_program:
+      title: "About site"
+      description: "This site is full curriculum, so if you have I noticed any copyright infringement that go "
+      here: "here"
+
+    about_us:
+      title: "About us"
+      front-end: "Lakatosh Vitaliy"
+      back-end: "Danko Olexandr"
+      manager: "Popovich Andriy"
+      manager_t: "Manager"
+      leader: "team leader"
+      github: "Github of project"
+      follow: "Follow us on Github:"
+
+    for_holders:
+      title: "Authors and holders"
+      text-1: "If you are the owner, author or legal representative of the owner (author) in the website and other information and you have objections or comments on this fact, want to add to it or change to clarify any information or to publish other documents, then let us at"
+      text-2: ", attaching the letter to confirm your rights to material protected by copyright and page reference book on our website. After reading, we will take all measures to eliminate facts that violate your property rights or perform other reasonable requirements.
+Site administration necessarily remove all information that violates copyright holders upon request.
+Blocking materials occurs as soon as possible, no more than 3 days."
+
+  auths:
+    form:
+      auth: "Author"
+      book: "Book/Books"
+      biography: "Biography"
+      submit: "Submit"
+      back: "Back"
+
+    edit:
+      title: "Editing"
+      show: "Show"
+      back: "Back"
+
+    index:
+      title: "Authors"
+      show: "Show"
+      edit: "Edit"
+      delete: "Remove"
+      question: "Are you sure?"
+      new: "Add new author"
+      back: "Back"
+      delete: "Delete"
+    
+    new:
+      title: "Add new author"
+
+    show:
+      book: "Book/Books"
+      edit: "Edit"
+      back: "Back"
+      biography: "Biography"
+      like: "Like"
+      dislike: "Do not like"
+
+  books:
+    form:
+      title: "Name"
+      auth: "Author"
+      zhanr: "Genre"
+      qty: "Number of pages"
+      description: "Description"
+      mini_description: "Mini description"
+      image_url: "Address to the picture"
+      submit: "Submit"
+      file_name: "File name"
+      downloaded_from: "Site address from which downloaded"
+      url_to_file: "Address to file"
+      file_extension: "File extension"
+      language: "Language"
+      back: "Back"
+
+    form_kritics:
+      name: "Author"
+      title_book: "Name of book"
+      recensiya: "Review"
+      ocinka: "Rating"
+      submit: "Submit"
+      message: "You are not authorized!"
+
+    form_vidguks:
+      name: "Author"
+      title_book: "Name of book"
+      recensiya: "Review"
+      ocinka: "Date"
+      submit: "Submit"
+      message: "You are not authorized!"
+
+    edit:
+      title: "Editing a book"
+      show: "Show"
+
+    index:
+      label_T: "Name"
+      label_A: "Author"
+      label_Z: "Genre"
+      label_Q: "Number of pages"
+      label_D: "Description"
+      label_I: "Address to the picture"
+      h1: "Books"
+      show: "Show"
+      edit: "Edit"
+      delete: "Remove"
+      question: "Are you sure?"
+      new: "Add new book"
+      back: "Back"
+      sort_by: "Sort by"
+      by_title: "Name"
+      by_auth: "Author"
+      by_likes: "Likes"
+      by_dislikes: "Dislikes"
+      type_sort: "Sorting type"
+      asc: "Descending"
+      desc: "Ascending"
+      sort: "Sort"
+
+    new:
+      h1: "Add new book"
+
+    show:
+      label_T: "Name"
+      label_A: "Author"
+      label_Z: "Genre:"
+      label_Q: "Number of pages:"
+      label_D: "Description:"
+      label_:I: "Address to the picture"
+      edit: "Edit"
+      kritic: "Critics"
+      write_kritic: "Write critics"
+      review: "Reviews"
+      write_review: "Write a review"
+      kritics: "Kritics"
+      vidguks: "Reviews"
+      show: "Show"
+      edit: "Edit"
+      delete: "Remove"
+      question: "Are you sure?"
+      kritic: "New critics"
+      vidguk: "New review"
+      back: "Back"
+      ocinka_kritikiv: "Kritics review:"
+      read: "Read: "
+      language: "Language:"
+      download: "Download:"
+      buy: "Buy:"
+      like: "Like"
+      dislike: "Do not like"
+
+  layouts:
+    application:
+      ua: "Ua"
+      ru: "Ru"
+      en: "En"
+
+  users:
+    sessions:
+      new:
+        title: "Log in"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        remember: "Remember me"
+

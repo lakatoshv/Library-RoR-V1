@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
   
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
   
 gem 'sass-rails', '~> 5.0'
 
@@ -44,7 +44,7 @@ gem 'paperclip'
 #Devise {autorisation}
 gem 'devise'
 
-gem 'activeadmin'
+#gem 'activeadmin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

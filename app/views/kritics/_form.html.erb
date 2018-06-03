@@ -38,7 +38,7 @@
     <% if user_signed_in? %>
       <div class="form-group">
         <label class="col-xs-2 control-label"><%= text[:name] %></label>
-        <%= f.text_field :name, :class => "form-control", :value => session[:user_email], :disabled => "disabled"  %>
+        <%= f.text_field :name, :class => "form-control" %>
       </div>
       <div class="form-group">
         <label class="col-xs-2 control-label"><%= text[:title_book] %></label>

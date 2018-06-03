@@ -1,38 +1,3 @@
-<% if session[:lang] == "ua" 
-    text ={
-      :label_T => "Назва",
-      :label_A => "Автор",
-      :label_Z => "Жанр",
-      :label_Q => "Кількість сторінок",
-      :label_D => "Опис",
-      :label_MD => "Короткий опис",
-      :label_I => "Адреса до картинки",
-      :submit => "Підтвердити"
-    } 
-  elsif session[:lang] == "en" 
-    text ={
-      :label_T => "Name",
-      :label_A => "Author",
-      :label_Z => "Genre",
-      :label_Q => "Number of pages",
-      :label_D => "Description",
-      :label_MD => "Mini description",
-      :label_I => "Address to the picture",
-      :submit => "Submit"
-    } 
-  elsif session[:lang] == "ru"
-    text ={
-      :label_T => "Название",
-      :label_A => "Автор",
-      :label_Z => "Жанр",
-      :label_Q => "Количество страниц",
-      :label_D => "Описание",
-      :label_MD => "Краткое описание",
-      :label_I => "Адрес к картинке",
-      :submit => "Подтвердить"
-    } 
-  end   
-%>
 <div class="col-md-4 col-md-offset-4">
   <%= form_for(book) do |f| %>
     <% if book.errors.any? %>
@@ -46,43 +11,59 @@
       </div>
     <% end %>
     <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:label_T] %></label>
+      <label class="col-xs-2 control-label"><%= t ".title" %></label>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:label_A] %></label>
+      <label class="col-xs-2 control-label"><%= t ".auth" %></label>
       <%= f.text_field :auth, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:label_Z] %></label>
+      <label class="col-xs-2 control-label"><%= t ".zhanr" %></label>
       <%= f.text_field :zhanr, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:label_Q] %></label>
+      <label class="col-xs-2 control-label"><%= t ".qty" %></label>
       <%= f.text_field :pages_qty, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:label_MD] %></label>
+      <label class="col-xs-2 control-label"><%= t ".mini_description" %></label>
       <%= f.text_area :mini_description, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:label_D] %></label>
+      <label class="col-xs-2 control-label"><%= t ".description" %></label>
       <%= f.text_area :description, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label"><%= text[:label_I] %></label>
-      <%= f.file_field :image_url %>
+      <label class="col-xs-2 control-label"><%= t ".file_name" %></label><br>
+      <%= f.text_field :name_of_file, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label">Адреса до файлу</label>
-      <%= f.file_field :url_to_book %>
+      <label class="col-xs-2 control-label"><%= t ".language" %></label><br>
+      <%= f.text_field :language, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <label class="col-xs-2 control-label">Адреса сайту з якого скачано</label>
-      <%= f.text_area :origin_url_to_book, :class => "form-control" %>
+      <label class="col-xs-2 control-label"><%= t ".file_extension" %></label>
+      <%= f.text_field :rozshirennya, :class => "form-control" %>
     </div>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= t ".image_url" %></label><br>
+      <%= f.file_field :image_url, :class => "loader"%>
+    </div><br>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= t ".url_to_file" %></label><br>
+      <%= f.file_field :url_to_book, :class => "loader" %>
+    </div><br>
+    <div class="form-group">
+      <label class="col-xs-2 control-label"><%= t ".downloaded_from" %></label><br>
+      <%= f.text_field :origin_url_to_book, :class => "form-control" %>
+    </div><br>
     <div class="actions">
-      <input type="submit" name="submit" class="btn" value=<%= text[:submit] %>>
+      <% 
+        submit = t ".submit" 
+        back = t ".back"
+      %>
+      <%= f.button submit, class: "btn btn-default" %><%= link_to back, books_path, class: "btn btn-default pull-right" %>
     </div>
   <% end %>
 </div>

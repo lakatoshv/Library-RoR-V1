@@ -1,15 +1,27 @@
-<%= form_for @userparam do |f|%>
+<div class="col-md-4 col-md-offset-4 back">
+	<%= form_for @userparam do |f|%>
+		<div class = "form-group">
+			<%= f.label :firstname %>
+			<%= f.text_field :firstname, class: "form-control" %>
+		</div>
 
-		<%= f.label :firstname %> </br>
-		<%= f.text_field :firstname %> </br>
+		<div class = "form-group">
+			<%= f.label :lastname %>
+			<%= f.text_field :lastname, class: "form-control" %>
+		</div>
 
-		<%= f.label :lastname %> </br>
-		<%= f.text_field :lastname %> </br>
+		<div class = "form-group">
+			<%= f.label :city %>
+			<%= f.text_field :city, class: "form-control" %>
+		</div>
 
-		<%= f.label :city %> </br>
-		<%= f.text_field :city %> </br>
+		<div class = "form-group">
+			<%= f.label :avatar %>
+			<%= f.file_field :avatar%>
+		</div>
 
-
-		<%= f.submit "Add"%>
-
-<% end %>
+		<div class = "form-group">
+			<%= f.button :submit, class: "btn btn-info pull-right" %>
+		</div>
+	<%end%>
+</div>

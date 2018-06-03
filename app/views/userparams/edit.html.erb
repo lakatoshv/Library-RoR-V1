@@ -1,2 +1,27 @@
-<h1>Userparams#edit</h1>
-<p>Find me in app/views/userparams/edit.html.erb</p>
+<div class="col-md-4 col-md-offset-4 back">
+	<%= form_for @userparam do |f|%>
+		<div class = "form-group">
+			<%= f.label :firstname %>
+			<%= f.text_field :firstname, class: "form-control" %>
+		</div>
+
+		<div class = "form-group">
+			<%= f.label :lastname %>
+			<%= f.text_field :lastname, class: "form-control" %>
+		</div>
+
+		<div class = "form-group">
+			<%= f.label :city %>
+			<%= f.text_field :city , class: "form-control" %>
+		</div>
+
+		<div class = "form-group">
+			<%= f.label :avatar %>
+			<%= f.file_field :avatar%>
+		</div>
+
+		<div class = "form-group">
+			<%= f.button :submit, class: "btn btn-info pull-right" %>
+		</div>
+	<%end%>
+</div>

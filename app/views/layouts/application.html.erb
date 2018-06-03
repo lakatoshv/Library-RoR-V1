@@ -93,14 +93,19 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><%= text[:lang] %><b class=" icon-angle-down"></b></a>
                 <ul class="dropdown-menu">
+                  <% 
+                    ua = t ".ua"
+                    ru = t ".ru"
+                    en = t ".en"
+                  %>
                   <li>
-                    <a href="../index?lang=ua"><%= text[:ua] %></a>
+                    <%= link_to_unless_current ua, locale: "ua" %>
                   </li>
                   <li>
-                    <a href="../index?lang=ru"><%= text[:ru] %></a>
+                    <%= link_to_unless_current ru, locale: "ru" %>
                   </li>
                   <li>
-                    <a href="../index?lang=en"><%= text[:en] %></a>
+                    <%= link_to_unless_current en, locale: "en" %>
                   </li>
                 </ul>
               </li>
@@ -127,6 +132,7 @@
           <ul class="list-inline">
             <li><h3 class="menu_head"><%= link_to text[:about_site], abouts_about_program_path %></h3></li>
             <li><h3 class="menu_head"><%= link_to text[:about_us], abouts_about_us_path %></h3></li>
+            <li><h3 class="menu_head"><%= link_to "Правовласникам", for_holders_path %></h3></li>
           </ul>
         </div>
       </div>

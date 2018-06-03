@@ -15,6 +15,16 @@ class UserparamsController < ApplicationController
   end
 
   def edit
+    @userparam = Userparam.find_by_user_id(current_user.id)
+  end
+
+  def update
+      @userparam = Userparam.find_by_user_id(current_user.id)
+      if @userparam.update(user_params)
+        redirect_to profile_path
+      else
+        render 'edit'
+      end
   end
 
   def profile
@@ -22,7 +32,7 @@ class UserparamsController < ApplicationController
 
   private
 def user_params
-  params.require(:userparam).permit(:firstname, :lastname, :city)
+  params.require(:userparam).permit(:firstname, :lastname, :city, :avatar)
   
 end
 end

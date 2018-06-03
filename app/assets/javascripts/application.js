@@ -17,7 +17,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require_tree .
-
+/*
 $(document).ready(
     function(){
     	$(".show_kritics").click(function(){
@@ -34,3 +34,4 @@ $(document).ready(
         });
     }
 );
+*/

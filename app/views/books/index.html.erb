@@ -1,84 +1,37 @@
-<% if session[:lang] == "ua" 
-    text ={
-      :label_T => "Назва",
-      :label_A => "Автор",
-      :label_Z => "Жанр",
-      :label_Q => "Кількість сторінок",
-      :label_D => "Опис",
-      :label_I => "Адреса до картинки",
-      :h1 => "Книги",
-      :show => "Показати",
-      :edit => "Редагувати",
-      :delete => "Видалити",
-      :question => "Ви впевнені?",
-      :new => "Додати нову книгу",
-      :back => "Назад"
-    } 
-  elsif session[:lang] == "en" 
-    text ={
-      :label_T => "Name",
-      :label_A => "Author",
-      :label_Z => "Genre",
-      :label_Q => "Number of pages",
-      :label_D => "Description",
-      :label_I => "Address to the picture",
-      :h1 => "Books",
-      :show => "Show",
-      :edit => "Edit",
-      :delete => "Remove",
-      :question => "Are you sure?",
-      :new => "Add new book",
-      :back => "Back"
-    } 
-  elsif session[:lang] == "ru"
-    text ={
-      :label_T => "Название",
-      :label_A => "Автор",
-      :label_Z => "Жанр",
-      :label_Q => "Количество страниц",
-      :label_D => "Описание",
-      :label_I => "Адрес к картинке",
-      :h1 => "Книги",
-      :show => "Показать",
-      :edit => "Редактировать",
-      :delete => "Удалить",
-      :question => "Вы уверены?",
-      :new => "Добавить новую книгу",
-      :back => "Назад"
-    } 
-  end 
-%>
 <p id="notice"><%= notice %></p>
 <div class="back">
   <div class="text-center">
-    <h1 class="col-md-6 col-md-offset-3"><%= text[:h1] %></h1></br>
-    <%= link_to text[:new], new_book_path %>
+    <h1 class="col-md-6 col-md-offset-3"><%= t ".h1" %></h1></br>
+    <% n = t ".new" %>
+    <%= link_to n, new_book_path %>
   </div>
   <br>
 </div>
+<% if @books.count > 1 %> 
 <div class="back">
   <div class="text-left">
     <ul class="list-inline">
-      <li>Сортувати за:</li>
+      <li><%= t ".sort_by" %></li>
       <li>
         <select id="sort" name="sort">
-          <option selected value="title">Назвою</option>
-          <option value="auth">Автором</option>
-          <option value="likes_qty">Лайками</option>
-          <option value="dislikes_qty">Дизлайками</option>
+          <option selected value="title"><%= t ".by_title" %></option>
+          <option value="auth"><%= t ".by_auth" %></option>
+          <option value="likes_qty"><%= t ".by_likes" %></option>
+          <option value="dislikes_qty"><%= t ".by_dislikes" %></option>
         </select>
       </li>
-      <li>Тип сортування:</li>
+      <li><%= t ".type_sort" %></li>
       <li>
         <select id="type_sort" name="type_sort">
-          <option selected value="asc">За спаданням</option>
-          <option value="desc">За зростанням</option>
+          <option selected value="asc"><%= t ".asc" %></option>
+          <option value="desc"><%= t ".desc" %></option>
         </select>
       </li>
-      <li><a id="sorting" class="btn btn-default" href="#">Сортувати</a></li>
+      <li><a id="sorting" class="btn btn-default" href="#"><%= t ".sort" %></a></li>
     </ul>
   </div>
 </div>
+<% end %>
 <div class="container">
   <div class="row">
     <% @books.each do |book| %>
@@ -86,21 +39,27 @@
         <div class="box">
           <div class="box-gray aligncenter">
             <h3><%= link_to book.title, book, :class => "product" %></h3>
-            <h4><a href="/auths?utf8=✓&search=<%= book.auth %>&commit=Пошук" class="product"><%= book.auth %></a></h4>
+            <h4><%= link_to book.auth, auths_path + "?utf8=✓&search=" + book.auth + "&commit=Пошук", :class => "product" %></h4>
             <div class="icon">
-              
               <i class="fa fa-desktop fa-3x"></i>
             </div>
-            <p>
-              <%= book.mini_description %><br/>
-               <%= link_to text[:delete], book, method: :delete, data: { confirm: text[:question] } %> 
-            </p>
+            <div class="product-item">
+              <%= image_tag book.image_url.url(:medium), :class => "img-thumbnail" %>
+              <div class="product-buttons">
+                <%= book.mini_description %><br/>
+                <% 
+                  delete = t ".delete"
+                  question = t ".question"
+                %>
+                <%= link_to delete, book, method: :delete, data: { confirm: question } %> 
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      
+    </div>
     <% end %>
   </div>
-</div>
 <% if @books.count > 5 %>
   <div class="col-md-6 col-md-offset-3 text-center back">
     <%= will_paginate @books %>
