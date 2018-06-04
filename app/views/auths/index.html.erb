@@ -1,28 +1,18 @@
 <p id="notice"><%= notice %></p>
 <div class="text-center back">
-  <h1 class="col-md-6 col-md-offset-3"><%= t ".title" %></h1></br>
-  <% a_new = t ".new" %> 
-  <%= link_to a_new, new_auth_path %>
+  <h1 class="col-md-6 col-md-offset-3"><%= t ".title" %></h1><br><br>
 </div>
 <div class="container">
   <div class="row">
     <% @auths.each do |auth| %>
       <div class="col-lg-3">
-        <div class="box">
+        <div class="box-auth">
           <div class="box-gray aligncenter">
             <h3><%= link_to auth.auth, auth, :class => "product" %></h3>
             <h4><%= link_to auth.book, books_path + "?utf8=✓&search=" + auth.book + "&commit=Пошук", :class => "product" %></h4>
             <div class="icon">
               <i class="fa fa-desktop fa-3x"></i>
             </div>
-            <p>
-              <% 
-                del = t ".delete" 
-                edit = t ".edit"
-                question = t ".question"
-              %>
-               <%= link_to del, auth, method: :delete, data: { confirm: question } %>  | <%= link_to edit, edit_auth_path(auth) %>
-            </p>
           </div>
         </div>
       </div>

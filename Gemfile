@@ -7,9 +7,8 @@ end
 
   
 #gem 'bootstrap-sass'
-  
 gem 'sass-rails', '~> 5.0'
-
+gem "pdf-reader"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
@@ -44,7 +43,7 @@ gem 'paperclip'
 #Devise {autorisation}
 gem 'devise'
 
-#gem 'activeadmin'
+gem 'activeadmin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,3 +67,5 @@ gem 'acts_as_votable', '~> 0.10.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
+
+gem "rails-i18n"

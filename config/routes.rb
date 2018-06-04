@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope ":locale" do
+  scope ":locale" , defaults: { locale: I18n.locale } do
     resources :vidguks
     get 'abouts/about_us'
 
@@ -11,8 +11,12 @@ Rails.application.routes.draw do
 
     get 'userparams/profile'
 
-    #devise_for :admin_users, ActiveAdmin::Devise.config
-    #ActiveAdmin.routes(self)
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    ActiveAdmin.routes(self)
+
+  devise_scope :admin_user do
+    get 'admin/logout', :to => 'active_admin/devise/sessions#destroy'
+  end
     resources :kritics do
       member do
         get 'like', to: 'kritics#like'
@@ -20,6 +24,11 @@ Rails.application.routes.draw do
       end
     end
     resources :zhanrs
+    resources :books do
+      member do
+        get 'read', to: 'books#read'
+      end
+    end
     resources :auths do
       member do
         get 'like', to: 'auths#like'
@@ -33,7 +42,6 @@ Rails.application.routes.draw do
         get 'dislike', to: 'books#dislike'
       end
     end
-    resources :userparams
     resources :vidguks do
       member do
         get 'like', to: 'vidguks#like'
@@ -42,20 +50,18 @@ Rails.application.routes.draw do
     end
     resources :abouts
   #  get 'home#index'
-    get "books/index"
-  root :to => 'index#index'
+    root :to => 'index#index'
     get 'index', to: 'index#index'
 
-    get 'edit', to: 'books#edit'
+    #get 'edit', to: 'books#edit'
     get'books', to: 'books#index'
-    get 'new', to:'books#new'
+    #get 'read', to:'books#read'
     get 'show', to: 'books#show'
-    #get 'like', to: 'books#like'
     post 'downl', to: 'books#downl'
 
-    get 'edit', to: 'zhanr#edit'
+    #get 'edit', to: 'zhanr#edit'
     get'zhanr', to: 'zhanr#index'
-    get 'new', to:'zhanr#new'
+    #get 'new', to:'zhanr#new'
     get 'show', to: 'zhanr#show'
 
     get 'edit', to: 'auth#edit'
@@ -85,6 +91,7 @@ Rails.application.routes.draw do
   end
   get 'show', to: 'home#show'
   get  'profile', to: 'userparams#profile'
+  get 'my_books', to: "userparams#my_books"
   resources :userparams
 
 
@@ -92,6 +99,6 @@ Rails.application.routes.draw do
     devise_for :users
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
-  #match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
-  #match '', to: redirect("/#{I18n.default_locale}/%{path}")
+  get '*path', to: redirect("/#{I18n.default_locale}/%{*path}")
+  get '', to: redirect("/#{I18n.default_locale}/index")
 end

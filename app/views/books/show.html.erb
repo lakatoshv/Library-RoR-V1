@@ -34,9 +34,15 @@
       <li><strong><%= t ".ocinka_kritikiv" %></strong></li>
       <li><div class="review-rating" data-score="<%= ocinka_kritikiv %>"></div></li>
     </p>
+    <%
+      like = t ".like"
+      dislike = t ".dislike"
+    %>
     <p>
       <span class="glyphicon glyphicon-thumbs-up"><%= @book.get_likes.size %></span>
       <span class="glyphicon glyphicon-thumbs-down"><%= @book.get_dislikes.size %></span>
+      <%= link_to like, like_book_path(@book), class: "btn btn-default blue" %>
+      <%= link_to dislike, dislike_book_path(@book), class: "btn btn-default red" %><br>
     </p>
     <p>
       <strong><%= t ".label_Q" %></strong>
@@ -47,7 +53,7 @@
       <%= @book.description %>
     </p>
     <p>
-      <strong><%= t ".read" %></strong>
+      <strong><% read = t ".read" %><%= link_to read, read_book_path(@book), class: "btn btn-default" %> </strong>
       <%= t ".language" %> - <%= @book.language %>
     </p>
     <p> 
@@ -56,14 +62,10 @@
         <li>
           <%=form_for :download, url:  downl_path do |f| %>
             <%= f.text_field :url_to_book, :value => @book.name_of_file + "." + @book.rozshirennya, :type => "hidden" %>
-            <%= f.submit @book.rozshirennya %>
+            <%= f.submit @book.rozshirennya, class: "btn btn-default", :id => "download" %>
           <% end %>
         </li>
       </ul>
-    </p>
-    <p>
-      <strong><%= t ".buy" %></strong><br>
-      <a href="https://market.yandex.ru/search?cvredirect=2&text=<%= @book.title %>&suggest_reqid=830016512148181348543684335130707">На Яндекс.Маркеті</a>
     </p>
 
   </div>
@@ -75,11 +77,9 @@
       back = t ".back"
       delete = t ".delete"
       question = t ".question"
+      read = t ".read"
     %>
-    <%= link_to like, like_book_path(@book), class: "btn btn-default blue" %>
-    <%= link_to dislike, dislike_book_path(@book), class: "btn btn-default red" %><br>
-    <%= link_to edit, edit_book_path(@book) %> |
-    <%= link_to back, books_path %>
+    <%= link_to back, books_path, class: "btn btn-default" %>
   </div>
   <br><br><br>
   <div>
@@ -140,6 +140,12 @@
   </div>
 </div>
  <script type="text/javascript">
+    $("#download").click(function(){
+      var download = confirm("<%= t ".question" %>");
+      if(!download){
+        window.event.cancelBubble = true;
+      }
+    });
     $('.review-rating').raty({
       readOnly: true,
       score: function(){

@@ -1,64 +1,7 @@
-<% if session[:lang] == "ua" 
-    text ={ 
-      :title => "Бібліотека на RubyOnRails",
-      :name => "Бібліотека Ruby On Rails",
-      :books => "Книги",
-      :registration => "Реєстрація",
-      :autorisation => "Авторизація",
-      :exit => "Вихід",
-      :lang => "Мова",
-      :ua => "укр",
-      :ru => "рус",
-      :en => "анг",
-      :auth => "Автори",
-      :zhanr => "Жанри",
-      :about_site => "Про сайт",
-      :about_us => "Про нас",
-      :submit => "Пошук"
-    } 
-  elsif session[:lang] == "en" 
-    text ={
-      :title => "Library on RubyOnRails",
-      :name => "Library Ruby On Rails",
-      :books => "Books",
-      :registration => "Registration",
-      :autorisation => "Autorisation",
-      :exit => "Exit",
-      :lang => "Language",
-      :ua => "ua",
-      :ru => "ru",
-      :en => "en",
-      :auth => "Authors",
-      :zhanr => "Genres",
-      :about_site => "About site",
-      :about_us => "About us",
-      :submit => "Search"
-    } 
-  elsif session[:lang] == "ru"
-    text ={
-      :title => "Библиотека на RubyOnRails",
-      :name => "Библиотека Ruby On Rails",
-      :books => "Книги",
-      :registration => "Реєстрация",
-      :autorisation => "Авторизация",
-      :exit => "Виход",
-      :lang => "Язык",
-      :ua => "укр",
-      :ru => "рус",
-      :en => "анг",
-      :auth => "Автори",
-      :zhanr => "Жанри",
-      :about_site => "О сайте",
-      :about_us => "О нас",
-      :submit => "Поиск"
-    } 
-  end 
-%>
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= text[:title] %></title>
+    <title><%= t ".title" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -68,7 +11,7 @@
   <body>
   <div id="wrapper">
     <header>
-      <div class="navbar navbar-default navbar-static-top">
+      <div class="navbar navbar-default navbar-fixed-top navbar-static-top">
         <div class="container">
           <div class="navbar-header">`
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -76,22 +19,30 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <h1><a class="navbar-brand" href=""><%= text[:name]%></a></h1>
+            <h1><a class="navbar-brand" href=""><%= t ".name"%></a></h1>
           </div>
           <div class="navbar-collapse collapse ">
             <ul class="nav navbar-nav">
-              <li><%= link_to text[:auth], auths_path %></li>
-              <li><%= link_to text[:zhanr], zhanrs_path %></li>
-              <li><%= link_to text[:books], books_path %></li>
+              <%
+                auths = t ".auth"
+                zhanr = t ".zhanr"
+                books = t ".book"
+                exit_user = t ".exit"
+                registration = t ".registration"
+                autorisation = t ".autorisation"
+              %>
+              <li><%= link_to auths, auths_path %></li>
+              <li><%= link_to zhanr, zhanrs_path %></li>
+              <li><%= link_to books, books_path %></li>
               <% if user_signed_in? %>
                 <li><%= link_to current_user.email, profile_path %></li>
-                <li><%= link_to text[:exit], sign_out_path  %></li>
+                <li><%= link_to exit_user, sign_out_path  %></li>
               <% else %>
-                <li class="active"><%= link_to text[:registration], sign_up_path %></li>
-                <li><%= link_to text[:autorisation], sign_in_path %></li>
+                <li class="active"><%= link_to registration, sign_up_path %></li>
+                <li><%= link_to autorisation, sign_in_path %></li>
               <% end %>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><%= text[:lang] %><b class=" icon-angle-down"></b></a>
+                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><%= t ".lang" %><b class=" icon-angle-down"></b></a>
                 <ul class="dropdown-menu">
                   <% 
                     ua = t ".ua"
@@ -100,43 +51,73 @@
                   %>
                   <li>
                     <%= link_to_unless_current ua, locale: "ua" %>
+                    <!--<img src="../images/langs/ua.png">-->
                   </li>
                   <li>
-                    <%= link_to_unless_current ru, locale: "ru" %>
+                    <%= link_to_unless_current ru, locale: "ru"%>
+                    <!--<img src="../images/langs/ru.png">-->
                   </li>
                   <li>
                     <%= link_to_unless_current en, locale: "en" %>
+                    <!--<img src="../images/langs/en.png">-->
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
-          <div class="nav navbar-nav right">
-            <%= form_tag(books_path, :method => 'get', :class => "form-search") do %>
-              <p>
-                <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
-                <%= submit_tag text[:submit], :class => "btn" %>
-              </p>
-            <% end %>
+          <div class="nav navbar-nav right form-search">
+            <p>
+              <%= t ".look_in" %>
+              <select id="search_in" name="search_in">
+                <% if cookies[:search_in] && cookies[:search_in] == "auths" %>
+                    <option value="books"><%= t ".books" %></option>
+                    <option selected value="auths"><%= t ".auths" %></option>
+                <% else %>
+                  <option selected value="books"><%= t ".books" %></option>
+                  <option value="auths"><%= t ".auths" %></option>
+                <% end %>
+              </select>
+              <%= text_field_tag :search, params[:search], :id => "search", :class => "input-medium search-query" %>
+              <input type="submit" id="submit" class="btn submit" value="<%= t ".submit" %>" %>
+            </p>
           </div>
         </div>
       </div>
     </header>
   </div>  
+  <br><br><br><br><br><br><br>
   <%= yield %>
+  <br><br><br>
   <div class="clear"></div>
   <div id="wrapper" class="navbar-fixed-bottom row-fluid">
     <div class="navbar-inner">
       <div class="container">
         <div id="footer" class="navbar navbar-default navbar-static-bottom col-md-6 col-md-offset-3">
           <ul class="list-inline">
-            <li><h3 class="menu_head"><%= link_to text[:about_site], abouts_about_program_path %></h3></li>
-            <li><h3 class="menu_head"><%= link_to text[:about_us], abouts_about_us_path %></h3></li>
-            <li><h3 class="menu_head"><%= link_to "Правовласникам", for_holders_path %></h3></li>
+            <%
+              about_us = t ".about_us"
+              about_site = t ".about_site"
+              holders = t ".holders"
+            %>
+            <li><h3 class="menu_head"><%= link_to about_site, abouts_about_program_path %></h3></li>
+            <li><h3 class="menu_head"><%= link_to about_us, abouts_about_us_path %></h3></li>
+            <li><h3 class="menu_head"><%= link_to holders, for_holders_path %></h3></li>
           </ul>
         </div>
       </div>
-    </div>
+    </div><% locale = I18n.locale %>
   </div>
+  <script type="text/javascript">
+      function cheked(select) {
+        return select.val();
+      };
+      $("#submit").click(function(){
+        search_in=cheked($("#search_in"));
+        search=document.getElementById('search').value;
+        document.cookie = "search_in=" + search_in;
+        locale = "<%= locale %>"
+        location =  search_in + "?utf8=✓&search=" + search + "&commit=Пошук";
+      });
+  </script>
   </body>
 </html>

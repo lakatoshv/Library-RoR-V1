@@ -1,29 +1,3 @@
-<% if session[:lang] == "ua" 
-    text ={
-      :name => "Ім'я",
-      :title_book => "Назва книги",
-      :recensiya => "Відгук",
-      :ocinka => "Дата",
-      :submit => "Підтвердити"
-    } 
-  elsif session[:lang] == "en" 
-    text ={
-      :name => "Author",
-      :title_book => "Name of book",
-      :recensiya => "Review",
-      :ocinka => "Date",
-      :submit => "Submit"
-    } 
-  elsif session[:lang] == "ru"
-    text ={
-      :name => "Автор",
-      :title_book => "Назвиние Книги",
-      :recensiya => "Отзив",
-      :ocinka => "Дата",
-      :submit => "Подтвердить"
-    } 
-  end 
-%>
   <%= form_for(vidguk) do |f| %>
     <% if vidguk.errors.any? %>
       <div id="error_explanation">
@@ -37,11 +11,11 @@
     <% end %>
     <% if user_signed_in? %>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:name] %></label>
+        <label class="col-xs-2 control-label"><%= t ".name" %></label>
         <%= f.text_field :name, :class => "form-control", :value => current_user.email, :disabled => "disabled" %>
       </div>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:title_book] %></label>
+        <label class="col-xs-2 control-label"><%= t ".title_book" %></label>
         <% if @kritics %>
           <%= f.text_field :title_book, :value => @kritics, :class => "form-control" %>
         <% else %>
@@ -49,26 +23,26 @@
         <% end %>
       </div>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:recensiya] %></label>
+        <label class="col-xs-2 control-label"><%= t ".recensiya" %></label>
         <%= f.text_field :vidguk, :class => "form-control" %>
       </div>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:ocinka] %></label>
+        <label class="col-xs-2 control-label"><%= t ".ocinka" %></label>
         <%= f.text_field :date, :class => "form-control" %>
       </div>
       <div class="actions">
-        <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>">
+        <input type="submit" name="submit" class="btn" value="<%= t ".submit" %>">
       </div>
     <% else %>
       <div class="alert alert-danger">
-        <strong>Ви не авторизовані!</strong>
+        <strong><%= t ".message" %></strong>
       </div>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:name] %></label>
+        <label class="col-xs-2 control-label"><%= t ".name" %></label>
         <%= f.text_field :name, :class => "form-control", :disabled => "disabled" %>
       </div>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:title_book] %></label>
+        <label class="col-xs-2 control-label"><%= t ".title_book" %></label>
         <% if @kritics %>
           <%= f.text_field :title_book, :value => @kritics, :class => "form-control", :disabled => "disabled" %>
         <% else %>
@@ -76,15 +50,15 @@
         <% end %>
       </div>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:recensiya] %></label>
+        <label class="col-xs-2 control-label"><%= t ".recensiya" %></label>
         <%= f.text_field :vidguk, :class => "form-control", :disabled => "disabled" %>
       </div>
       <div class="form-group">
-        <label class="col-xs-2 control-label"><%= text[:ocinka] %></label>
+        <label class="col-xs-2 control-label"><%= t ".ocinka" %></label>
         <%= f.text_field :date, :class => "form-control", :disabled => "disabled" %>
       </div>
       <div class="actions">
-        <input type="submit" name="submit" class="btn" value="<%= text[:submit] %>" hidden>
+        <input type="submit" name="submit" class="btn" value="<%= t ".submit" %>" hidden>
       </div>
     <% end %>
   <% end %>

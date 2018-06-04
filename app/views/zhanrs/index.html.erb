@@ -1,39 +1,6 @@
-<% if session[:lang] == "ua" 
-    text ={
-      :label_Z => "Жанри",
-      :show => "Показати",
-      :edit => "Редагувати",
-      :delete => "Видалити",
-      :question => "Ви впевнені?",
-      :new => "Додати новий жанр",
-      :back => "Назад"
-    } 
-  elsif session[:lang] == "en" 
-    text ={
-      :label_Z => "Genrs",
-      :show => "Show",
-      :edit => "Edit",
-      :delete => "Remove",
-      :question => "Are you sure?",
-      :new => "Add new zhanr",
-      :back => "Back"
-    } 
-  elsif session[:lang] == "ru"
-    text ={
-      :label_Z => "Жанри",
-      :show => "Показать",
-      :edit => "Редактировать",
-      :delete => "Удалить",
-      :question => "Вы уверены?",
-      :new => "Добавить нового автора",
-      :back => "Назад"
-    } 
-  end 
-%>
 <p id="notice"><%= notice %></p>
 <div class="text-center back">
-  <h1 class="col-md-6 col-md-offset-3"><%= text[:label_Z] %></h1></br>
-  <%= link_to text[:new], new_zhanr_path %>
+  <h1 class="col-md-6 col-md-offset-3"><%= t ".label_Z" %></h1><br>
 </div>
 <div class="container">
   <div class="row">
@@ -46,9 +13,6 @@
               
               <i class="fa fa-desktop fa-3x"></i>
             </div>
-            <p>
-               <%= link_to text[:delete], zhanr, method: :delete, data: { confirm: text[:question] } %>
-            </p>
           </div>
         </div>
       </div>

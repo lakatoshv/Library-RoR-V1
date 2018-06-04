@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
 	acts_as_votable
-	belongs_to :user
+	#belongs_to :user
 	has_many :vidguks
 	has_many :kritics
 	#belongs_to :zhanr

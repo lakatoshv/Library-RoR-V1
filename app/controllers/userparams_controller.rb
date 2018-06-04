@@ -2,16 +2,18 @@ class UserparamsController < ApplicationController
   def new
   	@userparam = Userparam.new
   end
-
+  def my_books
+    books = Book.all
+    @books = books.paginate(page: params[:page], per_page: 5)
+    @user_likes = Userparam.find_by_user_id(current_user.id)
+  end
   def create
- @userparam=current_user.build_userparam(user_params)
-
+    @userparam=current_user.build_userparam(user_params)
     if @userparam.save
       redirect_to root_path
-
     else
       render 'new'
-  end
+    end
   end
 
   def edit

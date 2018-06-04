@@ -1,13 +1,14 @@
+require 'rails-i18n'
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
-
   index do
     selectable_column
     id_column
+    #I18n.t("active_admin.admin_user.email"), 
     column :email
-    column :current_sign_in_at
+    column :current_sign_in_at, format: :long
     column :sign_in_count
-    column :created_at
+    column :created_at, format: :long
     actions
   end
 

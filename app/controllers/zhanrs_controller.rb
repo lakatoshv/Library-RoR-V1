@@ -1,5 +1,5 @@
 class ZhanrsController < ApplicationController
-  before_action :set_zhanr, only: [:show, :edit, :update, :destroy]
+  before_action :set_zhanr, only: [:show]
 
   # GET /zhanrs
   # GET /zhanrs.json

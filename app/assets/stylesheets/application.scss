@@ -9,13 +9,67 @@
   url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
   url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+
+.class {
+    min-height: 2000px;
+    width: 400px;
+    margin: 0 auto;
+}
+#back-top {
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+}
+#back-top a {
+    width: auto;
+    display: block;
+    text-align: center;
+    font: bold 20px Arial;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+   	padding: 10px;
+   	background: #000;
+}
+#back-top a:hover {
+    text-decoration: underline;
+}
+#back-top span {
+    width: auto;
+    height: auto;
+    display: block;
+    background: #000;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+.back-top{
+	display: none;
+}
+
+#loading {
+	background-color: #EF4848;
+	height: 5px;
+	width: 0px;
+	position: fixed;
+	left: 0px;
+	top: 160px;
+}
+
 .product-item {
   position: relative;
   overflow: hidden;
 }
 .product-item img {
   display: block;
-  width: 100%;
+  width: 250px;
+  height: 300px;
+  max-width: 200px;
+  max-height: 500px;
 }
 .product-buttons {
   position: absolute;
@@ -476,9 +530,17 @@ section.callaction {
 	min-height: 200px;
 	height: auto;
 }
+.col-lg-3 .box-auth {
+	min-height: 215px;
+	height: 100%;
+	width: 100%;
+	background: #f8f8f8;
+	border: 1px solid silver;
+	margin-bottom: 10px;
+}
 .col-lg-3 .box {
-	min-height: 240px;
-	height: auto;
+	min-height: 100px;
+	height: 100%;
 	width: 100%;
 	background: #f8f8f8;
 	border: 1px solid silver;

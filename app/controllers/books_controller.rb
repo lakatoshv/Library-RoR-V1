@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
- before_action :set_book, only: [:show, :edit, :update, :destroy, :like, :dislike]
+ before_action :set_book, only: [:show, :like, :dislike, :read]
  helper_method :sort_column, :sort_direction
   # GET /books
   # GET /books.json
@@ -32,13 +32,19 @@ class BooksController < ApplicationController
     @kritic = Kritic.new
     @vidguk = Vidguk.new
   end
+  def read
+  end
   # GET /books/like
   def like
-    @book.liked_by current_user
+    #@book.liked_by current_user
+    @userparam = Userparam.find_by_user_id(current_user.id)
+    @userparam.likes @book
     redirect_to :back
   end
   def dislike
-    @book.disliked_by current_user
+    #@book.disliked_by current_user
+    @userparam = Userparam.find_by_user_id(current_user.id)
+    @userparam.dislikes @book
     redirect_to :back
   end
   # GET /books/new
@@ -124,4 +130,5 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :auth, :zhanr, :pages_qty, :description, :image_url, :mini_description, :url_to_book, :name_of_file, :language, :rozshirennya, :origin_url_to_book)
     end
+    
 end

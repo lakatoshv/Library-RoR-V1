@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="back">
   <div class="text-center">
-    <h1 class="col-md-6 col-md-offset-3"><%= t ".h1" %></h1></br>
-    <% n = t ".new" %>
-    <%= link_to n, new_book_path %>
+    <h1 class="col-md-6 col-md-offset-3"><%= t ".h1" %></h1>
   </div>
   <br>
 </div>
@@ -14,20 +12,20 @@
       <li><%= t ".sort_by" %></li>
       <li>
         <select id="sort" name="sort">
-          <option selected value="title"><%= t ".by_title" %></option>
-          <option value="auth"><%= t ".by_auth" %></option>
-          <option value="likes_qty"><%= t ".by_likes" %></option>
-          <option value="dislikes_qty"><%= t ".by_dislikes" %></option>
+          <option <% if cookies[:sort] %><% if cookies[:sort] == "title" %> selected <% end %><% end %> value ="title"><%= t ".by_title" %></option>
+          <option <% if cookies[:sort] %><% if cookies[:sort] == "auth" %> selected <% end %><% end %> value="auth"><%= t ".by_auth" %></option>
+          <option <% if cookies[:sort] %><% if cookies[:sort] == "likes_qty" %> selected <% end %><% end %> value="likes_qty"><%= t ".by_likes" %></option>
+          <option <% if cookies[:sort] %><% if cookies[:sort] == "dislikes_qty" %> selected <% end %><% end %> value="dislikes_qty"><%= t ".by_dislikes" %></option>
         </select>
       </li>
       <li><%= t ".type_sort" %></li>
       <li>
         <select id="type_sort" name="type_sort">
-          <option selected value="asc"><%= t ".asc" %></option>
-          <option value="desc"><%= t ".desc" %></option>
+          <option <% if cookies[:type_sort] %><% if cookies[:type_sort] == "asc" %> selected <% end %><% end %> value="asc"><%= t ".asc" %></option>
+          <option <% if cookies[:type_sort] %><% if cookies[:type_sort] == "desc" %> selected <% end %><% end %> value="desc"><%= t ".desc" %></option>
         </select>
       </li>
-      <li><a id="sorting" class="btn btn-default" href="#"><%= t ".sort" %></a></li>
+      <li><a id="sorting" class="btn btn-default" href=""><%= t ".sort" %></a></li>
     </ul>
   </div>
 </div>
@@ -38,7 +36,7 @@
       <div class="col-lg-3">
         <div class="box">
           <div class="box-gray aligncenter">
-            <h3><%= link_to book.title, book, :class => "product" %></h3>
+            <h3><%= link_to book.title, book, class: "product" %></h3>
             <h4><%= link_to book.auth, auths_path + "?utf8=✓&search=" + book.auth + "&commit=Пошук", :class => "product" %></h4>
             <div class="icon">
               <i class="fa fa-desktop fa-3x"></i>
@@ -46,17 +44,22 @@
             <div class="product-item">
               <%= image_tag book.image_url.url(:medium), :class => "img-thumbnail" %>
               <div class="product-buttons">
-                <%= book.mini_description %><br/>
+                <br><%= book.mini_description %><br><br>
                 <% 
-                  delete = t ".delete"
-                  question = t ".question"
+                  read = t ".read"
+                  read += "(" + book.language + ")"
+                  download = t ".download"
+                  download += "(" + book.rozshirennya + ")" 
                 %>
-                <%= link_to delete, book, method: :delete, data: { confirm: question } %> 
+                <%= link_to read, read_book_path(book), class: "btn btn-default" %>
+                <%=form_for :download, url:  downl_path do |f| %>
+                  <%= f.text_field :url_to_book, :value => book.name_of_file + "." + book.rozshirennya, :type => "hidden" %>
+                  <%= f.submit download, class: "btn btn-default", :id => "download" %>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
-      
     </div>
     <% end %>
   </div>
@@ -66,11 +69,15 @@
   </div>
 <% end %>
 <script type="text/javascript">
+  function cheked(select) {
+    // берём значение из select и что-то с ним делаем
+    return select.val();
+  };
   $("#sorting").click(function(){
-            select = document.getElementById('sort');
-            value_sort=select.options[select.selectedIndex].value;
-            select=document.getElementById('type_sort');
-            type_sort=select.options[select.selectedIndex].value;
-            location = "?direction="+type_sort+"&page=1&sort="+value_sort;
-        });
+    value_sort = cheked($("#sort"));
+    type_sort = cheked($("#type_sort"));
+    document.cookie = "sort=" + value_sort;
+    document.cookie = "type_sort=" + type_sort; 
+    location = "?direction="+type_sort+"&page=1&sort="+value_sort;
+  });
 </script>
