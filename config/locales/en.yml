@@ -113,6 +113,7 @@ Blocking materials occurs as soon as possible, no more than 3 days."
       sort_by: "Sort by"
       by_title: "Name"
       by_auth: "Author"
+      by_zhanr: "Zhanr"
       by_likes: "Likes"
       by_dislikes: "Dislikes"
       type_sort: "Sorting type"
@@ -292,6 +293,8 @@ Blocking materials occurs as soon as possible, no more than 3 days."
       books: "Books"
       auths: "Authors"
       submit: "Search"
+      messages: "Messages"
+      contact_us: "Contact with us"
 
   userparams:
     my_books:
@@ -393,3 +396,39 @@ Blocking materials occurs as soon as possible, no more than 3 days."
       label_Z: "Genre"
       edit: "Edit"
       back: "Back"
+
+  messages:
+    new:
+      subject: "Subject"
+      message: "Message"
+      recipients: "Choose recipients"
+      h1: "Write us a message"
+      send: "Send"
+
+  conversations:
+    conversation:
+      restore: "Restore"
+      move: "Move to trash"
+      read: "Read"
+      question: "Are you sure?"
+      from: "From"
+      subject: "Subject"
+
+    index:
+      write_messaage: "Write new message"
+      inbox: "Inbox messages"
+      sent: "Sent messages"
+      trash: "Trash"
+      clear: 'Empty trash'
+      question: "Are you sure?"
+
+    show:
+      subject: "Subject"
+      message: "Message"
+      from: "From"
+      date: "Date"
+      answer: "Answer message"
+      write: "Type something..."
+      send: "Send"
+
+

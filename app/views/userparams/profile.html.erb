@@ -13,12 +13,12 @@
 				<strong><%= current_user.userparam.firstname + " " + current_user.userparam.lastname %></strong><br><br>
 				<%= image_tag current_user.userparam.avatar.url(:thumb), size: '200x250', class: 'img-rounded'%><br><br>
 				<strong><%= t ".town" %></strong> <%= current_user.userparam.city %><br>
-				<% books = t ".books" %><%= link_to books, my_books_path %><br><br>
+				<% books = t ".books" %><%= link_to books, my_books_path %><br>
 	 			<%= link_to edit_profile, userparams_edit_path%>
 	 		<% else %>
-				<%= link_to add_profile, userparams_new_path %>
-	 		<%end%>
-			<%= link_to back_profile, root_path %>
+				<%= link_to add_profile, userparams_new_path %><br>
+	 		<%end%><br><br>
+			<%= link_to back_profile, root_path, class: "btn btn-default btn-block button-background" %>
 		</p>
 	</div>
 </div>

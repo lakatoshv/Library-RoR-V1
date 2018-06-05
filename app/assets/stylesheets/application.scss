@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700');
+@import 'chosen';
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
@@ -10,7 +11,9 @@
   url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
-
+.book{
+	font: 20px Sourse Sans Pro;
+}
 .class {
     min-height: 2000px;
     width: 400px;
@@ -66,10 +69,10 @@
 }
 .product-item img {
   display: block;
-  width: 250px;
+  width: auto;
   height: 300px;
-  max-width: 200px;
-  max-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .product-buttons {
   position: absolute;
@@ -100,6 +103,15 @@
   content: "\f07a";
   font-family: FontAwesome;
   margin-right: 10px;
+}
+.product-item .buttons-bottom{
+	bottom: 0;
+}
+.button-background{
+  text-decoration: none;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
 }
 .box:hover .product-buttons {opacity: 1;}
 .box:hover .button {transform: translate(-50%, -50%) scale(1);}
@@ -222,7 +234,12 @@ h1,h2, h3, h4, h5, h6 {
 	margin-bottom:0;
 }
 
-
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
 
 /* ===================================
 3. Responsive media
@@ -538,9 +555,16 @@ section.callaction {
 	border: 1px solid silver;
 	margin-bottom: 10px;
 }
+.col-lg-3 .box-zhanres {
+	height: 100px;
+	width: 100%;
+	background: #f8f8f8;
+	border: 1px solid silver;
+	margin-bottom: 10px;
+}
 .col-lg-3 .box {
 	min-height: 100px;
-	height: 100%;
+	height: 550px;
 	width: 100%;
 	background: #f8f8f8;
 	border: 1px solid silver;

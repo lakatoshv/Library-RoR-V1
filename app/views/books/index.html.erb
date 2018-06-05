@@ -14,6 +14,7 @@
         <select id="sort" name="sort">
           <option <% if cookies[:sort] %><% if cookies[:sort] == "title" %> selected <% end %><% end %> value ="title"><%= t ".by_title" %></option>
           <option <% if cookies[:sort] %><% if cookies[:sort] == "auth" %> selected <% end %><% end %> value="auth"><%= t ".by_auth" %></option>
+          <option <% if cookies[:sort] %><% if cookies[:sort] == "zhanr" %> selected <% end %><% end %> value="zhanr"><%= t ".by_zhanr" %></option>
           <option <% if cookies[:sort] %><% if cookies[:sort] == "likes_qty" %> selected <% end %><% end %> value="likes_qty"><%= t ".by_likes" %></option>
           <option <% if cookies[:sort] %><% if cookies[:sort] == "dislikes_qty" %> selected <% end %><% end %> value="dislikes_qty"><%= t ".by_dislikes" %></option>
         </select>
@@ -25,7 +26,7 @@
           <option <% if cookies[:type_sort] %><% if cookies[:type_sort] == "desc" %> selected <% end %><% end %> value="desc"><%= t ".desc" %></option>
         </select>
       </li>
-      <li><a id="sorting" class="btn btn-default" href=""><%= t ".sort" %></a></li>
+      <li><a id="sorting" class="btn btn-default button-background" href=""><%= t ".sort" %></a></li>
     </ul>
   </div>
 </div>
@@ -44,25 +45,27 @@
             <div class="product-item">
               <%= image_tag book.image_url.url(:medium), :class => "img-thumbnail" %>
               <div class="product-buttons">
-                <br><%= book.mini_description %><br><br>
-                <% 
-                  read = t ".read"
-                  read += "(" + book.language + ")"
-                  download = t ".download"
-                  download += "(" + book.rozshirennya + ")" 
-                %>
-                <%= link_to read, read_book_path(book), class: "btn btn-default" %>
-                <%=form_for :download, url:  downl_path do |f| %>
-                  <%= f.text_field :url_to_book, :value => book.name_of_file + "." + book.rozshirennya, :type => "hidden" %>
-                  <%= f.submit download, class: "btn btn-default", :id => "download" %>
-                <% end %>
+                <br><%= book.mini_description %><br><
               </div>
             </div>
+            <div class="buttons-bottom">
+              <% 
+                read = t ".read"
+                read += "(" + book.language + ")"
+                download = t ".download"
+                download += "(" + book.rozshirennya + ")" 
+              %>
+              <%= link_to read, read_book_path(book), class: "btn btn-default btn-block button-background" %>
+              <%=form_for :download, url:  downl_path do |f| %>
+                <%= f.text_field :url_to_book, :value => book.name_of_file + "." + book.rozshirennya, :type => "hidden" %>
+                <%= f.submit download, class: "btn btn-default btn-block button-background", :id => "download" %>
+              <% end %>
           </div>
         </div>
+      </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 <% if @books.count > 5 %>
   <div class="col-md-6 col-md-offset-3 text-center back">
     <%= will_paginate @books %>

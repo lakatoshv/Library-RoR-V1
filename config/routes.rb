@@ -55,6 +55,7 @@ Rails.application.routes.draw do
 
     #get 'edit', to: 'books#edit'
     get'books', to: 'books#index'
+    get 'new', to:'books#new'
     #get 'read', to:'books#read'
     get 'show', to: 'books#show'
     post 'downl', to: 'books#downl'
@@ -83,6 +84,24 @@ Rails.application.routes.draw do
     get 'about_us', to: 'abouts#about_us'
     get 'about_us', to: 'abouts#about_program'
     get 'for_holders', to: 'abouts#for_holders'
+
+    resources :conversations, only: [:index, :show, :destroy] do
+
+      member do
+        post :reply
+        post :restore
+      end
+      collection do
+        delete :empty_trash
+      end
+      member do
+        post :mark_as_read
+      end
+    end
+
+
+resources :messages, only: [:new, :create]
+
 
   devise_scope :user do
     get 'sign_up', to: 'devise/registrations#new'

@@ -154,6 +154,7 @@ ua:
       sort_by: "Сортувати за:"
       by_title: "Назвою"
       by_auth: "Автором"
+      by_zhanr: "Жанром"
       by_likes: "Лайками"
       by_dislikes: "Дизлайками"
       type_sort: "Тип сортування:"
@@ -339,6 +340,8 @@ ua:
       books: "Книгах"
       auths: "Авторах"
       submit: "Пошук"
+      messages: "Повідомлення"
+      contact_us: "Зв'язатись з нами"
 
   userparams:
     my_books:
@@ -442,6 +445,40 @@ ua:
       label_Z: "Жанр"
       edit: "Редагувати"
       back: "Назад"
+
+  messages:
+    new:
+      subject: "Тема"
+      message: "Повідомлення"
+      recipients: "Виберіть отримувачів"
+      h1: "Напишіть нам повідомлення"
+      send: "Надіслати"
+
+  conversations:
+    conversation:
+      restore: "Відновити"
+      move: "Перемістити в корзину"
+      read: "Читати"
+      question: "Ви впевнені?"
+      from: "Від"
+      subject: "Тема"
+
+    index:
+      write_message: "Написати нове повідомлення"
+      inbox: "Вхідні повідомлення"
+      sent: "Надіслені повідомлення"
+      trash: "Корзина"
+      clear: "Очистити корзину"
+      question: "Ви впевнені?"
+
+    show:
+      subject: "Тема"
+      message: "Повідомлення"
+      from: "Від"
+      date: "Дата"
+      answer: "Відповісти на повідомлення"
+      write: "Напишіть що небудь..."
+      send: "Надіслати"
       
   time:
     formats:

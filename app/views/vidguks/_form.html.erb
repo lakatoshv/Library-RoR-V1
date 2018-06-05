@@ -31,7 +31,7 @@
         <%= f.text_field :date, :class => "form-control" %>
       </div>
       <div class="actions">
-        <input type="submit" name="submit" class="btn" value="<%= t ".submit" %>">
+        <input type="submit" name="submit" class="btn btn-default btn-primary btn-block button-background" value="<%= t ".submit" %>">
       </div>
     <% else %>
       <div class="alert alert-danger">
@@ -58,7 +58,7 @@
         <%= f.text_field :date, :class => "form-control", :disabled => "disabled" %>
       </div>
       <div class="actions">
-        <input type="submit" name="submit" class="btn" value="<%= t ".submit" %>" hidden>
+        <input type="submit" name="submit" class="btn btn-default btn-primary btn-block button-background" value="<%= t ".submit" %>" hidden>
       </div>
     <% end %>
   <% end %>

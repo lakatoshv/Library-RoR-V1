@@ -113,6 +113,7 @@ ru:
       sort_by: "Сортировать по:"
       by_title: "Названию"
       by_auth: "Автору"
+      by_zhanr: "Жанром"
       by_likes: "Лайках"
       by_dislikes: "Дизлайках"
       type_sort: "Тип сортировки:"
@@ -295,6 +296,8 @@ ru:
       books: "Книгах"
       auths: "Авторах"
       submit: "Поиск"
+      messages: "Сообщения"
+      contact_us: "Св'язаться с нами"
 
   userparams:
     my_books:
@@ -396,3 +399,37 @@ ru:
       label_Z: "Жанр"
       edit: "Редактировать"
       back: "Назад"
+
+  messages:
+    new:
+      subject: "Тема"
+      message: "Сообщение"
+      recipients: "Виберите получателей"
+      h1: "Напишите нам сообщение"
+      send: "Отправить"
+
+  conversations:
+    conversation:
+      restore: "Восстановить"
+      move: "Переместить в корзину"
+      read: "Читать"
+      question: "Вы уверены?"
+      from: "От"
+      subject: "Тема"
+
+    index:
+      write_message: "Написать новое сообщение"
+      inbox: "Входящие сообщения"
+      sent: "Отправление сообщения"
+      trash: "КОрзина"
+      clear: "Очистить корзину"
+      question: "Вы уверены?"
+
+    show:
+      subject: "Тема"
+      message: "Сообщение"
+      from: "От"
+      date: "Дата"
+      answer: "Ответить на сообщение"
+      write: "Напишите что небудь..."
+      send: "Отправить"

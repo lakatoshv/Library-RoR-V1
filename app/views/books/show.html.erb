@@ -53,19 +53,17 @@
       <%= @book.description %>
     </p>
     <p>
-      <strong><% read = t ".read" %><%= link_to read, read_book_path(@book), class: "btn btn-default" %> </strong>
-      <%= t ".language" %> - <%= @book.language %>
+      <strong><% read = t ".read" %></strong>
+      <%= t ".language" %>: <%= @book.language %>
     </p>
     <p> 
-      <ul class="list-inline  text-left">
-        <li><strong><%= t ".download"  %></strong></li>
-        <li>
-          <%=form_for :download, url:  downl_path do |f| %>
-            <%= f.text_field :url_to_book, :value => @book.name_of_file + "." + @book.rozshirennya, :type => "hidden" %>
-            <%= f.submit @book.rozshirennya, class: "btn btn-default", :id => "download" %>
-          <% end %>
-        </li>
-      </ul>
+      <strong><%= "Формат: " + @book.rozshirennya %></strong><br>
+        <%=form_for :download, url:  downl_path do |f| %>
+          <%= f.text_field :url_to_book, :value => @book.name_of_file + "." + @book.rozshirennya, :type => "hidden" %>
+          <% download = t ".download" %>
+          <%= link_to read, read_book_path(@book), class: "btn btn-default btn-block button-background" %>
+          <%= f.submit download, class: "btn btn-default btn-block button-background", :id => "download" %>
+        <% end %>
     </p>
 
   </div>
@@ -79,8 +77,9 @@
       question = t ".question"
       read = t ".read"
     %>
-    <%= link_to back, books_path, class: "btn btn-default" %>
-  </div>
+    <%= link_to back, books_path, class: "btn btn-default btn-block button-background" %>
+  </div><br>
+  <div id="line"></div>
   <br><br><br>
   <div>
       <a href="#" class="show_kritics" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h2 class="text-left"><%= t ".kritics" %></h2><b class=" icon-angle-down"></b></a></br>
@@ -107,11 +106,11 @@
       <% end %>
     </div>
   </div>
-    <a href="#" class="add_kritics" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h3 class="text-left"><%= t ".kritic" %></h3><b class=" icon-angle-down"></b></a>
-    <div class="form_kritics">
-      <%= render 'form_kritics', kritic: @kritic %>
-    </div>
-    <div id="line"></div>
+  <a href="#" class="add_kritics" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><h3 class="text-left"><%= t ".kritic" %></h3><b class=" icon-angle-down"></b></a>
+  <div class="form_kritics">
+    <%= render 'form_kritics', kritic: @kritic %>
+  </div>
+  <div id="line"></div>
 </div>
 <div class="col-md-4 col-md-offset-4 back">
   <div>

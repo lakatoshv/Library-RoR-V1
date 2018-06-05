@@ -30,16 +30,25 @@
                 exit_user = t ".exit"
                 registration = t ".registration"
                 autorisation = t ".autorisation"
+                messages = t ".messages"
               %>
               <li><%= link_to auths, auths_path %></li>
               <li><%= link_to zhanr, zhanrs_path %></li>
               <li><%= link_to books, books_path %></li>
               <% if user_signed_in? %>
                 <li><%= link_to current_user.email, profile_path %></li>
-                <li><%= link_to exit_user, sign_out_path  %></li>
+                <% 
+                  if current_user.email != "admin@example.com" && current_user.mailbox.inbox.count > 0
+                    messages = messages + " + #{current_user.mailbox.inbox.count}"
+                %>
+                  <li><%= link_to messages, conversations_path, class: "btn-warning" %></li>
+                <% elsif current_user.email == "admin@example.com" %>
+                  <li><%= link_to messages, conversations_path %></li>
+                <% end %>
+                <li><%= link_to exit_user, destroy_user_session_path, method: :delete  %></li>
               <% else %>
                 <li class="active"><%= link_to registration, sign_up_path %></li>
-                <li><%= link_to autorisation, sign_in_path %></li>
+                <li><%= link_to autorisation, new_user_session_path %></li>
               <% end %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"><%= t ".lang" %><b class=" icon-angle-down"></b></a>
@@ -78,7 +87,7 @@
                 <% end %>
               </select>
               <%= text_field_tag :search, params[:search], :id => "search", :class => "input-medium search-query" %>
-              <input type="submit" id="submit" class="btn submit" value="<%= t ".submit" %>" %>
+              <input type="submit" id="submit" class="btn submit button-background" value="<%= t ".submit" %>" %>
             </p>
           </div>
         </div>
@@ -93,15 +102,17 @@
     <div class="navbar-inner">
       <div class="container">
         <div id="footer" class="navbar navbar-default navbar-static-bottom col-md-6 col-md-offset-3">
-          <ul class="list-inline">
+          <ul class="nav navbar-nav list-inline">
             <%
               about_us = t ".about_us"
               about_site = t ".about_site"
               holders = t ".holders"
+              contact_us = t ".contact_us"
             %>
-            <li><h3 class="menu_head"><%= link_to about_site, abouts_about_program_path %></h3></li>
-            <li><h3 class="menu_head"><%= link_to about_us, abouts_about_us_path %></h3></li>
-            <li><h3 class="menu_head"><%= link_to holders, for_holders_path %></h3></li>
+            <li><h4><%= link_to about_site, abouts_about_program_path %></h4></li>
+            <li><h4><%= link_to about_us, abouts_about_us_path %></h4></li>
+            <li><h4><%= link_to holders, for_holders_path %></h4></li>
+            <li><h4><%= link_to contact_us, new_message_path %></h4></li>
           </ul>
         </div>
       </div>

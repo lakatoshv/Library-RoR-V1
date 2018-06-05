@@ -30,7 +30,7 @@
           submit = t ".submit" 
           back = t ".back"
         %>
-        <%= f.button submit, class: "btn btn-default" %>
+        <%= f.button submit, class: "btn btn-default btn-primary btn-block button-background" %>
       </div>
     <% else %>
       <div class="alert alert-danger">
@@ -55,7 +55,7 @@
           submit = t ".submit" 
           back = t ".back"
         %>
-        <%= f.button submit, class: "btn btn-default", :disabled => "disabled" %>
+        <%= f.button submit, class: "btn btn-default btn-primary btn-block button-background", :disabled => "disabled" %>
       </div>
     <% end %>
   <% end %>
